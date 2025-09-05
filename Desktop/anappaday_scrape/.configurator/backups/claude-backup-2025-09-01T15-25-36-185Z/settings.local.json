@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:launched.lovable.dev)",
+      "Bash(source:*)",
+      "Bash(python:*)",
+      "WebFetch(domain:catalog.base44.com)",
+      "WebFetch(domain:replit.com)",
+      "WebFetch(domain:bolt.new)",
+      "Bash(pip install:*)",
+      "Bash(npm install:*)",
+      "Bash(npx playwright:*)",
+      "Bash(mkdir:*)",
+      "Read(//Users/yoel/Library/Application Support/Claude/**)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "/Users/yoel/Desktop"
+    ]
+  }
+}

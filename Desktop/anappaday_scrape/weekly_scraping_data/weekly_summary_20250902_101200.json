@@ -1,0 +1,27 @@
+{
+  "run_timestamp": "2025-09-02T10:12:00.132709",
+  "duration_seconds": 2.041661024093628,
+  "total_new_items": 0,
+  "scrapers": {
+    "lovable": {
+      "success": false,
+      "site": "Lovable Launched",
+      "error": "BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    },
+    "base44": {
+      "success": false,
+      "site": "Base44 Catalog",
+      "error": "BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    },
+    "replit": {
+      "success": false,
+      "site": "Replit Gallery",
+      "error": "BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    },
+    "bolt": {
+      "success": false,
+      "site": "Bolt.new Gallery",
+      "error": "BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     playwright install                                     ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    }
+  }
+}

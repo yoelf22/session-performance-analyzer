@@ -1,0 +1,70 @@
+{
+  "scrape_timestamp": "2025-08-26 19:34:46",
+  "source_website": "https://bolt.new/gallery/all",
+  "total_projects_found": 5,
+  "description": "Projects from Bolt.new Gallery with load more pagination",
+  "tag_summary": {},
+  "top_authors": {},
+  "projects": [
+    {
+      "title": "All Projects",
+      "description": "Explore all projects built with Bolt.new. Get inspired by templates, examples, and real-world applications from our community.",
+      "creator_name": null,
+      "app_url": "https://bolt.new/gallery",
+      "screenshot_url": "https://bolt.new/public-page-assets/gallery/gallery-mosaic-solid.png",
+      "likes": null,
+      "created_date": null,
+      "category": "general",
+      "submitted_by": "system",
+      "submission_date": "2025-08-26 19:34:46"
+    },
+    {
+      "title": "Tripp'it - A fun travelling web app",
+      "description": null,
+      "creator_name": null,
+      "app_url": "https://trippit.me/",
+      "screenshot_url": null,
+      "likes": 73,
+      "created_date": null,
+      "category": "general",
+      "submitted_by": "system",
+      "submission_date": "2025-08-26 19:34:46"
+    },
+    {
+      "title": "Currents - Agile Project Management for Everyone",
+      "description": null,
+      "creator_name": null,
+      "app_url": "https://currents.build",
+      "screenshot_url": null,
+      "likes": 5,
+      "created_date": null,
+      "category": "general",
+      "submitted_by": "system",
+      "submission_date": "2025-08-26 19:34:46"
+    },
+    {
+      "title": "VibeViz.ai |  Vibe images → Get coherent visual style code prompt for your app",
+      "description": null,
+      "creator_name": null,
+      "app_url": "https://vibeviz.ai",
+      "screenshot_url": null,
+      "likes": 5,
+      "created_date": null,
+      "category": "general",
+      "submitted_by": "system",
+      "submission_date": "2025-08-26 19:34:46"
+    },
+    {
+      "title": "Octify — AI-Powered Relationship Magic Mobile App",
+      "description": null,
+      "creator_name": null,
+      "app_url": "https://octifybolt.netlify.app/",
+      "screenshot_url": null,
+      "likes": 4,
+      "created_date": null,
+      "category": "general",
+      "submitted_by": "system",
+      "submission_date": "2025-08-26 19:34:46"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scrape_timestamp": "2025-09-02 10:13:15",
+  "site": "Base44 Catalog",
+  "url": "https://catalog.base44.com/apps",
+  "new_items_count": 1,
+  "new_items": [
+    {
+      "title": "Welcome to Base44",
+      "description": "Don't have an account?Sign up",
+      "screenshot_url": "https://catalog.base44.com/assets/auth/auth-page-image.jpg",
+      "app_url": null,
+      "creator_name": null,
+      "created_date": null,
+      "submitted_by": "system",
+      "tech_stack": "Base44",
+      "page_number": 1,
+      "category": "general",
+      "submission_date": "2025-09-02 10:13:15",
+      "_hash": "38946d2d4d373dc1765e33176886d309"
+    }
+  ]
+}

@@ -1,0 +1,1078 @@
+{
+  "scrape_timestamp": "2025-08-26 10:13:16",
+  "source_website": "https://launched.lovable.dev/",
+  "total_apps_found": 107,
+  "description": "Apps launched and showcased on Lovable Launched platform",
+  "apps": [
+    {
+      "name": "Promptzii",
+      "url": "https://promptzii.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/2h6yzp4szme.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Promptzii",
+      "url": "https://chatyx.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/2h6yzp4szme.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Promptzii",
+      "url": "https://videolyricsmaker.netlify.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/2h6yzp4szme.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Promptzii",
+      "url": "https://myshopping.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/2h6yzp4szme.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Promptzii",
+      "url": "https://spiritualive.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/2h6yzp4szme.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "MemeForge",
+      "url": "https://preview--gif-caption-craft-94.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/wx1ft3emn1f.gif",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "MemeForge",
+      "url": "https://preview--question-master-mind-37.lovable.app/study",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/wx1ft3emn1f.gif",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "MemeForge",
+      "url": "https://preview--job-trackr-buddy-26.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/wx1ft3emn1f.gif",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "MemeForge",
+      "url": "https://agromotoindia.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/wx1ft3emn1f.gif",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "MemeForge",
+      "url": "https://preview--myhealthcare.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/wx1ft3emn1f.gif",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Kid Art Live",
+      "url": "https://kidartlive.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/xoh3okvmwgm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Kid Art Live",
+      "url": "https://resumetransform-ai.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/xoh3okvmwgm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Kid Art Live",
+      "url": "https://preview--agromotoindia.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/xoh3okvmwgm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Kid Art Live",
+      "url": "https://preview--vital-path-record.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/xoh3okvmwgm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Bookmarklets Library",
+      "url": "https://minanagehsalalma.github.io/BookMarkletsWiki",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/nwkmp1rr3d.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Bookmarklets Library",
+      "url": "https://preview--page-forge-md-62.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/nwkmp1rr3d.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Bookmarklets Library",
+      "url": "https://preview--win11-power-suite.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/nwkmp1rr3d.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Bookmarklets Library",
+      "url": "https://preview--billow-business-flow-suite.lovable.app/dashboard",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/nwkmp1rr3d.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Bookmarklets Library",
+      "url": "https://preview--milk-route-ai-manager.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/nwkmp1rr3d.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Al Alt Text Generator | AltTextLab",
+      "url": "https://www.alttextlab.com/?utm_source=directory&utm_medium=lovable",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/46aq4m9ekc2.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Al Alt Text Generator | AltTextLab",
+      "url": "https://preview--super-simple-tests.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/46aq4m9ekc2.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Al Alt Text Generator | AltTextLab",
+      "url": "https://preview--stream-stash-dashboard-51.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/46aq4m9ekc2.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Al Alt Text Generator | AltTextLab",
+      "url": "https://fluence-link.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/46aq4m9ekc2.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI BotBuilder",
+      "url": "https://botbuilder.cinciwebtech.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/9uhqfo5kplr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI BotBuilder",
+      "url": "https://vps.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/9uhqfo5kplr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI BotBuilder",
+      "url": "https://preview--modern-do-list-26.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/9uhqfo5kplr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI BotBuilder",
+      "url": "https://preview--ielts-task-ace-87.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/9uhqfo5kplr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI BotBuilder",
+      "url": "https://kk-patil-campus-connect.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/9uhqfo5kplr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Agents Directory",
+      "url": "https://namviek-replica-landing-page.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/c9afgfzo724.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Agents Directory",
+      "url": "https://looplayer.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/c9afgfzo724.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Agents Directory",
+      "url": "https://flux-factory-control-40.lovable.app/login",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/c9afgfzo724.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Agents Directory",
+      "url": "https://coursehub-theta.vercel.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/c9afgfzo724.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Startup-Spark",
+      "url": "https://startup-spark-theta.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/caeuphdla1.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Startup-Spark",
+      "url": "https://preview--ezbase-reimagine-project-genesis.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/caeuphdla1.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Startup-Spark",
+      "url": "https://startupsparkv1.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/caeuphdla1.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Startup-Spark",
+      "url": "https://mototribez.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/caeuphdla1.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "FoodVrse",
+      "url": "https://foodvrse.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/aoz341o9bsf.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "FoodVrse",
+      "url": "https://votenventure.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/aoz341o9bsf.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "FoodVrse",
+      "url": "https://preview--electric-folio-showcase.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/aoz341o9bsf.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "FoodVrse",
+      "url": "https://online-pro-converter-main.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/aoz341o9bsf.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "FoodVrse",
+      "url": "https://preview--lovable-calendar-pro.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/aoz341o9bsf.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ChromaConnect",
+      "url": "https://preview--chroma-social-nexus.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/24u11g7uamx.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ChromaConnect",
+      "url": "https://preview--ethnospeak-journey-canvas.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/24u11g7uamx.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ChromaConnect",
+      "url": "https://hospital.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/24u11g7uamx.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "QuickTables",
+      "url": "https://quicktables.org",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q6r29gc7ju.webp",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "QuickTables",
+      "url": "https://arab-poetry.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q6r29gc7ju.webp",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "QuickTables",
+      "url": "https://preview--ai-prompt-brilliance.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q6r29gc7ju.webp",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "QuickTables",
+      "url": "https:/flower-shop.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q6r29gc7ju.webp",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Shop flower  Demo",
+      "url": "https://launchedonlaunched.lovable.app/?utm_source=launched&utm_medium=landing-page&utm_campaign=launch-week",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/te86m92dnkj.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Taskz.me",
+      "url": "https://taskz.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ac7psxnekd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Taskz.me",
+      "url": "https://preview--qerilo-knowledge-glow.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ac7psxnekd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Taskz.me",
+      "url": "https://mule-migration-nexus.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ac7psxnekd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Taskz.me",
+      "url": "https://storyweaver-hindi-english.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ac7psxnekd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Taskz.me",
+      "url": "https://savvy-budgetbuddy.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ac7psxnekd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Time  to relax 🧘🏻",
+      "url": "https://elsewhen-time-scribe.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1jkfx60kjj.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Time  to relax 🧘🏻",
+      "url": "https://inforid.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1jkfx60kjj.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Time  to relax 🧘🏻",
+      "url": "https://journaltrade.io",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1jkfx60kjj.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Refine AI",
+      "url": "https://refined-ai.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/j2xckdpx1lk.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Refine AI",
+      "url": "https://inside-job-hub.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/j2xckdpx1lk.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Refine AI",
+      "url": "https://stayscape.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/j2xckdpx1lk.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Refine AI",
+      "url": "https://between-prompts.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/j2xckdpx1lk.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Refine AI",
+      "url": "https://playvexa.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/j2xckdpx1lk.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Skill Swappa",
+      "url": "https://skill-airtime-connect-53-21.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1or98vfibd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Skill Swappa",
+      "url": "https://little-learners-connect-37.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1or98vfibd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Skill Swappa",
+      "url": "https://www.triggerlnk.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1or98vfibd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Skill Swappa",
+      "url": "https://trygrapple.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1or98vfibd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Skill Swappa",
+      "url": "https://wuzzedat.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/q1or98vfibd.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Will you date me ?",
+      "url": "https://preview--love-story-artistry.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/mqbdo6o5tvr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Will you date me ?",
+      "url": "https://billable-freelance-hub.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/mqbdo6o5tvr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Will you date me ?",
+      "url": "https://pokemontcg.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/mqbdo6o5tvr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Will you date me ?",
+      "url": "https://prompt-craft-pilot.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/mqbdo6o5tvr.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "UtilityHub - Multitool Website",
+      "url": "https://utility-hub-planet.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/uef9m6e699q.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "UtilityHub - Multitool Website",
+      "url": "https://quick-freelancer-site.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/uef9m6e699q.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "UtilityHub - Multitool Website",
+      "url": "https://luxnav-chatdeck.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/uef9m6e699q.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "UtilityHub - Multitool Website",
+      "url": "https://sacred-journey-planner.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/uef9m6e699q.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "UtilityHub - Multitool Website",
+      "url": "https://wanderwisdom-helper.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/uef9m6e699q.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Growth Hack Toolkit",
+      "url": "https://growthhacktoolkit.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/3ryhexow2i.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Growth Hack Toolkit",
+      "url": "https://neonspeedtype.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/3ryhexow2i.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Growth Hack Toolkit",
+      "url": "https://preview--upliftora-home-glow.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/3ryhexow2i.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Growth Hack Toolkit",
+      "url": "https://debtfreeo.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/3ryhexow2i.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Growth Hack Toolkit",
+      "url": "https://jivana.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/3ryhexow2i.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SmartFlow",
+      "url": "https://smartflowai.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/7rl69tt7d2d.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SmartFlow",
+      "url": "https://campmanager.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/7rl69tt7d2d.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SmartFlow",
+      "url": "https://organize-iq-homepage-design.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/7rl69tt7d2d.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Game Maker - playmix.ai",
+      "url": "https://paper-craft-master.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/l8kspzdp0wm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "AI Game Maker - playmix.ai",
+      "url": "https://gpt-flowmaster.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/l8kspzdp0wm.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ViraLogic",
+      "url": "https://viralogic-seo-boost.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/117a165e-0875-4f4f-9355-a2d44a5db583.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ViraLogic",
+      "url": "https://twitposter.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/117a165e-0875-4f4f-9355-a2d44a5db583.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "ViraLogic",
+      "url": "https://reit-running-app-mvp-1.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/117a165e-0875-4f4f-9355-a2d44a5db583.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Code Clone and Similarity Analysis Platform",
+      "url": "https://preview--code-clarity-conductor.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ea0a6fe6-ca44-43d4-83da-39dce7d65a65.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Code Clone and Similarity Analysis Platform",
+      "url": "https://bizdevim.lovable.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ea0a6fe6-ca44-43d4-83da-39dce7d65a65.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Code Clone and Similarity Analysis Platform",
+      "url": "https://iskolaris.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ea0a6fe6-ca44-43d4-83da-39dce7d65a65.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CodeLearn",
+      "url": "https://code-learn-olive.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ded9a255-bd7f-4744-99f3-eaafdfdbe995.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CodeLearn",
+      "url": "https://my-promptpal.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ded9a255-bd7f-4744-99f3-eaafdfdbe995.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CodeLearn",
+      "url": "https://www.recipifyai.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/ded9a255-bd7f-4744-99f3-eaafdfdbe995.jpeg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Remindly",
+      "url": "https://remindr-monthly-magic.lovable.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/acd650d6-03cf-41f1-bb9e-2a08921eaf04.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Remindly",
+      "url": "https://summaryoftheinternet.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/acd650d6-03cf-41f1-bb9e-2a08921eaf04.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Remindly",
+      "url": "http://ephakari-power-solution.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/acd650d6-03cf-41f1-bb9e-2a08921eaf04.jpg",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Slay The Day",
+      "url": "https://slaytheday.io",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/0ed8e1c8-40b8-4c0b-82c5-c0e55b24d722.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Slay The Day",
+      "url": "https://shivalayammakeupstudio.netlify.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/0ed8e1c8-40b8-4c0b-82c5-c0e55b24d722.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "Slay The Day",
+      "url": "https://pestlebank.com",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/0ed8e1c8-40b8-4c0b-82c5-c0e55b24d722.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SHIVALAYAM MAKEUPSTUDIO AND ACADEMY",
+      "url": "https://www.prompterflow.com/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/5336ac97-0e48-4392-a5f2-16203cb661d6.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SHIVALAYAM MAKEUPSTUDIO AND ACADEMY",
+      "url": "https://bet-wisdom-git-main-kelvinnj103-gmailcoms-projects.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/5336ac97-0e48-4392-a5f2-16203cb661d6.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "SHIVALAYAM MAKEUPSTUDIO AND ACADEMY",
+      "url": "https://coursehub-kelvinnj103-gmailcoms-projects.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/5336ac97-0e48-4392-a5f2-16203cb661d6.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CvExpress",
+      "url": "https://my-cv-canvas.vercel.app/",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/65fccced-415f-48ea-9b6a-3236ee2305c1.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CvExpress",
+      "url": "https://saferr.netlify.app",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/65fccced-415f-48ea-9b6a-3236ee2305c1.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    },
+    {
+      "name": "CvExpress",
+      "url": "https://dollardeploy.com/?utm_source=lovable",
+      "image_url": "https://mxwrbgeplsqtgwrbiyse.supabase.co/storage/v1/object/public/project-images/65fccced-415f-48ea-9b6a-3236ee2305c1.png",
+      "description": null,
+      "type": "historical_winner",
+      "launch_date": null,
+      "rank": null,
+      "votes": null
+    }
+  ]
+}
