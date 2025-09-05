@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smartphone Perceptual Mapping Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .header { text-align: center; background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .controls { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .chart-container { background: white; padding: 20px; border-radius: 10px; }
+        select, button { padding: 10px; margin: 5px; font-size: 14px; }
+        button { background: #007AFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #chart { width: 800px; height: 600px; border: 1px solid #ddd; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📱 Smartphone Perceptual Mapping Dashboard</h1>
+        <p>Interactive analysis with popularity-based bubble sizing</p>
+    </div>
+
+    <div class="controls">
+        <label>X-Axis: </label>
+        <select id="x-select">
+            <option value="Performance">Performance</option>
+            <option value="Camera_Quality">Camera Quality</option>
+            <option value="Battery_Life">Battery Life</option>
+            <option value="Price_Value">Price Value</option>
+            <option value="Build_Quality">Build Quality</option>
+            <option value="Display_Quality">Display Quality</option>
+            <option value="Design_Appeal">Design Appeal</option>
+            <option value="Feature_Richness">Feature Richness</option>
+        </select>
+        
+        <label>Y-Axis: </label>
+        <select id="y-select">
+            <option value="Camera_Quality">Camera Quality</option>
+            <option value="Performance">Performance</option>
+            <option value="Battery_Life">Battery Life</option>
+            <option value="Price_Value">Price Value</option>
+            <option value="Build_Quality">Build Quality</option>
+            <option value="Display_Quality">Display Quality</option>
+            <option value="Design_Appeal">Design Appeal</option>
+            <option value="Feature_Richness">Feature Richness</option>
+        </select>
+        
+        <button onclick="updateChart()">Update Map</button>
+        <button onclick="exportData()">Export CSV</button>
+    </div>
+
+    <div class="chart-container">
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        const phoneData = [
+            {name: "iPhone 15 Pro", brand: "Apple", popularity: 85, Performance: 9.2, Camera_Quality: 8.5, Battery_Life: 7.5, Price_Value: 4.0, Build_Quality: 9.0, Display_Quality: 8.8, Design_Appeal: 9.1, Feature_Richness: 8.0},
+            {name: "iPhone 15", brand: "Apple", popularity: 78, Performance: 8.8, Camera_Quality: 8.0, Battery_Life: 7.2, Price_Value: 4.8, Build_Quality: 8.7, Display_Quality: 8.3, Design_Appeal: 8.8, Feature_Richness: 7.5},
+            {name: "Samsung Galaxy S24 Ultra", brand: "Samsung", popularity: 72, Performance: 8.9, Camera_Quality: 9.0, Battery_Life: 8.2, Price_Value: 5.5, Build_Quality: 8.8, Display_Quality: 9.2, Design_Appeal: 8.3, Feature_Richness: 9.1},
+            {name: "Samsung Galaxy S24", brand: "Samsung", popularity: 68, Performance: 8.5, Camera_Quality: 8.3, Battery_Life: 7.8, Price_Value: 6.2, Build_Quality: 8.4, Display_Quality: 8.7, Design_Appeal: 8.0, Feature_Richness: 8.5},
+            {name: "Google Pixel 8 Pro", brand: "Google", popularity: 45, Performance: 8.2, Camera_Quality: 8.8, Battery_Life: 7.6, Price_Value: 6.8, Build_Quality: 7.9, Display_Quality: 8.4, Design_Appeal: 7.5, Feature_Richness: 7.8},
+            {name: "Google Pixel 8", brand: "Google", popularity: 42, Performance: 7.9, Camera_Quality: 8.4, Battery_Life: 7.2, Price_Value: 7.5, Build_Quality: 7.6, Display_Quality: 8.0, Design_Appeal: 7.2, Feature_Richness: 7.4},
+            {name: "OnePlus 12", brand: "OnePlus", popularity: 35, Performance: 8.7, Camera_Quality: 7.8, Battery_Life: 8.4, Price_Value: 7.8, Build_Quality: 8.0, Display_Quality: 8.5, Design_Appeal: 7.9, Feature_Richness: 8.2},
+            {name: "Xiaomi 14 Pro", brand: "Xiaomi", popularity: 38, Performance: 8.4, Camera_Quality: 7.9, Battery_Life: 8.1, Price_Value: 8.5, Build_Quality: 7.7, Display_Quality: 8.2, Design_Appeal: 7.6, Feature_Richness: 8.7},
+            {name: "Samsung Galaxy A54", brand: "Samsung", popularity: 65, Performance: 6.5, Camera_Quality: 6.8, Battery_Life: 7.5, Price_Value: 7.9, Build_Quality: 6.9, Display_Quality: 7.2, Design_Appeal: 7.1, Feature_Richness: 7.0},
+            {name: "Google Pixel 7a", brand: "Google", popularity: 52, Performance: 6.8, Camera_Quality: 7.8, Battery_Life: 6.9, Price_Value: 8.2, Build_Quality: 6.5, Display_Quality: 7.0, Design_Appeal: 6.8, Feature_Richness: 6.7},
+            {name: "OnePlus Nord 3", brand: "OnePlus", popularity: 28, Performance: 7.2, Camera_Quality: 6.5, Battery_Life: 7.8, Price_Value: 8.0, Build_Quality: 6.8, Display_Quality: 7.4, Design_Appeal: 6.9, Feature_Richness: 7.1},
+            {name: "Xiaomi Redmi Note 13", brand: "Xiaomi", popularity: 58, Performance: 5.9, Camera_Quality: 5.8, Battery_Life: 8.2, Price_Value: 8.8, Build_Quality: 5.5, Display_Quality: 6.2, Design_Appeal: 5.9, Feature_Richness: 6.8}
+        ];
+
+        const brandColors = {
+            "Apple": "#007AFF",
+            "Samsung": "#1f77b4", 
+            "Google": "#ff7f0e",
+            "OnePlus": "#2ca02c",
+            "Xiaomi": "#d62728"
+        };
+
+        function updateChart() {
+            const xDim = document.getElementById('x-select').value;
+            const yDim = document.getElementById('y-select').value;
+            
+            const chart = d3.select("#chart");
+            chart.selectAll("*").remove();
+            
+            const svg = chart.append("svg").attr("width", "100%").attr("height", "100%");
+            const width = 800, height = 600;
+            const margin = {top: 20, right: 20, bottom: 60, left: 60}; // Reduced margins for 1/3 larger map
+            
+            const xScale = d3.scaleLinear().domain([3, 10]).range([margin.left, width - margin.right]);
+            const yScale = d3.scaleLinear().domain([3, 10]).range([height - margin.bottom, margin.top]);
+            const sizeScale = d3.scaleSqrt().domain([0, 100]).range([8, 40]); // 20% smaller circles
+            
+            // Calculate center points for quadrant lines
+            const xCenter = xScale(6.5);
+            const yCenter = yScale(6.5);
+            
+            // Add quadrant background rectangles
+            const quadrants = [
+                {x: margin.left, y: margin.top, width: xCenter - margin.left, height: yCenter - margin.top, class: 'quadrant-niche'},
+                {x: xCenter, y: margin.top, width: width - margin.right - xCenter, height: yCenter - margin.top, class: 'quadrant-leaders'},
+                {x: margin.left, y: yCenter, width: xCenter - margin.left, height: height - margin.bottom - yCenter, class: 'quadrant-challenged'},
+                {x: xCenter, y: yCenter, width: width - margin.right - xCenter, height: height - margin.bottom - yCenter, class: 'quadrant-specialists'}
+            ];
+            
+            svg.selectAll(".quadrant")
+                .data(quadrants)
+                .enter()
+                .append("rect")
+                .attr("class", d => d.class)
+                .attr("x", d => d.x)
+                .attr("y", d => d.y)
+                .attr("width", d => d.width)
+                .attr("height", d => d.height)
+                .attr("fill", (d, i) => ["#ffe6e6", "#e6ffe6", "#ffebe6", "#e6f3ff"][i])
+                .attr("opacity", 0.3);
+            
+            // Add quadrant divider lines
+            svg.append("line").attr("x1", xCenter).attr("y1", margin.top).attr("x2", xCenter).attr("y2", height - margin.bottom).attr("stroke", "#ddd").attr("stroke-width", 1).attr("stroke-dasharray", "5,5");
+            svg.append("line").attr("x1", margin.left).attr("y1", yCenter).attr("x2", width - margin.right).attr("y2", yCenter).attr("stroke", "#ddd").attr("stroke-width", 1).attr("stroke-dasharray", "5,5");
+            
+            // Add axes
+            svg.append("g").attr("transform", `translate(0,${height - margin.bottom})`).call(d3.axisBottom(xScale));
+            svg.append("g").attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(yScale));
+            
+            // Add quadrant labels
+            svg.append("text").attr("x", margin.left + (xCenter - margin.left)/2).attr("y", margin.top + 15).style("text-anchor", "middle").style("font-size", "10px").style("font-weight", "normal").style("fill", "#666").text("Niche Players");
+            svg.append("text").attr("x", xCenter + (width - margin.right - xCenter)/2).attr("y", margin.top + 15).style("text-anchor", "middle").style("font-size", "10px").style("font-weight", "normal").style("fill", "#666").text("Leaders");
+            svg.append("text").attr("x", margin.left + (xCenter - margin.left)/2).attr("y", yCenter + 15).style("text-anchor", "middle").style("font-size", "10px").style("font-weight", "normal").style("fill", "#666").text("Challenged");
+            svg.append("text").attr("x", xCenter + (width - margin.right - xCenter)/2).attr("y", yCenter + 15).style("text-anchor", "middle").style("font-size", "10px").style("font-weight", "normal").style("fill", "#666").text("Specialists");
+            
+            // Add axis labels
+            svg.append("text").attr("x", width/2).attr("y", height - 20).style("text-anchor", "middle").text(xDim.replace('_', ' '));
+            svg.append("text").attr("transform", "rotate(-90)").attr("x", -height/2).attr("y", 20).style("text-anchor", "middle").text(yDim.replace('_', ' '));
+            
+            // Add title
+            svg.append("text").attr("x", width/2).attr("y", 25).style("text-anchor", "middle").style("font-size", "18px").style("font-weight", "bold").text(`${xDim.replace('_', ' ')} vs ${yDim.replace('_', ' ')}`);
+            
+            // Add circles
+            svg.selectAll("circle")
+                .data(phoneData)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScale(d[xDim]))
+                .attr("cy", d => yScale(d[yDim]))
+                .attr("r", d => sizeScale(d.popularity))
+                .attr("fill", d => brandColors[d.brand] || "#666")
+                .attr("opacity", 0.7)
+                .attr("stroke", "#000")
+                .attr("stroke-width", 1);
+            
+            // Add labels with leader lines at controlled distance
+            svg.selectAll(".label-group")
+                .data(phoneData)
+                .enter()
+                .append("g")
+                .attr("class", "label-group")
+                .each(function(d) {
+                    const g = d3.select(this);
+                    const cx = xScale(d[xDim]);
+                    const cy = yScale(d[yDim]);
+                    const bubbleRadius = Math.sqrt(sizeScale(d.popularity)) / 2;
+                    
+                    // Position label at 5 diameters to the left (100% longer)
+                    const labelDistance = bubbleRadius * 10; // 5 diameters
+                    const labelX = cx - labelDistance;
+                    const labelY = cy;
+                    
+                    // Get brand colors
+                    const bubbleColor = brandColors[d.brand] || "#666";
+                    
+                    // Create lighter background color
+                    function lightenColor(color, factor) {
+                        const hex = color.replace('#', '');
+                        const r = parseInt(hex.substr(0, 2), 16);
+                        const g = parseInt(hex.substr(2, 2), 16);
+                        const b = parseInt(hex.substr(4, 2), 16);
+                        
+                        const lightR = Math.min(255, Math.floor(r + (255 - r) * factor));
+                        const lightG = Math.min(255, Math.floor(g + (255 - g) * factor));
+                        const lightB = Math.min(255, Math.floor(b + (255 - b) * factor));
+                        
+                        return `rgb(${lightR}, ${lightG}, ${lightB})`;
+                    }
+                    
+                    const bgColor = lightenColor(bubbleColor, 0.7);
+                    
+                    // Add leader line
+                    g.append("line")
+                        .attr("x1", cx)
+                        .attr("y1", cy)
+                        .attr("x2", labelX + 5) // Stop line 5px before text
+                        .attr("y2", labelY)
+                        .attr("stroke", bubbleColor)
+                        .attr("stroke-width", 1)
+                        .attr("opacity", 0.7);
+                    
+                    // Add label background box
+                    const text = g.append("text")
+                        .attr("x", labelX)
+                        .attr("y", labelY)
+                        .style("text-anchor", "end")
+                        .style("font-size", "9px")
+                        .style("font-weight", "bold")
+                        .style("fill", "#333")
+                        .style("dominant-baseline", "middle")
+                        .text(d.name.replace('Samsung Galaxy ', 'Galaxy ').replace('Google Pixel ', 'Pixel '));
+                    
+                    // Add background rectangle with brand color
+                    const bbox = text.node().getBBox();
+                    g.insert("rect", "text")
+                        .attr("x", bbox.x - 3)
+                        .attr("y", bbox.y - 2)
+                        .attr("width", bbox.width + 6)
+                        .attr("height", bbox.height + 4)
+                        .attr("fill", bgColor)
+                        .attr("stroke", bubbleColor)
+                        .attr("stroke-width", 1)
+                        .attr("opacity", 0.9)
+                        .attr("rx", 3);
+                });
+        }
+        
+        function exportData() {
+            const csv = "name,brand,popularity,Performance,Camera_Quality,Battery_Life,Price_Value,Build_Quality\n" + 
+                       phoneData.map(d => `${d.name},${d.brand},${d.popularity},${d.Performance},${d.Camera_Quality},${d.Battery_Life},${d.Price_Value},${d.Build_Quality}`).join("\n");
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'smartphone_data.csv';
+            a.click();
+        }
+        
+        // Initialize chart
+        updateChart();
+    </script>
+</body>
+</html>
