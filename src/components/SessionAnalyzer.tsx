@@ -88,7 +88,7 @@ const SessionAnalyzer: React.FC = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         try {
-          const csvText = e.target?.result as string;
+          const _csvText = e.target?.result as string;
           console.log('File uploaded:', file.name);
           alert(`File "${file.name}" uploaded successfully! CSV parsing will be implemented in a future version.`);
         } catch (error) {
