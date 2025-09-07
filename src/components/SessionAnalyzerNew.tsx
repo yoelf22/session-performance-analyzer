@@ -417,40 +417,51 @@ const SessionAnalyzer: React.FC = () => {
     
     setFusedData(fused);
     
-    // Calculate proper inflection point using derivative analysis
+    // Calculate inflection point using slope change analysis
     const calculateInflectionPoint = (data: FusedDataPoint[]): number => {
-      if (data.length < 10) return 0; // Need sufficient data points
+      if (data.length < 10) return 0;
       
-      const smoothingWindow = 5;
-      const smoothedData: number[] = [];
+      // Sort data by session length to ensure proper ordering
+      const sortedData = [...data].sort((a, b) => a.sessionLength - b.sessionLength);
       
-      // Apply smoothing to success rates
-      for (let i = smoothingWindow; i < data.length - smoothingWindow; i++) {
-        const window = data.slice(i - smoothingWindow, i + smoothingWindow + 1);
-        const avgSuccess = window.reduce((sum, p) => sum + p.successRate, 0) / window.length;
-        smoothedData.push(avgSuccess);
+      // Group data into bins to smooth out noise
+      const binSize = Math.max(1, Math.floor(sortedData.length / 20));
+      const binnedData: { sessionLength: number; successRate: number }[] = [];
+      
+      for (let i = 0; i < sortedData.length; i += binSize) {
+        const bin = sortedData.slice(i, i + binSize);
+        const avgSessionLength = bin.reduce((sum, p) => sum + p.sessionLength, 0) / bin.length;
+        const avgSuccessRate = bin.reduce((sum, p) => sum + p.successRate, 0) / bin.length;
+        binnedData.push({ sessionLength: avgSessionLength, successRate: avgSuccessRate });
       }
       
-      // Calculate first derivative (rate of change)
-      const derivatives: number[] = [];
-      for (let i = 1; i < smoothedData.length; i++) {
-        const derivative = smoothedData[i] - smoothedData[i - 1];
-        derivatives.push(derivative);
-      }
+      if (binnedData.length < 3) return sortedData[0]?.sessionLength || 0;
       
-      // Find the point where the derivative changes most dramatically (second derivative)
-      let maxSecondDerivative = 0;
-      let inflectionIndex = 0;
+      // Find the point where the slope changes most dramatically
+      let maxSlopeChange = 0;
+      let inflectionPoint = binnedData[0].sessionLength;
       
-      for (let i = 1; i < derivatives.length; i++) {
-        const secondDerivative = Math.abs(derivatives[i] - derivatives[i - 1]);
-        if (secondDerivative > maxSecondDerivative) {
-          maxSecondDerivative = secondDerivative;
-          inflectionIndex = i + smoothingWindow; // Adjust for smoothing offset
+      for (let i = 1; i < binnedData.length - 1; i++) {
+        const prevPoint = binnedData[i - 1];
+        const currPoint = binnedData[i];
+        const nextPoint = binnedData[i + 1];
+        
+        // Calculate slopes before and after current point
+        const slopeBefore = (currPoint.successRate - prevPoint.successRate) / 
+                           (currPoint.sessionLength - prevPoint.sessionLength);
+        const slopeAfter = (nextPoint.successRate - currPoint.successRate) / 
+                          (nextPoint.sessionLength - currPoint.sessionLength);
+        
+        // Find the largest change in slope (inflection point)
+        const slopeChange = Math.abs(slopeAfter - slopeBefore);
+        
+        if (slopeChange > maxSlopeChange) {
+          maxSlopeChange = slopeChange;
+          inflectionPoint = currPoint.sessionLength;
         }
       }
       
-      return data[inflectionIndex]?.sessionLength || 0;
+      return inflectionPoint;
     };
     
     const inflectionPoint = calculateInflectionPoint(fused);
@@ -586,40 +597,51 @@ const SessionAnalyzer: React.FC = () => {
     setAWSUploadStatus('idle');
     setIsReportGenerated(true);
     
-    // Calculate proper inflection point for sample data too
+    // Calculate inflection point using slope change analysis
     const calculateInflectionPoint = (data: FusedDataPoint[]): number => {
-      if (data.length < 10) return 0; // Need sufficient data points
+      if (data.length < 10) return 0;
       
-      const smoothingWindow = 5;
-      const smoothedData: number[] = [];
+      // Sort data by session length to ensure proper ordering
+      const sortedData = [...data].sort((a, b) => a.sessionLength - b.sessionLength);
       
-      // Apply smoothing to success rates
-      for (let i = smoothingWindow; i < data.length - smoothingWindow; i++) {
-        const window = data.slice(i - smoothingWindow, i + smoothingWindow + 1);
-        const avgSuccess = window.reduce((sum, p) => sum + p.successRate, 0) / window.length;
-        smoothedData.push(avgSuccess);
+      // Group data into bins to smooth out noise
+      const binSize = Math.max(1, Math.floor(sortedData.length / 20));
+      const binnedData: { sessionLength: number; successRate: number }[] = [];
+      
+      for (let i = 0; i < sortedData.length; i += binSize) {
+        const bin = sortedData.slice(i, i + binSize);
+        const avgSessionLength = bin.reduce((sum, p) => sum + p.sessionLength, 0) / bin.length;
+        const avgSuccessRate = bin.reduce((sum, p) => sum + p.successRate, 0) / bin.length;
+        binnedData.push({ sessionLength: avgSessionLength, successRate: avgSuccessRate });
       }
       
-      // Calculate first derivative (rate of change)
-      const derivatives: number[] = [];
-      for (let i = 1; i < smoothedData.length; i++) {
-        const derivative = smoothedData[i] - smoothedData[i - 1];
-        derivatives.push(derivative);
-      }
+      if (binnedData.length < 3) return sortedData[0]?.sessionLength || 0;
       
-      // Find the point where the derivative changes most dramatically (second derivative)
-      let maxSecondDerivative = 0;
-      let inflectionIndex = 0;
+      // Find the point where the slope changes most dramatically
+      let maxSlopeChange = 0;
+      let inflectionPoint = binnedData[0].sessionLength;
       
-      for (let i = 1; i < derivatives.length; i++) {
-        const secondDerivative = Math.abs(derivatives[i] - derivatives[i - 1]);
-        if (secondDerivative > maxSecondDerivative) {
-          maxSecondDerivative = secondDerivative;
-          inflectionIndex = i + smoothingWindow; // Adjust for smoothing offset
+      for (let i = 1; i < binnedData.length - 1; i++) {
+        const prevPoint = binnedData[i - 1];
+        const currPoint = binnedData[i];
+        const nextPoint = binnedData[i + 1];
+        
+        // Calculate slopes before and after current point
+        const slopeBefore = (currPoint.successRate - prevPoint.successRate) / 
+                           (currPoint.sessionLength - prevPoint.sessionLength);
+        const slopeAfter = (nextPoint.successRate - currPoint.successRate) / 
+                          (nextPoint.sessionLength - currPoint.sessionLength);
+        
+        // Find the largest change in slope (inflection point)
+        const slopeChange = Math.abs(slopeAfter - slopeBefore);
+        
+        if (slopeChange > maxSlopeChange) {
+          maxSlopeChange = slopeChange;
+          inflectionPoint = currPoint.sessionLength;
         }
       }
       
-      return data[inflectionIndex]?.sessionLength || 0;
+      return inflectionPoint;
     };
 
     const inflectionPoint = calculateInflectionPoint(sortedData);
