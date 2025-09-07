@@ -68,6 +68,9 @@ const SessionAnalyzer: React.FC = () => {
   const [shopifyUploadStatus, setShopifyUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
   const [awsUploadStatus, setAWSUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
   const [isReportGenerated, setIsReportGenerated] = useState(true);
+  const [shopifyMessage, setShopifyMessage] = useState<string>('');
+  const [awsMessage, setAWSMessage] = useState<string>('');
+  const [fusionMessage, setFusionMessage] = useState<string>('');
   const shopifyFileRef = useRef<HTMLInputElement>(null);
   const awsFileRef = useRef<HTMLInputElement>(null);
 
@@ -128,8 +131,6 @@ const SessionAnalyzer: React.FC = () => {
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
     const data: ShopifyData[] = [];
     
-    console.log('Shopify CSV headers detected:', headers);
-    
     // Find column indices for Shopify data - robust matching
     const sessionIdIndex = headers.findIndex(h => 
       h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
@@ -148,17 +149,7 @@ const SessionAnalyzer: React.FC = () => {
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
-    console.log('Shopify column indices:', {
-      sessionIdIndex,
-      successRateIndex,
-      orderIdIndex,
-      timestampIndex
-    });
-    
     if (sessionIdIndex === -1 || successRateIndex === -1) {
-      console.error('Column detection failed for Shopify CSV');
-      console.error('Headers:', headers);
-      console.error('Looking for session_id (session+id) and success_rate (success+rate)');
       throw new Error(`Shopify CSV must contain columns for session_id and success_rate. Found headers: ${headers.join(', ')}`);
     }
     
@@ -204,8 +195,6 @@ const SessionAnalyzer: React.FC = () => {
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
     const data: AWSData[] = [];
     
-    console.log('AWS CSV headers detected:', headers);
-    
     // Find column indices for AWS data - robust matching
     const sessionIdIndex = headers.findIndex(h => 
       h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
@@ -224,17 +213,7 @@ const SessionAnalyzer: React.FC = () => {
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
-    console.log('AWS column indices:', {
-      sessionIdIndex,
-      sessionLengthIndex,
-      userIdIndex,
-      timestampIndex
-    });
-    
     if (sessionIdIndex === -1 || sessionLengthIndex === -1) {
-      console.error('Column detection failed for AWS CSV');
-      console.error('Headers:', headers);
-      console.error('Looking for session_id (session+id) and session_length (session+length)');
       throw new Error(`AWS CSV must contain columns for session_id and session_length. Found headers: ${headers.join(', ')}`);
     }
     
@@ -293,14 +272,14 @@ const SessionAnalyzer: React.FC = () => {
 
   const generateFusionReport = () => {
     if (shopifyData.length === 0 || awsData.length === 0) {
-      alert('Both Shopify and AWS data must be uploaded before generating a fusion report.');
+      setFusionMessage('Both Shopify and AWS data must be uploaded before generating a fusion report.');
       return;
     }
 
     const fused = fuseData();
     
     if (fused.length === 0) {
-      alert(`No matching sessions found between Shopify data (${shopifyData.length} sessions) and AWS data (${awsData.length} sessions). Please ensure both datasets contain matching session_id values.`);
+      setFusionMessage(`No matching sessions found between Shopify data (${shopifyData.length} sessions) and AWS data (${awsData.length} sessions). Please ensure both datasets contain matching session_id values.`);
       return;
     }
     
@@ -324,7 +303,7 @@ const SessionAnalyzer: React.FC = () => {
     });
     
     setIsReportGenerated(true);
-    alert(`Fusion report generated! Matched ${matchedSessions} sessions out of ${totalSessions} total (${matchRate}% match rate).`);
+    setFusionMessage(`✅ Fusion report generated! Matched ${matchedSessions} sessions out of ${totalSessions} total (${matchRate}% match rate).`);
   };
 
   const handleShopifyUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -333,11 +312,12 @@ const SessionAnalyzer: React.FC = () => {
     
     if (!file.name.toLowerCase().endsWith('.csv')) {
       setShopifyUploadStatus('error');
-      alert('Please upload a CSV file');
+      setShopifyMessage('Please upload a CSV file');
       return;
     }
     
     setShopifyUploadStatus('uploading');
+    setShopifyMessage('');
     const reader = new FileReader();
     
     reader.onload = (e) => {
@@ -347,26 +327,20 @@ const SessionAnalyzer: React.FC = () => {
         
         setShopifyData(parsedData);
         setShopifyUploadStatus('success');
+        setShopifyMessage(`✅ Successfully loaded ${parsedData.length} records`);
         setIsReportGenerated(false); // Reset report when new data is uploaded
-        
-        alert(`Successfully loaded ${parsedData.length} Shopify records from ${file.name}`);
+        setFusionMessage(''); // Clear any previous fusion messages
       } catch (error) {
         console.error('Error parsing Shopify CSV:', error);
         setShopifyUploadStatus('error');
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        console.log('Detailed Shopify CSV error:', {
-          fileName: file.name,
-          fileSize: file.size,
-          errorMessage,
-          csvPreview: csvText.substring(0, 200)
-        });
-        alert(`❌ Shopify CSV Error: ${errorMessage}\n\nPlease check that your CSV contains 'session_id' and 'success_rate' columns.`);
+        setShopifyMessage(`❌ ${errorMessage.replace('Shopify CSV must contain columns for session_id and success_rate. Found headers: ', 'Missing required columns. Found: ')}`);
       }
     };
     
     reader.onerror = () => {
       setShopifyUploadStatus('error');
-      alert('Error reading Shopify file');
+      setShopifyMessage('❌ Error reading file');
     };
     
     reader.readAsText(file);
@@ -381,11 +355,12 @@ const SessionAnalyzer: React.FC = () => {
     
     if (!file.name.toLowerCase().endsWith('.csv')) {
       setAWSUploadStatus('error');
-      alert('Please upload a CSV file');
+      setAWSMessage('Please upload a CSV file');
       return;
     }
     
     setAWSUploadStatus('uploading');
+    setAWSMessage('');
     const reader = new FileReader();
     
     reader.onload = (e) => {
@@ -395,26 +370,20 @@ const SessionAnalyzer: React.FC = () => {
         
         setAWSData(parsedData);
         setAWSUploadStatus('success');
+        setAWSMessage(`✅ Successfully loaded ${parsedData.length} records`);
         setIsReportGenerated(false); // Reset report when new data is uploaded
-        
-        alert(`Successfully loaded ${parsedData.length} AWS session records from ${file.name}`);
+        setFusionMessage(''); // Clear any previous fusion messages
       } catch (error) {
         console.error('Error parsing AWS CSV:', error);
         setAWSUploadStatus('error');
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        console.log('Detailed AWS CSV error:', {
-          fileName: file.name,
-          fileSize: file.size,
-          errorMessage,
-          csvPreview: csvText.substring(0, 200)
-        });
-        alert(`❌ AWS CSV Error: ${errorMessage}\n\nPlease check that your CSV contains 'session_id' and 'session_length' columns.`);
+        setAWSMessage(`❌ ${errorMessage.replace('AWS CSV must contain columns for session_id and session_length. Found headers: ', 'Missing required columns. Found: ')}`);
       }
     };
     
     reader.onerror = () => {
       setAWSUploadStatus('error');
-      alert('Error reading AWS file');
+      setAWSMessage('❌ Error reading file');
     };
     
     reader.readAsText(file);
@@ -560,11 +529,6 @@ const SessionAnalyzer: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Session Performance Analyzer</h1>
           <p className="text-gray-600 mb-4">Analytics for session length vs success rate correlation</p>
           
-          {/* Debug status */}
-          <div className="bg-green-100 border border-green-300 rounded p-2 mb-4">
-            <span className="text-green-800 text-sm font-medium">✅ React App Loaded Successfully - Chart Data: {fusedData.length} points</span>
-          </div>
-          
           {/* Data Source Info */}
           <div className="flex items-center gap-2 text-sm">
             <span className="font-medium">Data source:</span>
@@ -631,7 +595,18 @@ const SessionAnalyzer: React.FC = () => {
                  shopifyUploadStatus === 'error' ? 'Try Again' : 'Upload Shopify CSV'}
               </button>
               
-              <div className="text-xs text-gray-600">
+              {/* Shopify message display */}
+              {shopifyMessage && (
+                <div className={`text-xs p-2 rounded mt-2 ${
+                  shopifyMessage.startsWith('✅') 
+                    ? 'bg-green-50 text-green-700 border border-green-200' 
+                    : 'bg-red-50 text-red-700 border border-red-200'
+                }`}>
+                  {shopifyMessage}
+                </div>
+              )}
+              
+              <div className="text-xs text-gray-600 mt-2">
                 Required columns: <code>session_id</code>, <code>success_rate</code><br/>
                 Optional: <code>order_id</code>, <code>timestamp</code><br/>
                 <a 
@@ -691,7 +666,18 @@ const SessionAnalyzer: React.FC = () => {
                  awsUploadStatus === 'error' ? 'Try Again' : 'Upload AWS CSV'}
               </button>
               
-              <div className="text-xs text-gray-600">
+              {/* AWS message display */}
+              {awsMessage && (
+                <div className={`text-xs p-2 rounded mt-2 ${
+                  awsMessage.startsWith('✅') 
+                    ? 'bg-green-50 text-green-700 border border-green-200' 
+                    : 'bg-red-50 text-red-700 border border-red-200'
+                }`}>
+                  {awsMessage}
+                </div>
+              )}
+              
+              <div className="text-xs text-gray-600 mt-2">
                 Required columns: <code>session_id</code>, <code>session_length</code><br/>
                 Optional: <code>user_id</code>, <code>timestamp</code><br/>
                 <a 
@@ -721,7 +707,16 @@ const SessionAnalyzer: React.FC = () => {
                 <span className="text-base">🔗</span>
                 Generate Fusion Report
               </button>
-              {shopifyUploadStatus !== 'success' || awsUploadStatus !== 'success' ? (
+              {/* Fusion message display */}
+              {fusionMessage ? (
+                <div className={`text-xs p-2 rounded mt-2 text-center ${
+                  fusionMessage.startsWith('✅') 
+                    ? 'bg-green-50 text-green-700 border border-green-200' 
+                    : 'bg-yellow-50 text-yellow-700 border border-yellow-200'
+                }`}>
+                  {fusionMessage}
+                </div>
+              ) : shopifyUploadStatus !== 'success' || awsUploadStatus !== 'success' ? (
                 <p className="text-xs text-gray-500 text-center mt-1">
                   Upload both data sources to enable fusion
                 </p>
