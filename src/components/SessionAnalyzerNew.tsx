@@ -50,20 +50,29 @@ const SessionAnalyzer: React.FC = () => {
   // ... (keeping all the existing parsing and processing functions) ...
   const generateSampleData = (): FusedDataPoint[] => {
     const points: FusedDataPoint[] = [];
+    // Define inflection point to match realistic user behavior (around 5-6 seconds)
+    const inflectionSessionLength = 5.5; // This matches your real data pattern
+    
     for (let i = 1; i <= 200; i++) {
-      const sessionLength = 1.0 + (i - 1) * 0.2;
+      // Generate session lengths from 0.5 to 20 seconds (more realistic range)
+      const sessionLength = 0.5 + (i - 1) * 0.1; // 0.5 to 20.4 seconds
       let baseSuccessRate: number;
       
-      if (i <= 130) {
-        const progressRatio = (i - 1) / 129;
-        const curveValue = 1 - Math.pow(progressRatio, 0.7);
-        baseSuccessRate = 0.55 + (0.99 - 0.55) * curveValue;
+      // Base success rate on session length - realistic user engagement pattern
+      if (sessionLength <= inflectionSessionLength) {
+        // Before inflection: very high success rate (engaged users)
+        const progressRatio = sessionLength / inflectionSessionLength;
+        // More gradual decline until inflection point
+        baseSuccessRate = 0.85 + (0.95 - 0.85) * (1 - Math.pow(progressRatio, 0.5));
       } else {
-        baseSuccessRate = 0.05;
+        // After inflection: rapid decline (users losing interest)
+        const excessTime = sessionLength - inflectionSessionLength;
+        const declineRate = Math.exp(-excessTime * 0.3); // Exponential decay
+        baseSuccessRate = 0.15 + (0.70 - 0.15) * declineRate;
       }
       
-      const noise = (Math.random() - 0.5) * 0.2;
-      const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
+      const noise = (Math.random() - 0.5) * 0.12; // Moderate noise for realism
+      const successRate = Math.max(0.02, Math.min(0.98, baseSuccessRate + noise));
       
       points.push({
         sessionId: `session_${i}`,
@@ -533,21 +542,24 @@ const SessionAnalyzer: React.FC = () => {
 
   const loadSampleData = () => {
     const sampleData = generateSampleData();
-    setFusedData(sampleData);
+    // Sort sample data by session length (same as in fuseData)
+    const sortedData = sampleData.sort((a, b) => a.sessionLength - b.sessionLength);
+    setFusedData(sortedData);
     setShopifyUploadStatus('idle');
     setAWSUploadStatus('idle');
     setIsReportGenerated(true);
     
-    const earlyData = sampleData.slice(0, 130);
-    const lateData = sampleData.slice(130);
-    const inflectionPoint = 1.0 + (130 - 1) * 0.2;
+    // Use the same 65% calculation as in generateFusionReport
+    const earlyData = sortedData.slice(0, Math.floor(sortedData.length * 0.65));
+    const lateData = sortedData.slice(Math.floor(sortedData.length * 0.65));
+    const inflectionPoint = sortedData.length > 0 ? sortedData[Math.floor(sortedData.length * 0.65)]?.sessionLength || 0 : 0;
     
     setStats({
-      totalSessions: sampleData.length,
-      matchedSessions: sampleData.length,
+      totalSessions: sortedData.length,
+      matchedSessions: sortedData.length,
       inflectionPoint: inflectionPoint.toFixed(1),
-      earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
-      lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
+      earlySuccessRate: earlyData.length > 0 ? (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1) : '0',
+      lateSuccessRate: lateData.length > 0 ? (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1) : '0',
     });
   };
 
@@ -597,28 +609,28 @@ const SessionAnalyzer: React.FC = () => {
               data={fusedData}
               margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#2a3140" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis 
                 dataKey="sessionLength"
                 type="number"
                 domain={['dataMin - 2', 'dataMax + 2']}
-                stroke="var(--muted)"
+                stroke="#64748b"
               />
               <YAxis 
                 domain={[0, 100]}
-                stroke="var(--muted)"
+                stroke="#64748b"
               />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'var(--panel)', 
-                  border: 'var(--border)',
+                  backgroundColor: '#ffffff', 
+                  border: '1px solid #e2e8f0',
                   borderRadius: '8px',
-                  color: 'var(--text)'
+                  color: '#1e293b'
                 }}
               />
               <Scatter 
                 dataKey="successRate" 
-                fill="var(--brand)" 
+                fill="#3b82f6" 
               />
             </ScatterChart>
           </ResponsiveContainer>
@@ -632,27 +644,27 @@ const SessionAnalyzer: React.FC = () => {
               data={smoothedData}
               margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#2a3140" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis 
                 dataKey="sessionLength"
                 type="number"
-                stroke="var(--muted)"
+                stroke="#64748b"
               />
               <YAxis 
                 domain={[0, 100]}
-                stroke="var(--muted)"
+                stroke="#64748b"
               />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'var(--panel)', 
-                  border: 'var(--border)',
+                  backgroundColor: '#ffffff', 
+                  border: '1px solid #e2e8f0',
                   borderRadius: '8px',
-                  color: 'var(--text)'
+                  color: '#1e293b'
                 }}
               />
               <Line 
                 dataKey="successRate" 
-                stroke="var(--brand)" 
+                stroke="#3b82f6" 
                 strokeWidth={2}
                 dot={false}
               />
@@ -858,7 +870,7 @@ const SessionAnalyzer: React.FC = () => {
         <div className="grid">
           <div className="chart-card">
             <h3>Success Rate vs Session Length</h3>
-            <div style={{ height: '260px' }}>
+            <div style={{ height: '360px' }}>
               {renderChart()}
             </div>
           </div>
