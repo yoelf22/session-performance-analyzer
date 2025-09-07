@@ -280,10 +280,82 @@ Please include:
 - Expected vs actual behavior
 - Console errors (if any)
 
+## 🧪 Mock Data Generator
+
+For testing and demonstration purposes, this repository includes a command-line tool to generate realistic sample data.
+
+### Quick Generation
+
+```bash
+# Generate sample data files in the project directory
+cd mock_data_gen
+node sample_data_generator_cli.js --type both --sessions 150
+
+# This creates:
+# aws_sample_data_150s_2025-01-22.csv
+# shopify_sample_data_150s_n15_2025-01-22.csv
+```
+
+### Generator Features
+
+- **Dual Dataset Generation**: Creates matching AWS and Shopify CSV files
+- **Realistic Patterns**: Configurable performance curves with inflection points
+- **Noise Injection**: Adds realistic variance (default 15% noise)
+- **Flexible Configuration**: Customize session count, patterns, and output files
+
+### Usage Options
+
+```bash
+# Generate both datasets with defaults (200 sessions)
+node sample_data_generator_cli.js
+
+# Generate AWS data only with custom session count
+node sample_data_generator_cli.js --type aws --sessions 100
+
+# Generate Shopify data with custom noise level
+node sample_data_generator_cli.js --type shopify --noise 0.25 --sessions 150
+
+# Generate both with linear pattern and custom inflection point
+node sample_data_generator_cli.js --pattern linear --inflection 80 --sessions 120
+```
+
+### Generated Data Format
+
+**AWS Data** (`user_id,session_id,start_timestamp,end_timestamp`):
+```csv
+USER_1234,SESS_000001,1724515200,1724515201.0
+USER_5678,SESS_000002,1724515260,1724515261.2
+```
+
+**Shopify Data** (`user_id,session_id,success`):
+```csv
+USER_1234,SESS_000001,1
+USER_5678,SESS_000002,0
+```
+
+### Data Patterns
+
+- **Session Duration**: Linear increase (1.0s + 0.2s per session)
+- **Success Rate**: Exponential decay from 99% → 55% → 5% at inflection point
+- **Inflection Point**: Default at session 130 (configurable)
+- **Realistic Noise**: 15% random variation (configurable 0-100%)
+
+See [`mock_data_gen/cli_readme.md`](mock_data_gen/cli_readme.md) for complete documentation.
+
 ---
 
 ## 🎯 Quick Start
 
+### Option 1: Use Generated Sample Data
+```bash
+# Generate test data
+cd mock_data_gen
+node sample_data_generator_cli.js --sessions 150
+
+# Upload the generated CSV files to the web app
+```
+
+### Option 2: Use Your Own Data
 1. **Visit**: [https://yoelf22.github.io/session-performance-analyzer/](https://yoelf22.github.io/session-performance-analyzer/)
 2. **Prepare**: Two CSV files with session data (see Data Requirements above)
 3. **Upload**: Shopify file first, then AWS file
