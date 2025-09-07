@@ -128,22 +128,38 @@ const SessionAnalyzer: React.FC = () => {
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
     const data: ShopifyData[] = [];
     
-    // Find column indices for Shopify data
+    console.log('Shopify CSV headers detected:', headers);
+    
+    // Find column indices for Shopify data - robust matching
     const sessionIdIndex = headers.findIndex(h => 
-      h.includes('session') && (h.includes('id') || h.includes('identifier'))
+      h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
+      (h.includes('session') && h.includes('id'))
     );
     const orderIdIndex = headers.findIndex(h => 
-      h.includes('order') && h.includes('id')
+      h === 'order_id' || h === 'orderid' || h === 'order-id' ||
+      (h.includes('order') && h.includes('id'))
     );
     const successRateIndex = headers.findIndex(h => 
-      h.includes('success') && (h.includes('rate') || h.includes('percent') || h.includes('%'))
+      h === 'success_rate' || h === 'successrate' || h === 'success-rate' ||
+      h === 'success_percent' || h === 'success_percentage' ||
+      (h.includes('success') && (h.includes('rate') || h.includes('percent')))
     );
     const timestampIndex = headers.findIndex(h => 
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
+    console.log('Shopify column indices:', {
+      sessionIdIndex,
+      successRateIndex,
+      orderIdIndex,
+      timestampIndex
+    });
+    
     if (sessionIdIndex === -1 || successRateIndex === -1) {
-      throw new Error('Shopify CSV must contain columns for session_id and success_rate');
+      console.error('Column detection failed for Shopify CSV');
+      console.error('Headers:', headers);
+      console.error('Looking for session_id (session+id) and success_rate (success+rate)');
+      throw new Error(`Shopify CSV must contain columns for session_id and success_rate. Found headers: ${headers.join(', ')}`);
     }
     
     for (let i = 1; i < lines.length; i++) {
@@ -188,22 +204,38 @@ const SessionAnalyzer: React.FC = () => {
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
     const data: AWSData[] = [];
     
-    // Find column indices for AWS data
+    console.log('AWS CSV headers detected:', headers);
+    
+    // Find column indices for AWS data - robust matching
     const sessionIdIndex = headers.findIndex(h => 
-      h.includes('session') && (h.includes('id') || h.includes('identifier'))
+      h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
+      (h.includes('session') && h.includes('id'))
     );
     const sessionLengthIndex = headers.findIndex(h => 
-      h.includes('session') && (h.includes('length') || h.includes('duration') || h.includes('time'))
+      h === 'session_length' || h === 'sessionlength' || h === 'session-length' ||
+      h === 'session_duration' || h === 'duration' ||
+      (h.includes('session') && (h.includes('length') || h.includes('duration')))
     );
     const userIdIndex = headers.findIndex(h => 
-      h.includes('user') && h.includes('id')
+      h === 'user_id' || h === 'userid' || h === 'user-id' ||
+      (h.includes('user') && h.includes('id'))
     );
     const timestampIndex = headers.findIndex(h => 
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
+    console.log('AWS column indices:', {
+      sessionIdIndex,
+      sessionLengthIndex,
+      userIdIndex,
+      timestampIndex
+    });
+    
     if (sessionIdIndex === -1 || sessionLengthIndex === -1) {
-      throw new Error('AWS CSV must contain columns for session_id and session_length');
+      console.error('Column detection failed for AWS CSV');
+      console.error('Headers:', headers);
+      console.error('Looking for session_id (session+id) and session_length (session+length)');
+      throw new Error(`AWS CSV must contain columns for session_id and session_length. Found headers: ${headers.join(', ')}`);
     }
     
     for (let i = 1; i < lines.length; i++) {
