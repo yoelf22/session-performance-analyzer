@@ -1,0 +1,316 @@
+/* ===== Base / Tokens ===== */
+:root{
+  --bg:#0b0c10;
+  --panel:#121318;
+  --text:#e8eaf0;
+  --muted:#a9afbd;
+  --brand:#4f8cff;
+  --ok:#19b77f;
+  --warn:#ffb020;
+  --err:#ff5a5f;
+  --border:1px solid #222632;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ===== Layout ===== */
+.app{
+  max-width:1200px;
+  margin:0 auto;
+  padding:16px;
+  display:grid;
+  gap:16px;
+  /* Mobile - one column stacked */
+  grid-template-areas:
+    "heading"
+    "controls"
+    "actions"
+    "numbers"
+    "charts";
+}
+
+/* Desktop grid - arrange side by side */
+@media (min-width: 1024px){
+  .app{
+    gap:20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "heading  heading"
+      "controls actions"
+      "numbers  charts"
+      "numbers  charts";
+  }
+}
+
+/* ===== Sections ===== */
+.heading   { grid-area: heading; }
+.controls  { grid-area: controls; }
+.actions   { grid-area: actions; }
+.numbers   { grid-area: numbers; }
+.charts    { grid-area: charts; }
+
+.panel{
+  background:var(--panel);
+  border:var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+
+/* ===== Heading ===== */
+.heading h1{
+  margin:0 0 6px 0;
+  font-size: clamp(22px, 3.4vw, 34px);
+  letter-spacing:.2px;
+}
+.heading p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* ===== Controls: input + side by side buttons + messages ===== */
+.controls .upload-section{
+  display:flex;
+  flex-direction: column;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.controls .upload-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+}
+
+.upload-item{
+  flex:1 1 280px;
+  min-width:200px;
+  display:flex;
+  flex-direction: column;
+  gap:8px;
+}
+
+.upload-item label{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.upload-item input[type="file"]{
+  display:none;
+}
+
+.btn-group{
+  display:flex;
+  gap:8px;             /* side by side buttons */
+  flex-wrap:wrap;
+}
+
+button.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid transparent;
+  background:#1a1f2b;
+  color:var(--text);
+  cursor:pointer;
+  transition:transform .06s ease, border-color .2s ease, background .2s ease;
+}
+button.btn:hover{ transform:translateY(-1px); }
+button.btn:active{ transform:translateY(0); }
+button.primary{ background:var(--brand); color:#081226; }
+button.ghost{ background:#0f1117; border-color:#2a3140; }
+button.success{ background:var(--ok); color:#081226; }
+button.warn{ background:var(--warn); color:#081226; }
+button.error{ background:var(--err); color:#fff; }
+
+.messages{
+  width:100%;
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+
+/* Alerts / success messages shown under the input/buttons */
+.alert{
+  border-radius:10px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.08);
+  background:#11141c;
+  display:flex; gap:8px; align-items:flex-start;
+  font-size:13px;
+}
+.alert .title{ font-weight:600; }
+.alert.success{ border-color: rgba(25,183,127,.35); background: rgba(25,183,127,.10); }
+.alert.warn{    border-color: rgba(255,176,32,.35); background: rgba(255,176,32,.10); }
+.alert.error{   border-color: rgba(255,90,95,.35);  background: rgba(255,90,95,.10); }
+
+/* ===== Actions: Generate analysis button ===== */
+.actions{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:12px;
+}
+
+.actions .cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+}
+
+.actions .cta button{
+  font-size:16px;
+  padding:14px 20px;
+  min-width:200px;
+}
+
+.actions .cta button:disabled{
+  background:#0f1117;
+  color:var(--muted);
+  cursor:not-allowed;
+  transform:none;
+}
+
+.actions .secondary-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.actions .secondary-actions button{
+  font-size:13px;
+  padding:8px 12px;
+}
+
+.actions .hint{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:8px;
+}
+
+/* ===== Numbers section (cards) ===== */
+.numbers .grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 1024px){
+  .numbers .grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.stat{
+  background:#0f1117;
+  border:var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+.stat .label{ color:var(--muted); font-size:12px; margin-bottom:4px; }
+.stat .value{ font-size:22px; font-weight:700; }
+
+/* ===== Charts section ===== */
+.charts .grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1200px){
+  .charts .grid{ grid-template-columns: 1fr 1fr; }
+}
+.chart-card{
+  min-height:300px;
+  background:#0f1117;
+  border:var(--border);
+  border-radius:12px;
+  padding:16px;
+  overflow:hidden;
+}
+
+.chart-card h3{
+  margin:0 0 12px 0;
+  font-size:14px;
+  color:var(--text);
+}
+
+/* Controls section */
+.controls h2{
+  margin:0 0 16px 0;
+  font-size:18px;
+}
+
+.actions h2{
+  margin:0 0 16px 0;
+  font-size:18px;
+}
+
+.numbers h2{
+  margin:0 0 16px 0;
+  font-size:18px;
+}
+
+.charts h2{
+  margin:0 0 16px 0;
+  font-size:18px;
+}
+
+/* Analysis Controls */
+.analysis-controls{
+  margin-top:20px;
+  padding-top:20px;
+  border-top:var(--border);
+}
+
+.analysis-controls .control-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.analysis-controls label{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.analysis-controls select{
+  padding:8px 10px;
+  border-radius:8px;
+  border:var(--border);
+  background:#0f1117;
+  color:var(--text);
+  outline:none;
+}
+
+.analysis-controls input[type="range"]{
+  flex:1;
+  min-width:120px;
+}
+
+/* Status indicators */
+.status-pending{ color:var(--muted); }
+.status-success{ color:var(--ok); }
+.status-error{ color:var(--err); }
+.status-uploading{ color:var(--brand); }
+
+/* Utility spacing for frameworks to hook into */
+.mt-8{ margin-top:8px; }
+.mt-12{ margin-top:12px; }
+.mt-16{ margin-top:16px; }
