@@ -155,10 +155,18 @@ const SessionAnalyzer: React.FC = () => {
       const successRate = parseFloat(successRateStr);
       
       if (sessionId && !isNaN(successRate)) {
+        // Convert success rate to percentage (0-100 range)
+        let normalizedSuccessRate = successRate;
+        if (successRate <= 1) {
+          // Assume it's a decimal (0.45 -> 45%)
+          normalizedSuccessRate = successRate * 100;
+        }
+        // If > 1, assume it's already a percentage
+        
         data.push({
           sessionId,
           orderId: orderIdIndex >= 0 ? values[orderIdIndex] : undefined,
-          successRate: successRate > 1 ? successRate : successRate * 100,
+          successRate: Number(normalizedSuccessRate.toFixed(2)),
           timestamp: timestampIndex >= 0 ? values[timestampIndex] : undefined,
         });
       }
@@ -301,8 +309,8 @@ const SessionAnalyzer: React.FC = () => {
     const reader = new FileReader();
     
     reader.onload = (e) => {
+      const csvText = String(e.target?.result ?? '');
       try {
-        const csvText = String(e.target?.result ?? '');
         const parsedData = parseShopifyCSV(csvText);
         
         setShopifyData(parsedData);
@@ -313,7 +321,14 @@ const SessionAnalyzer: React.FC = () => {
       } catch (error) {
         console.error('Error parsing Shopify CSV:', error);
         setShopifyUploadStatus('error');
-        alert(`Error parsing Shopify CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.log('Detailed Shopify CSV error:', {
+          fileName: file.name,
+          fileSize: file.size,
+          errorMessage,
+          csvPreview: csvText.substring(0, 200)
+        });
+        alert(`❌ Shopify CSV Error: ${errorMessage}\n\nPlease check that your CSV contains 'session_id' and 'success_rate' columns.`);
       }
     };
     
@@ -342,8 +357,8 @@ const SessionAnalyzer: React.FC = () => {
     const reader = new FileReader();
     
     reader.onload = (e) => {
+      const csvText = String(e.target?.result ?? '');
       try {
-        const csvText = String(e.target?.result ?? '');
         const parsedData = parseAWSCSV(csvText);
         
         setAWSData(parsedData);
@@ -354,7 +369,14 @@ const SessionAnalyzer: React.FC = () => {
       } catch (error) {
         console.error('Error parsing AWS CSV:', error);
         setAWSUploadStatus('error');
-        alert(`Error parsing AWS CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.log('Detailed AWS CSV error:', {
+          fileName: file.name,
+          fileSize: file.size,
+          errorMessage,
+          csvPreview: csvText.substring(0, 200)
+        });
+        alert(`❌ AWS CSV Error: ${errorMessage}\n\nPlease check that your CSV contains 'session_id' and 'session_length' columns.`);
       }
     };
     
@@ -421,100 +443,78 @@ const SessionAnalyzer: React.FC = () => {
   const renderChart = () => {
     if (!fusedData.length) {
       return (
-        <div className="flex items-center justify-center h-full text-gray-500">
+        <div className="flex items-center justify-center h-96 text-gray-500 bg-gray-50 border border-gray-200 rounded">
           No fused data available. Please upload both Shopify and AWS data files or click "Load Demo Data".
         </div>
       );
     }
 
-    // Create chart data with proper structure
-    const chartData = fusedData.map(point => ({
-      sessionLength: point.sessionLength,
-      successRate: point.successRate,
-      sessionId: point.sessionId
-    }));
+    // Debug info
+    console.log('Rendering chart with data:', fusedData.slice(0, 3));
 
-    if (viewMode === 'raw') {
+    try {
+      if (viewMode === 'raw') {
+        return (
+          <div style={{ width: '100%', height: '400px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <ScatterChart 
+                data={fusedData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis 
+                  dataKey="sessionLength"
+                  type="number"
+                  domain={['dataMin - 2', 'dataMax + 2']}
+                />
+                <YAxis 
+                  domain={[0, 100]}
+                />
+                <Tooltip />
+                <Scatter 
+                  dataKey="successRate" 
+                  fill="#8884d8" 
+                />
+              </ScatterChart>
+            </ResponsiveContainer>
+          </div>
+        );
+      } else {
+        const smoothedData = getSmoothedData();
+        console.log('Smoothed data:', smoothedData.slice(0, 3));
+        
+        return (
+          <div style={{ width: '100%', height: '400px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart 
+                data={smoothedData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis 
+                  dataKey="sessionLength"
+                  type="number"
+                />
+                <YAxis 
+                  domain={[0, 100]}
+                />
+                <Tooltip />
+                <Line 
+                  dataKey="successRate" 
+                  stroke="#8884d8" 
+                  strokeWidth={2}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        );
+      }
+    } catch (error) {
+      console.error('Chart rendering error:', error);
       return (
-        <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart 
-            data={chartData} 
-            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-            <XAxis 
-              dataKey="sessionLength"
-              type="number" 
-              domain={['dataMin - 1', 'dataMax + 1']}
-              label={{ 
-                value: 'Session Length (seconds)', 
-                position: 'insideBottom', 
-                offset: -10 
-              }}
-            />
-            <YAxis 
-              domain={[0, 100]}
-              label={{ 
-                value: 'Success Rate (%)', 
-                angle: -90, 
-                position: 'insideLeft' 
-              }}
-            />
-            <Tooltip 
-              formatter={(value: any) => [`${Number(value).toFixed(1)}%`, 'Success Rate']}
-              labelFormatter={(value: any) => `Session Length: ${Number(value).toFixed(1)}s`}
-            />
-            <Scatter 
-              dataKey="successRate" 
-              fill="#4F46E5" 
-              fillOpacity={0.7} 
-            />
-          </ScatterChart>
-        </ResponsiveContainer>
-      );
-    } else {
-      const smoothedData = getSmoothedData().map(point => ({
-        sessionLength: point.sessionLength,
-        successRate: point.successRate
-      }));
-      
-      return (
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart 
-            data={smoothedData} 
-            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-            <XAxis 
-              dataKey="sessionLength"
-              type="number"
-              domain={['dataMin - 1', 'dataMax + 1']}
-              label={{ 
-                value: 'Session Length (seconds)', 
-                position: 'insideBottom', 
-                offset: -10 
-              }}
-            />
-            <YAxis 
-              domain={[0, 100]}
-              label={{ 
-                value: 'Success Rate (%)', 
-                angle: -90, 
-                position: 'insideLeft' 
-              }}
-            />
-            <Tooltip 
-              formatter={(value: any) => [`${Number(value).toFixed(1)}%`, 'Success Rate']}
-              labelFormatter={(value: any) => `Session Length: ${Number(value).toFixed(1)}s`}
-            />
-            <Line 
-              dataKey="successRate" 
-              stroke="#DC2626" 
-              strokeWidth={3}
-              dot={{ fill: '#DC2626', r: 4 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+        <div className="flex items-center justify-center h-96 text-red-500 bg-red-50 border border-red-200 rounded">
+          Chart rendering error: {error instanceof Error ? error.message : 'Unknown error'}
+        </div>
       );
     }
   };
