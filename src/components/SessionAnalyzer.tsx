@@ -123,7 +123,10 @@ const SessionAnalyzer: React.FC = () => {
     );
     
     if (sessionIdIndex === -1 || successRateIndex === -1) {
-      throw new Error(`Shopify CSV must contain columns for session_id and success_rate. Found headers: ${headers.join(', ')}`);
+      const missingColumns = [];
+      if (sessionIdIndex === -1) missingColumns.push('session_id');
+      if (successRateIndex === -1) missingColumns.push('success or success_rate');
+      throw new Error(`Missing required columns: ${missingColumns.join(', ')}. Found headers: ${headers.join(', ')}`);
     }
     
     for (let i = 1; i < lines.length; i++) {
@@ -168,40 +171,76 @@ const SessionAnalyzer: React.FC = () => {
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
     const data: AWSData[] = [];
     
-    // Find column indices for AWS data - robust matching
+    // Show complete diagnostic info
+    console.log('=== AWS CSV DIAGNOSTIC ===');
+    console.log('Total lines:', lines.length);
+    console.log('Headers found:', headers);
+    console.log('First 3 data lines:');
+    lines.slice(1, 4).forEach((line, index) => {
+      console.log(`Line ${index + 2}: "${line}"`);
+      const values = line.split(',').map(v => v.trim().replace(/^["']|["']$/g, ''));
+      console.log(`  Split values: [${values.map(v => `"${v}"`).join(', ')}]`);
+    });
+    
+    // Find column indices for AWS data - very flexible matching
     const sessionIdIndex = headers.findIndex(h => 
       h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
-      (h.includes('session') && h.includes('id'))
+      (h.includes('session') && h.includes('id')) ||
+      h === 'session' || h === 'id'
     );
     // Look for direct session length column first
     let sessionLengthIndex = headers.findIndex(h => 
       h === 'session_length' || h === 'sessionlength' || h === 'session-length' ||
-      h === 'session_duration' || h === 'duration' ||
-      (h.includes('session') && (h.includes('length') || h.includes('duration')))
+      h === 'session_duration' || h === 'duration' || h === 'length' ||
+      (h.includes('session') && (h.includes('length') || h.includes('duration'))) ||
+      (h.includes('duration')) || (h.includes('length'))
     );
     
-    // If no direct session length, look for start/end timestamp columns
+    // If no direct session length, look for start/end timestamp columns - be more flexible
     let startTimestampIndex = -1;
     let endTimestampIndex = -1;
     
     if (sessionLengthIndex === -1) {
       startTimestampIndex = headers.findIndex(h => 
-        h.includes('start') && h.includes('timestamp')
+        h.includes('start') && (h.includes('timestamp') || h.includes('time')) ||
+        h === 'start_timestamp' || h === 'starttime' || h === 'start_time' ||
+        h === 'start' || h === 'begin_timestamp' || h === 'begin_time'
       );
       endTimestampIndex = headers.findIndex(h => 
-        h.includes('end') && h.includes('timestamp')
+        h.includes('end') && (h.includes('timestamp') || h.includes('time')) ||
+        h === 'end_timestamp' || h === 'endtime' || h === 'end_time' ||
+        h === 'end' || h === 'finish_timestamp' || h === 'finish_time'
       );
     }
     const userIdIndex = headers.findIndex(h => 
       h === 'user_id' || h === 'userid' || h === 'user-id' ||
-      (h.includes('user') && h.includes('id'))
+      (h.includes('user') && h.includes('id')) || h === 'user'
     );
     const timestampIndex = headers.findIndex(h => 
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
+    console.log('Column matching results:', {
+      sessionIdIndex,
+      sessionLengthIndex,
+      startTimestampIndex,
+      endTimestampIndex,
+      userIdIndex,
+      timestampIndex
+    });
+    
     if (sessionIdIndex === -1 || (sessionLengthIndex === -1 && (startTimestampIndex === -1 || endTimestampIndex === -1))) {
-      throw new Error(`AWS CSV must contain columns for session_id and either session_length OR both start_timestamp and end_timestamp. Found headers: ${headers.join(', ')}`);
+      const missingColumns = [];
+      if (sessionIdIndex === -1) missingColumns.push('session_id (or similar)');
+      if (sessionLengthIndex === -1 && (startTimestampIndex === -1 || endTimestampIndex === -1)) {
+        missingColumns.push('session_length OR (start_timestamp AND end_timestamp)');
+      }
+      
+      console.error('Column detection failed. Available headers:', headers);
+      console.error('Looking for session ID in columns containing: session_id, sessionid, session-id, session, id');
+      console.error('Looking for timestamps in columns containing: start_timestamp, end_timestamp, starttime, endtime, etc.');
+      
+      throw new Error(`❌ Cannot find required columns. Looking for: ${missingColumns.join(' AND ')}. Available columns: ${headers.join(', ')}`);
     }
     
     for (let i = 1; i < lines.length; i++) {
@@ -220,11 +259,52 @@ const SessionAnalyzer: React.FC = () => {
         const endTime = values[endTimestampIndex];
         
         try {
-          const start = new Date(startTime);
-          const end = new Date(endTime);
-          sessionLength = (end.getTime() - start.getTime()) / 1000; // Convert to seconds
+          let startMs: number;
+          let endMs: number;
+          
+          // Check if timestamps are Unix timestamps (numbers) or date strings
+          const startNum = parseFloat(startTime);
+          const endNum = parseFloat(endTime);
+          
+          if (!isNaN(startNum) && !isNaN(endNum) && startTime.match(/^\d+\.?\d*$/) && endTime.match(/^\d+\.?\d*$/)) {
+            // Unix timestamps (seconds since epoch)
+            console.log(`Unix timestamps detected: start=${startNum}, end=${endNum}`);
+            
+            // Convert from seconds to milliseconds
+            if (startNum < 1e10) {
+              // Seconds since epoch (typical Unix timestamp)
+              startMs = startNum * 1000;
+              endMs = endNum * 1000;
+            } else {
+              // Already in milliseconds
+              startMs = startNum;
+              endMs = endNum;
+            }
+          } else {
+            // ISO date strings - handle both formats: "2024-01-01 10:00:00" and "2024-01-01T10:00:00Z"
+            console.log(`ISO timestamps detected: start="${startTime}", end="${endTime}"`);
+            const normalizedStartTime = startTime.includes('T') ? startTime : startTime.replace(' ', 'T');
+            const normalizedEndTime = endTime.includes('T') ? endTime : endTime.replace(' ', 'T');
+            
+            const start = new Date(normalizedStartTime);
+            const end = new Date(normalizedEndTime);
+            
+            if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+              throw new Error('Invalid ISO timestamp format');
+            }
+            
+            startMs = start.getTime();
+            endMs = end.getTime();
+          }
+          
+          if (isNaN(startMs) || isNaN(endMs)) {
+            throw new Error('Invalid timestamp values');
+          }
+          
+          sessionLength = (endMs - startMs) / 1000; // Convert to seconds
+          console.log(`Session ${sessionId}: ${sessionLength} seconds (${startMs} -> ${endMs})`);
         } catch (error) {
-          console.warn('Failed to parse timestamps for session:', sessionId, startTime, endTime);
+          console.warn(`Failed to parse timestamps for session ${sessionId}: start="${startTime}", end="${endTime}"`, error);
           continue; // Skip this row if timestamp parsing fails
         }
       }
@@ -251,6 +331,14 @@ const SessionAnalyzer: React.FC = () => {
       return [];
     }
     
+    console.log('=== DATA FUSION DEBUG ===');
+    console.log(`Shopify data: ${shopifyData.length} records`);
+    console.log(`AWS data: ${awsData.length} records`);
+    
+    // Show sample session IDs from both datasets
+    console.log('Sample Shopify session IDs:', shopifyData.slice(0, 5).map(s => s.sessionId));
+    console.log('Sample AWS session IDs:', awsData.slice(0, 5).map(a => a.sessionId));
+    
     const fused: FusedDataPoint[] = [];
     let sessionCounter = 1;
     
@@ -258,18 +346,42 @@ const SessionAnalyzer: React.FC = () => {
     const awsMap = new Map<string, AWSData>();
     awsData.forEach(aws => awsMap.set(aws.sessionId, aws));
     
+    console.log('AWS session IDs available:', Array.from(awsMap.keys()).slice(0, 10));
+    
+    let matchCount = 0;
+    let sampleMatches: string[] = [];
+    let sampleMismatches: string[] = [];
+    
     // Match Shopify data with AWS data by session ID
     shopifyData.forEach(shopify => {
       const awsMatch = awsMap.get(shopify.sessionId);
       if (awsMatch) {
+        matchCount++;
+        if (sampleMatches.length < 5) {
+          sampleMatches.push(shopify.sessionId);
+        }
         fused.push({
           sessionId: shopify.sessionId,
           sessionLength: awsMatch.sessionLength,
           successRate: shopify.successRate,
           sessionNumber: sessionCounter++
         });
+      } else {
+        if (sampleMismatches.length < 5) {
+          sampleMismatches.push(shopify.sessionId);
+        }
       }
     });
+    
+    console.log(`Fusion results: ${matchCount} matches out of ${shopifyData.length} Shopify records`);
+    console.log('Sample matching session IDs:', sampleMatches);
+    console.log('Sample non-matching Shopify session IDs:', sampleMismatches);
+    
+    if (fused.length === 0) {
+      console.error('❌ NO MATCHES FOUND!');
+      console.error('This usually means session IDs between files don\'t match exactly.');
+      console.error('Check for differences in format, prefixes, or case sensitivity.');
+    }
     
     // Sort by session length for better visualization
     return fused.sort((a, b) => a.sessionLength - b.sessionLength);
@@ -349,7 +461,7 @@ const SessionAnalyzer: React.FC = () => {
         console.error('Error parsing Shopify CSV:', error);
         setShopifyUploadStatus('error');
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        setShopifyMessage(`❌ ${errorMessage.replace('Shopify CSV must contain columns for session_id and success_rate. Found headers: ', 'Missing required columns. Found: ')}`);
+        setShopifyMessage(`❌ ${errorMessage}`);
       }
     };
     
