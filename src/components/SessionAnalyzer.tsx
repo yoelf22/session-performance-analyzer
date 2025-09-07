@@ -2,49 +2,55 @@ import React, { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
 import { BarChart3, TrendingDown, AlertTriangle, Upload, Download } from 'lucide-react';
 
-interface DataPoint {
-  sessionNumber: number;
+interface ShopifyData {
+  sessionId: string;
+  orderId?: string;
+  successRate: number;
+  timestamp?: string;
+}
+
+interface AWSData {
+  sessionId: string;
+  sessionLength: number;
+  userId?: string;
+  timestamp?: string;
+}
+
+interface FusedDataPoint {
+  sessionId: string;
   sessionLength: number;
   successRate: number;
+  sessionNumber: number; // For chart compatibility
 }
 
 const SessionAnalyzer: React.FC = () => {
-  const [data, setData] = useState<DataPoint[]>([]);
+  const [fusedData, setFusedData] = useState<FusedDataPoint[]>([]);
+  const [shopifyData, setShopifyData] = useState<ShopifyData[]>([]);
+  const [awsData, setAWSData] = useState<AWSData[]>([]);
   const [viewMode, setViewMode] = useState<'raw' | 'trend'>('raw');
   const [smoothingLevel, setSmoothingLevel] = useState<number>(10);
   const [stats, setStats] = useState({
     totalSessions: 0,
+    matchedSessions: 0,
     inflectionPoint: '0',
     earlySuccessRate: '0',
     lateSuccessRate: '0',
   });
-  const [isUsingCustomData, setIsUsingCustomData] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [shopifyUploadStatus, setShopifyUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
+  const [awsUploadStatus, setAWSUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
+  const [isReportGenerated, setIsReportGenerated] = useState(false);
+  const shopifyFileRef = useRef<HTMLInputElement>(null);
+  const awsFileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     // Load sample data by default on first render
-    if (data.length === 0) {
-      const sampleData = generateSampleData();
-      setData(sampleData);
-      setIsUsingCustomData(false);
-      setUploadStatus('idle');
-      
-      const earlyData = sampleData.slice(0, 130);
-      const lateData = sampleData.slice(130);
-      const inflectionPoint = 1.0 + (130 - 1) * 0.2;
-      
-      setStats({
-        totalSessions: sampleData.length,
-        inflectionPoint: inflectionPoint.toFixed(1),
-        earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
-        lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
-      });
+    if (fusedData.length === 0 && shopifyData.length === 0 && awsData.length === 0) {
+      loadSampleData();
     }
   }, []);
 
-  const generateSampleData = (): DataPoint[] => {
-    const points: DataPoint[] = [];
+  const generateSampleData = (): FusedDataPoint[] => {
+    const points: FusedDataPoint[] = [];
     for (let i = 1; i <= 200; i++) {
       const sessionLength = 1.0 + (i - 1) * 0.2;
       let baseSuccessRate: number;
@@ -61,6 +67,7 @@ const SessionAnalyzer: React.FC = () => {
       const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
       
       points.push({
+        sessionId: `session_${i}`,
         sessionNumber: i,
         sessionLength: Number(sessionLength.toFixed(2)),
         successRate: Number((successRate * 100).toFixed(2)),
@@ -69,18 +76,19 @@ const SessionAnalyzer: React.FC = () => {
     return points;
   };
 
-  const getSmoothedData = (): DataPoint[] => {
-    if (!data.length) return [];
+  const getSmoothedData = (): FusedDataPoint[] => {
+    if (!fusedData.length) return [];
     
-    const smoothed: DataPoint[] = [];
-    for (let i = 0; i < data.length; i += smoothingLevel) {
-      const chunk = data.slice(i, i + smoothingLevel);
+    const smoothed: FusedDataPoint[] = [];
+    for (let i = 0; i < fusedData.length; i += smoothingLevel) {
+      const chunk = fusedData.slice(i, i + smoothingLevel);
       if (chunk.length === 0) continue;
       
       const avgLength = chunk.reduce((sum, p) => sum + p.sessionLength, 0) / chunk.length;
       const avgSuccess = chunk.reduce((sum, p) => sum + p.successRate, 0) / chunk.length;
       
       smoothed.push({
+        sessionId: `smoothed_${i}`,
         sessionNumber: Math.round(i + smoothingLevel / 2),
         sessionLength: Number(avgLength.toFixed(2)),
         successRate: Number(avgSuccess.toFixed(2)),
@@ -89,110 +97,262 @@ const SessionAnalyzer: React.FC = () => {
     return smoothed;
   };
 
-  const parseCSV = (csvText: string): DataPoint[] => {
+  const parseShopifyCSV = (csvText: string): ShopifyData[] => {
     const lines = csvText.trim().split('\n');
     if (lines.length < 2) {
-      throw new Error('CSV must have at least a header row and one data row');
+      throw new Error('Shopify CSV must have at least a header row and one data row');
     }
     
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-    const data: DataPoint[] = [];
+    const data: ShopifyData[] = [];
     
-    // Find column indices
-    const sessionNumIndex = headers.findIndex(h => 
-      h.includes('session') && (h.includes('number') || h.includes('num') || h.includes('id'))
+    // Find column indices for Shopify data
+    const sessionIdIndex = headers.findIndex(h => 
+      h.includes('session') && (h.includes('id') || h.includes('identifier'))
     );
-    const sessionLengthIndex = headers.findIndex(h => 
-      h.includes('session') && (h.includes('length') || h.includes('duration') || h.includes('time'))
+    const orderIdIndex = headers.findIndex(h => 
+      h.includes('order') && h.includes('id')
     );
     const successRateIndex = headers.findIndex(h => 
       h.includes('success') && (h.includes('rate') || h.includes('percent') || h.includes('%'))
     );
+    const timestampIndex = headers.findIndex(h => 
+      h.includes('timestamp') || h.includes('date') || h.includes('time')
+    );
     
-    if (sessionNumIndex === -1 || sessionLengthIndex === -1 || successRateIndex === -1) {
-      throw new Error('CSV must contain columns for session number, session length, and success rate');
+    if (sessionIdIndex === -1 || successRateIndex === -1) {
+      throw new Error('Shopify CSV must contain columns for session_id and success_rate');
     }
     
     for (let i = 1; i < lines.length; i++) {
-      const values = lines[i].split(',').map(v => v.trim());
-      if (values.length < 3) continue;
+      const values = lines[i].split(',').map(v => v.trim().replace(/^["']|["']$/g, ''));
+      if (values.length < 2) continue;
       
-      const sessionNumber = parseInt(values[sessionNumIndex]);
-      const sessionLength = parseFloat(values[sessionLengthIndex]);
-      const successRate = parseFloat(values[successRateIndex]);
+      const sessionId = values[sessionIdIndex];
+      const successRateStr = values[successRateIndex];
+      const successRate = parseFloat(successRateStr);
       
-      if (!isNaN(sessionNumber) && !isNaN(sessionLength) && !isNaN(successRate)) {
+      if (sessionId && !isNaN(successRate)) {
         data.push({
-          sessionNumber,
-          sessionLength,
-          successRate: successRate > 1 ? successRate : successRate * 100 // Handle both 0.85 and 85% formats
+          sessionId,
+          orderId: orderIdIndex >= 0 ? values[orderIdIndex] : undefined,
+          successRate: successRate > 1 ? successRate : successRate * 100,
+          timestamp: timestampIndex >= 0 ? values[timestampIndex] : undefined,
         });
       }
     }
     
     if (data.length === 0) {
-      throw new Error('No valid data rows found in CSV');
+      throw new Error('No valid Shopify data rows found in CSV');
     }
     
-    // Sort by session number
-    return data.sort((a, b) => a.sessionNumber - b.sessionNumber);
+    return data;
   };
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const parseAWSCSV = (csvText: string): AWSData[] => {
+    const lines = csvText.trim().split('\n');
+    if (lines.length < 2) {
+      throw new Error('AWS CSV must have at least a header row and one data row');
+    }
+    
+    const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const data: AWSData[] = [];
+    
+    // Find column indices for AWS data
+    const sessionIdIndex = headers.findIndex(h => 
+      h.includes('session') && (h.includes('id') || h.includes('identifier'))
+    );
+    const sessionLengthIndex = headers.findIndex(h => 
+      h.includes('session') && (h.includes('length') || h.includes('duration') || h.includes('time'))
+    );
+    const userIdIndex = headers.findIndex(h => 
+      h.includes('user') && h.includes('id')
+    );
+    const timestampIndex = headers.findIndex(h => 
+      h.includes('timestamp') || h.includes('date') || h.includes('time')
+    );
+    
+    if (sessionIdIndex === -1 || sessionLengthIndex === -1) {
+      throw new Error('AWS CSV must contain columns for session_id and session_length');
+    }
+    
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split(',').map(v => v.trim().replace(/^["']|["']$/g, ''));
+      if (values.length < 2) continue;
+      
+      const sessionId = values[sessionIdIndex];
+      const sessionLength = parseFloat(values[sessionLengthIndex]);
+      
+      if (sessionId && !isNaN(sessionLength)) {
+        data.push({
+          sessionId,
+          sessionLength,
+          userId: userIdIndex >= 0 ? values[userIdIndex] : undefined,
+          timestamp: timestampIndex >= 0 ? values[timestampIndex] : undefined,
+        });
+      }
+    }
+    
+    if (data.length === 0) {
+      throw new Error('No valid AWS data rows found in CSV');
+    }
+    
+    return data;
+  };
+
+  const fuseData = (): FusedDataPoint[] => {
+    if (shopifyData.length === 0 || awsData.length === 0) {
+      return [];
+    }
+    
+    const fused: FusedDataPoint[] = [];
+    let sessionCounter = 1;
+    
+    // Create lookup map for AWS data by session ID
+    const awsMap = new Map<string, AWSData>();
+    awsData.forEach(aws => awsMap.set(aws.sessionId, aws));
+    
+    // Match Shopify data with AWS data by session ID
+    shopifyData.forEach(shopify => {
+      const awsMatch = awsMap.get(shopify.sessionId);
+      if (awsMatch) {
+        fused.push({
+          sessionId: shopify.sessionId,
+          sessionLength: awsMatch.sessionLength,
+          successRate: shopify.successRate,
+          sessionNumber: sessionCounter++
+        });
+      }
+    });
+    
+    // Sort by session length for better visualization
+    return fused.sort((a, b) => a.sessionLength - b.sessionLength);
+  };
+
+  const generateFusionReport = () => {
+    if (shopifyData.length === 0 || awsData.length === 0) {
+      alert('Both Shopify and AWS data must be uploaded before generating a fusion report.');
+      return;
+    }
+
+    const fused = fuseData();
+    
+    if (fused.length === 0) {
+      alert(`No matching sessions found between Shopify data (${shopifyData.length} sessions) and AWS data (${awsData.length} sessions). Please ensure both datasets contain matching session_id values.`);
+      return;
+    }
+    
+    const totalSessions = Math.max(shopifyData.length, awsData.length);
+    const matchedSessions = fused.length;
+    const matchRate = ((matchedSessions / totalSessions) * 100).toFixed(1);
+    
+    setFusedData(fused);
+    
+    // Calculate statistics
+    const earlyData = fused.slice(0, Math.floor(fused.length * 0.65));
+    const lateData = fused.slice(Math.floor(fused.length * 0.65));
+    const inflectionPoint = fused.length > 0 ? fused[Math.floor(fused.length * 0.65)]?.sessionLength || 0 : 0;
+    
+    setStats({
+      totalSessions: totalSessions,
+      matchedSessions: matchedSessions,
+      inflectionPoint: inflectionPoint.toFixed(1),
+      earlySuccessRate: earlyData.length > 0 ? (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1) : '0',
+      lateSuccessRate: lateData.length > 0 ? (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1) : '0',
+    });
+    
+    setIsReportGenerated(true);
+    alert(`Fusion report generated! Matched ${matchedSessions} sessions out of ${totalSessions} total (${matchRate}% match rate).`);
+  };
+
+  const handleShopifyUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
     
     if (!file.name.toLowerCase().endsWith('.csv')) {
-      setUploadStatus('error');
+      setShopifyUploadStatus('error');
       alert('Please upload a CSV file');
       return;
     }
     
-    setUploadStatus('uploading');
+    setShopifyUploadStatus('uploading');
     const reader = new FileReader();
     
     reader.onload = (e) => {
       try {
         const csvText = String(e.target?.result ?? '');
-        const parsedData = parseCSV(csvText);
+        const parsedData = parseShopifyCSV(csvText);
         
-        setData(parsedData);
-        setIsUsingCustomData(true);
-        setUploadStatus('success');
+        setShopifyData(parsedData);
+        setShopifyUploadStatus('success');
+        setIsReportGenerated(false); // Reset report when new data is uploaded
         
-        // Calculate stats for uploaded data
-        const earlyData = parsedData.slice(0, Math.floor(parsedData.length * 0.65));
-        const lateData = parsedData.slice(Math.floor(parsedData.length * 0.65));
-        const inflectionPoint = parsedData.length > 0 ? parsedData[Math.floor(parsedData.length * 0.65)]?.sessionLength || 0 : 0;
-        
-        setStats({
-          totalSessions: parsedData.length,
-          inflectionPoint: inflectionPoint.toFixed(1),
-          earlySuccessRate: earlyData.length > 0 ? (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1) : '0',
-          lateSuccessRate: lateData.length > 0 ? (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1) : '0',
-        });
-        
-        alert(`Successfully loaded ${parsedData.length} data points from ${file.name}`);
+        alert(`Successfully loaded ${parsedData.length} Shopify records from ${file.name}`);
       } catch (error) {
-        console.error('Error parsing CSV:', error);
-        setUploadStatus('error');
-        alert(`Error parsing CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        console.error('Error parsing Shopify CSV:', error);
+        setShopifyUploadStatus('error');
+        alert(`Error parsing Shopify CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     };
     
     reader.onerror = () => {
-      setUploadStatus('error');
-      alert('Error reading file');
+      setShopifyUploadStatus('error');
+      alert('Error reading Shopify file');
     };
     
     reader.readAsText(file);
+    
+    // Reset file input
+    if (event.target) event.target.value = '';
+  };
+
+  const handleAWSUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    
+    if (!file.name.toLowerCase().endsWith('.csv')) {
+      setAWSUploadStatus('error');
+      alert('Please upload a CSV file');
+      return;
+    }
+    
+    setAWSUploadStatus('uploading');
+    const reader = new FileReader();
+    
+    reader.onload = (e) => {
+      try {
+        const csvText = String(e.target?.result ?? '');
+        const parsedData = parseAWSCSV(csvText);
+        
+        setAWSData(parsedData);
+        setAWSUploadStatus('success');
+        setIsReportGenerated(false); // Reset report when new data is uploaded
+        
+        alert(`Successfully loaded ${parsedData.length} AWS session records from ${file.name}`);
+      } catch (error) {
+        console.error('Error parsing AWS CSV:', error);
+        setAWSUploadStatus('error');
+        alert(`Error parsing AWS CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
+    };
+    
+    reader.onerror = () => {
+      setAWSUploadStatus('error');
+      alert('Error reading AWS file');
+    };
+    
+    reader.readAsText(file);
+    
+    // Reset file input
+    if (event.target) event.target.value = '';
   };
 
   const loadSampleData = () => {
     const sampleData = generateSampleData();
-    setData(sampleData);
-    setIsUsingCustomData(false);
-    setUploadStatus('idle');
+    setFusedData(sampleData);
+    setShopifyUploadStatus('idle');
+    setAWSUploadStatus('idle');
+    setIsReportGenerated(true);
     
     const earlyData = sampleData.slice(0, 130);
     const lateData = sampleData.slice(130);
@@ -200,6 +360,7 @@ const SessionAnalyzer: React.FC = () => {
     
     setStats({
       totalSessions: sampleData.length,
+      matchedSessions: sampleData.length,
       inflectionPoint: inflectionPoint.toFixed(1),
       earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
       lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
@@ -208,15 +369,15 @@ const SessionAnalyzer: React.FC = () => {
 
   const exportData = () => {
     const csvContent = [
-      'Session Number,Session Length,Success Rate',
-      ...data.map(row => `${row.sessionNumber},${row.sessionLength},${row.successRate}`)
+      'Session ID,Session Number,Session Length,Success Rate',
+      ...fusedData.map(row => `${row.sessionId},${row.sessionNumber},${row.sessionLength},${row.successRate}`)
     ].join('\n');
     
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'session_analysis_results.csv';
+    a.download = 'session_fusion_analysis_results.csv';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -236,14 +397,14 @@ const SessionAnalyzer: React.FC = () => {
   );
 
   const renderChart = () => {
-    if (!data.length) {
-      return <div className="flex items-center justify-center h-full text-gray-500">Loading data...</div>;
+    if (!fusedData.length) {
+      return <div className="flex items-center justify-center h-full text-gray-500">No fused data available. Please upload both Shopify and AWS data files.</div>;
     }
 
     if (viewMode === 'raw') {
       return (
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+          <ScatterChart data={fusedData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
             <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
             <XAxis 
               dataKey="sessionLength" 
@@ -308,96 +469,196 @@ const SessionAnalyzer: React.FC = () => {
           <div className="flex items-center gap-2 text-sm">
             <span className="font-medium">Data source:</span>
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-              isUsingCustomData 
+              isReportGenerated 
                 ? 'bg-green-100 text-green-800' 
                 : 'bg-blue-100 text-blue-800'
             }`}>
-              {isUsingCustomData ? '📁 Custom CSV Data' : '🧪 Sample Data'}
+              {isReportGenerated ? '🔗 Fused Data Report' : '⏳ Awaiting Data Fusion'}
             </span>
-            <span className="text-gray-500">({stats.totalSessions} sessions)</span>
+            <span className="text-gray-500">({stats.totalSessions} sessions, {stats.matchedSessions} matched)</span>
           </div>
         </div>
 
         {/* Data Management */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">📊 Data Management</h2>
-          <div className="flex flex-col md:flex-row gap-4">
-            
-            {/* File Upload Section */}
-            <div className="flex-1">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Upload Your Data</h3>
-              <div className="flex items-center gap-3">
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  onChange={handleFileUpload}
-                  accept=".csv"
-                  className="hidden"
-                />
-                <button
-                  onClick={() => fileInputRef.current?.click()}
-                  disabled={uploadStatus === 'uploading'}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
-                    uploadStatus === 'uploading'
-                      ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : uploadStatus === 'success'
-                      ? 'bg-green-600 hover:bg-green-700 text-white'
-                      : uploadStatus === 'error'
-                      ? 'bg-red-600 hover:bg-red-700 text-white'
-                      : 'bg-blue-600 hover:bg-blue-700 text-white'
-                  }`}
-                >
-                  <Upload className="w-4 h-4" />
-                  {uploadStatus === 'uploading' ? 'Uploading...' :
-                   uploadStatus === 'success' ? 'Upload New File' :
-                   uploadStatus === 'error' ? 'Try Again' : 'Upload CSV File'}
-                </button>
-                <div className="text-xs text-gray-500 flex items-center gap-2">
-                  <span>Expected format: session_number, session_length, success_rate</span>
-                  <a 
-                    href="/session-performance-analyzer/sample_data.csv" 
-                    download="sample_data.csv"
-                    className="text-blue-600 hover:text-blue-800 underline"
-                  >
-                    📥 Download Sample
-                  </a>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            {/* Shopify Data Section */}
+            <div className="border-2 border-dashed border-orange-200 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">🛒</span>
+                <h3 className="text-base font-medium text-gray-900">Shopify Data (Success Metrics)</h3>
+                <div className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  shopifyUploadStatus === 'success' 
+                    ? 'bg-green-100 text-green-800' 
+                    : shopifyUploadStatus === 'error'
+                    ? 'bg-red-100 text-red-800'
+                    : shopifyUploadStatus === 'uploading'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-600'
+                }`}>
+                  {shopifyUploadStatus === 'success' ? '✓ Loaded' :
+                   shopifyUploadStatus === 'error' ? '✗ Error' :
+                   shopifyUploadStatus === 'uploading' ? '↻ Loading' : 'Pending'}
                 </div>
               </div>
-            </div>
-
-            {/* Sample Data Section */}
-            <div className="flex-1">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Use Sample Data</h3>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={loadSampleData}
-                  className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors"
+              
+              <input
+                type="file"
+                ref={shopifyFileRef}
+                onChange={handleShopifyUpload}
+                accept=".csv"
+                className="hidden"
+              />
+              
+              <button
+                onClick={() => shopifyFileRef.current?.click()}
+                disabled={shopifyUploadStatus === 'uploading'}
+                className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-colors mb-3 ${
+                  shopifyUploadStatus === 'uploading'
+                    ? 'bg-gray-400 text-white cursor-not-allowed'
+                    : shopifyUploadStatus === 'success'
+                    ? 'bg-green-600 hover:bg-green-700 text-white'
+                    : shopifyUploadStatus === 'error'
+                    ? 'bg-red-600 hover:bg-red-700 text-white'
+                    : 'bg-orange-600 hover:bg-orange-700 text-white'
+                }`}
+              >
+                <Upload className="w-4 h-4" />
+                {shopifyUploadStatus === 'uploading' ? 'Uploading Shopify Data...' :
+                 shopifyUploadStatus === 'success' ? `Replace Shopify File (${shopifyData.length} records)` :
+                 shopifyUploadStatus === 'error' ? 'Try Again' : 'Upload Shopify CSV'}
+              </button>
+              
+              <div className="text-xs text-gray-600">
+                Required columns: <code>session_id</code>, <code>success_rate</code><br/>
+                Optional: <code>order_id</code>, <code>timestamp</code><br/>
+                <a 
+                  href="/session-performance-analyzer/shopify_sample.csv" 
+                  download="shopify_sample.csv"
+                  className="text-orange-600 hover:text-orange-800 underline"
                 >
-                  <BarChart3 className="w-4 h-4" />
-                  Load Demo Data
-                </button>
-                <span className="text-xs text-gray-500">
-                  200 sessions with realistic performance curve
-                </span>
+                  📥 Download Shopify Sample
+                </a>
               </div>
             </div>
 
-            {/* Export Section */}
-            <div className="flex-1">
-              <h3 className="text-sm font-medium text-gray-700 mb-2">Export Results</h3>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={exportData}
-                  disabled={data.length === 0}
-                  className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  Export CSV
-                </button>
-                <span className="text-xs text-gray-500">
-                  Download current dataset
-                </span>
+            {/* AWS Data Section */}
+            <div className="border-2 border-dashed border-blue-200 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">☁️</span>
+                <h3 className="text-base font-medium text-gray-900">AWS Data (Session Lengths)</h3>
+                <div className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  awsUploadStatus === 'success' 
+                    ? 'bg-green-100 text-green-800' 
+                    : awsUploadStatus === 'error'
+                    ? 'bg-red-100 text-red-800'
+                    : awsUploadStatus === 'uploading'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-600'
+                }`}>
+                  {awsUploadStatus === 'success' ? '✓ Loaded' :
+                   awsUploadStatus === 'error' ? '✗ Error' :
+                   awsUploadStatus === 'uploading' ? '↻ Loading' : 'Pending'}
+                </div>
               </div>
+              
+              <input
+                type="file"
+                ref={awsFileRef}
+                onChange={handleAWSUpload}
+                accept=".csv"
+                className="hidden"
+              />
+              
+              <button
+                onClick={() => awsFileRef.current?.click()}
+                disabled={awsUploadStatus === 'uploading'}
+                className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-colors mb-3 ${
+                  awsUploadStatus === 'uploading'
+                    ? 'bg-gray-400 text-white cursor-not-allowed'
+                    : awsUploadStatus === 'success'
+                    ? 'bg-green-600 hover:bg-green-700 text-white'
+                    : awsUploadStatus === 'error'
+                    ? 'bg-red-600 hover:bg-red-700 text-white'
+                    : 'bg-blue-600 hover:bg-blue-700 text-white'
+                }`}
+              >
+                <Upload className="w-4 h-4" />
+                {awsUploadStatus === 'uploading' ? 'Uploading AWS Data...' :
+                 awsUploadStatus === 'success' ? `Replace AWS File (${awsData.length} records)` :
+                 awsUploadStatus === 'error' ? 'Try Again' : 'Upload AWS CSV'}
+              </button>
+              
+              <div className="text-xs text-gray-600">
+                Required columns: <code>session_id</code>, <code>session_length</code><br/>
+                Optional: <code>user_id</code>, <code>timestamp</code><br/>
+                <a 
+                  href="/session-performance-analyzer/aws_sample.csv" 
+                  download="aws_sample.csv"
+                  className="text-blue-600 hover:text-blue-800 underline"
+                >
+                  📥 Download AWS Sample
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons Row */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
+            {/* Generate Fusion Report Button */}
+            <div className="flex-1">
+              <button
+                onClick={generateFusionReport}
+                disabled={shopifyUploadStatus !== 'success' || awsUploadStatus !== 'success'}
+                className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
+                  shopifyUploadStatus === 'success' && awsUploadStatus === 'success'
+                    ? 'bg-purple-600 hover:bg-purple-700 text-white'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                <span className="text-base">🔗</span>
+                Generate Fusion Report
+              </button>
+              {shopifyUploadStatus !== 'success' || awsUploadStatus !== 'success' ? (
+                <p className="text-xs text-gray-500 text-center mt-1">
+                  Upload both data sources to enable fusion
+                </p>
+              ) : (
+                <p className="text-xs text-green-600 text-center mt-1">
+                  Ready to generate fusion report
+                </p>
+              )}
+            </div>
+
+            {/* Sample Data Button */}
+            <div className="flex-1">
+              <button
+                onClick={loadSampleData}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
+              >
+                <BarChart3 className="w-4 h-4" />
+                Load Demo Data
+              </button>
+              <p className="text-xs text-gray-500 text-center mt-1">
+                200 sessions with realistic performance curve
+              </p>
+            </div>
+
+            {/* Export Button */}
+            <div className="flex-1">
+              <button
+                onClick={exportData}
+                disabled={fusedData.length === 0}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Export Results
+              </button>
+              <p className="text-xs text-gray-500 text-center mt-1">
+                Download fused dataset
+              </p>
             </div>
           </div>
         </div>
@@ -437,12 +698,18 @@ const SessionAnalyzer: React.FC = () => {
         </div>
 
         {/* Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <StatCard 
             title="Total Sessions" 
             value={stats.totalSessions} 
             icon={BarChart3} 
             color="border-blue-500" 
+          />
+          <StatCard 
+            title="Matched Sessions" 
+            value={stats.matchedSessions} 
+            icon={BarChart3} 
+            color="border-purple-500" 
           />
           <StatCard 
             title="Inflection Point" 
