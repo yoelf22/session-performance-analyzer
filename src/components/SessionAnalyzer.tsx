@@ -24,50 +24,22 @@ interface FusedDataPoint {
 }
 
 const SessionAnalyzer: React.FC = () => {
-  // Generate initial sample data immediately  
-  const generateSampleDataImmediate = (): FusedDataPoint[] => {
-    const points: FusedDataPoint[] = [];
-    for (let i = 1; i <= 200; i++) {
-      const sessionLength = 1.0 + (i - 1) * 0.2;
-      let baseSuccessRate: number;
-      
-      if (i <= 130) {
-        const progressRatio = (i - 1) / 129;
-        const curveValue = 1 - Math.pow(progressRatio, 0.7);
-        baseSuccessRate = 0.55 + (0.99 - 0.55) * curveValue;
-      } else {
-        baseSuccessRate = 0.05;
-      }
-      
-      const noise = (Math.random() - 0.5) * 0.2;
-      const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
-      
-      points.push({
-        sessionId: `session_${i}`,
-        sessionNumber: i,
-        sessionLength: Number(sessionLength.toFixed(2)),
-        successRate: Number((successRate * 100).toFixed(2)),
-      });
-    }
-    return points;
-  };
-
-  const initialSampleData = generateSampleDataImmediate();
-  const [fusedData, setFusedData] = useState<FusedDataPoint[]>(initialSampleData);
+  // Start with empty data - user must upload files to begin session
+  const [fusedData, setFusedData] = useState<FusedDataPoint[]>([]);
   const [shopifyData, setShopifyData] = useState<ShopifyData[]>([]);
   const [awsData, setAWSData] = useState<AWSData[]>([]);
   const [viewMode, setViewMode] = useState<'raw' | 'trend'>('raw');
   const [smoothingLevel, setSmoothingLevel] = useState<number>(10);
   const [stats, setStats] = useState({
-    totalSessions: initialSampleData.length,
-    matchedSessions: initialSampleData.length,
-    inflectionPoint: '27.0',
-    earlySuccessRate: '80.5',
-    lateSuccessRate: '5.0',
+    totalSessions: 0,
+    matchedSessions: 0,
+    inflectionPoint: '0',
+    earlySuccessRate: '0',
+    lateSuccessRate: '0',
   });
   const [shopifyUploadStatus, setShopifyUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
   const [awsUploadStatus, setAWSUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
-  const [isReportGenerated, setIsReportGenerated] = useState(true);
+  const [isReportGenerated, setIsReportGenerated] = useState(false);
   const [shopifyMessage, setShopifyMessage] = useState<string>('');
   const [awsMessage, setAWSMessage] = useState<string>('');
   const [fusionMessage, setFusionMessage] = useState<string>('');
@@ -316,6 +288,18 @@ const SessionAnalyzer: React.FC = () => {
       return;
     }
     
+    // Clear all previous session data when starting new upload
+    setFusedData([]);
+    setIsReportGenerated(false);
+    setFusionMessage('');
+    setStats({
+      totalSessions: 0,
+      matchedSessions: 0,
+      inflectionPoint: '0',
+      earlySuccessRate: '0',
+      lateSuccessRate: '0',
+    });
+    
     setShopifyUploadStatus('uploading');
     setShopifyMessage('');
     const reader = new FileReader();
@@ -328,8 +312,6 @@ const SessionAnalyzer: React.FC = () => {
         setShopifyData(parsedData);
         setShopifyUploadStatus('success');
         setShopifyMessage(`✅ Successfully loaded ${parsedData.length} records`);
-        setIsReportGenerated(false); // Reset report when new data is uploaded
-        setFusionMessage(''); // Clear any previous fusion messages
       } catch (error) {
         console.error('Error parsing Shopify CSV:', error);
         setShopifyUploadStatus('error');
@@ -359,6 +341,18 @@ const SessionAnalyzer: React.FC = () => {
       return;
     }
     
+    // Clear all previous session data when starting new upload
+    setFusedData([]);
+    setIsReportGenerated(false);
+    setFusionMessage('');
+    setStats({
+      totalSessions: 0,
+      matchedSessions: 0,
+      inflectionPoint: '0',
+      earlySuccessRate: '0',
+      lateSuccessRate: '0',
+    });
+    
     setAWSUploadStatus('uploading');
     setAWSMessage('');
     const reader = new FileReader();
@@ -371,8 +365,6 @@ const SessionAnalyzer: React.FC = () => {
         setAWSData(parsedData);
         setAWSUploadStatus('success');
         setAWSMessage(`✅ Successfully loaded ${parsedData.length} records`);
-        setIsReportGenerated(false); // Reset report when new data is uploaded
-        setFusionMessage(''); // Clear any previous fusion messages
       } catch (error) {
         console.error('Error parsing AWS CSV:', error);
         setAWSUploadStatus('error');
@@ -444,14 +436,15 @@ const SessionAnalyzer: React.FC = () => {
   const renderChart = () => {
     if (!fusedData.length) {
       return (
-        <div className="flex items-center justify-center h-96 text-gray-500 bg-gray-50 border border-gray-200 rounded">
-          No fused data available. Please upload both Shopify and AWS data files or click "Load Demo Data".
+        <div className="flex flex-col items-center justify-center h-96 text-gray-500 bg-gray-50 border border-gray-200 rounded">
+          <div className="text-6xl mb-4">📊</div>
+          <div className="text-lg font-medium mb-2">No Analysis Data</div>
+          <div className="text-sm text-center max-w-md">
+            Upload both Shopify and AWS CSV files, then click "Generate Fusion Report" to see charts and analytics.
+          </div>
         </div>
       );
     }
-
-    // Debug info
-    console.log('Rendering chart with data:', fusedData.slice(0, 3));
 
     try {
       if (viewMode === 'raw') {
@@ -482,7 +475,6 @@ const SessionAnalyzer: React.FC = () => {
         );
       } else {
         const smoothedData = getSmoothedData();
-        console.log('Smoothed data:', smoothedData.slice(0, 3));
         
         return (
           <div style={{ width: '100%', height: '400px' }}>
@@ -535,11 +527,13 @@ const SessionAnalyzer: React.FC = () => {
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
               isReportGenerated 
                 ? 'bg-green-100 text-green-800' 
-                : 'bg-blue-100 text-blue-800'
+                : 'bg-gray-100 text-gray-600'
             }`}>
-              {isReportGenerated ? '🔗 Fused Data Report' : '⏳ Awaiting Data Fusion'}
+              {isReportGenerated ? '🔗 Fused Data Report' : '📝 New Session'}
             </span>
-            <span className="text-gray-500">({stats.totalSessions} sessions, {stats.matchedSessions} matched)</span>
+            {isReportGenerated && (
+              <span className="text-gray-500">({stats.totalSessions} sessions, {stats.matchedSessions} matched)</span>
+            )}
           </div>
         </div>
 
