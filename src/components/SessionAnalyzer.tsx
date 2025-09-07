@@ -18,49 +18,56 @@ const SessionAnalyzer: React.FC = () => {
     earlySuccessRate: '0',
     lateSuccessRate: '0',
   });
+  const [isUsingCustomData, setIsUsingCustomData] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const generateSampleData = (): DataPoint[] => {
-      const points: DataPoint[] = [];
-      for (let i = 1; i <= 200; i++) {
-        const sessionLength = 1.0 + (i - 1) * 0.2;
-        let baseSuccessRate: number;
-        
-        if (i <= 130) {
-          const progressRatio = (i - 1) / 129;
-          const curveValue = 1 - Math.pow(progressRatio, 0.7);
-          baseSuccessRate = 0.55 + (0.99 - 0.55) * curveValue;
-        } else {
-          baseSuccessRate = 0.05;
-        }
-        
-        const noise = (Math.random() - 0.5) * 0.2;
-        const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
-        
-        points.push({
-          sessionNumber: i,
-          sessionLength: Number(sessionLength.toFixed(2)),
-          successRate: Number((successRate * 100).toFixed(2)),
-        });
-      }
-      return points;
-    };
-
-    const sampleData = generateSampleData();
-    setData(sampleData);
-    
-    const earlyData = sampleData.slice(0, 130);
-    const lateData = sampleData.slice(130);
-    const inflectionPoint = 1.0 + (130 - 1) * 0.2;
-    
-    setStats({
-      totalSessions: sampleData.length,
-      inflectionPoint: inflectionPoint.toFixed(1),
-      earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
-      lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
-    });
+    // Load sample data by default on first render
+    if (data.length === 0) {
+      const sampleData = generateSampleData();
+      setData(sampleData);
+      setIsUsingCustomData(false);
+      setUploadStatus('idle');
+      
+      const earlyData = sampleData.slice(0, 130);
+      const lateData = sampleData.slice(130);
+      const inflectionPoint = 1.0 + (130 - 1) * 0.2;
+      
+      setStats({
+        totalSessions: sampleData.length,
+        inflectionPoint: inflectionPoint.toFixed(1),
+        earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
+        lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
+      });
+    }
   }, []);
+
+  const generateSampleData = (): DataPoint[] => {
+    const points: DataPoint[] = [];
+    for (let i = 1; i <= 200; i++) {
+      const sessionLength = 1.0 + (i - 1) * 0.2;
+      let baseSuccessRate: number;
+      
+      if (i <= 130) {
+        const progressRatio = (i - 1) / 129;
+        const curveValue = 1 - Math.pow(progressRatio, 0.7);
+        baseSuccessRate = 0.55 + (0.99 - 0.55) * curveValue;
+      } else {
+        baseSuccessRate = 0.05;
+      }
+      
+      const noise = (Math.random() - 0.5) * 0.2;
+      const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
+      
+      points.push({
+        sessionNumber: i,
+        sessionLength: Number(sessionLength.toFixed(2)),
+        successRate: Number((successRate * 100).toFixed(2)),
+      });
+    }
+    return points;
+  };
 
   const getSmoothedData = (): DataPoint[] => {
     if (!data.length) return [];
@@ -82,23 +89,121 @@ const SessionAnalyzer: React.FC = () => {
     return smoothed;
   };
 
+  const parseCSV = (csvText: string): DataPoint[] => {
+    const lines = csvText.trim().split('\n');
+    if (lines.length < 2) {
+      throw new Error('CSV must have at least a header row and one data row');
+    }
+    
+    const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const data: DataPoint[] = [];
+    
+    // Find column indices
+    const sessionNumIndex = headers.findIndex(h => 
+      h.includes('session') && (h.includes('number') || h.includes('num') || h.includes('id'))
+    );
+    const sessionLengthIndex = headers.findIndex(h => 
+      h.includes('session') && (h.includes('length') || h.includes('duration') || h.includes('time'))
+    );
+    const successRateIndex = headers.findIndex(h => 
+      h.includes('success') && (h.includes('rate') || h.includes('percent') || h.includes('%'))
+    );
+    
+    if (sessionNumIndex === -1 || sessionLengthIndex === -1 || successRateIndex === -1) {
+      throw new Error('CSV must contain columns for session number, session length, and success rate');
+    }
+    
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split(',').map(v => v.trim());
+      if (values.length < 3) continue;
+      
+      const sessionNumber = parseInt(values[sessionNumIndex]);
+      const sessionLength = parseFloat(values[sessionLengthIndex]);
+      const successRate = parseFloat(values[successRateIndex]);
+      
+      if (!isNaN(sessionNumber) && !isNaN(sessionLength) && !isNaN(successRate)) {
+        data.push({
+          sessionNumber,
+          sessionLength,
+          successRate: successRate > 1 ? successRate : successRate * 100 // Handle both 0.85 and 85% formats
+        });
+      }
+    }
+    
+    if (data.length === 0) {
+      throw new Error('No valid data rows found in CSV');
+    }
+    
+    // Sort by session number
+    return data.sort((a, b) => a.sessionNumber - b.sessionNumber);
+  };
+
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const csvText = String(e.target?.result ?? '');
-console.log('CSV text preview:', csvText.slice(0, 200));
-          console.log('File uploaded:', file.name);
-          alert(`File "${file.name}" uploaded successfully! CSV parsing will be implemented in a future version.`);
-        } catch (error) {
-          console.error('Error parsing file:', error);
-          alert('Error parsing file. Please check the format.');
-        }
-      };
-      reader.readAsText(file);
+    if (!file) return;
+    
+    if (!file.name.toLowerCase().endsWith('.csv')) {
+      setUploadStatus('error');
+      alert('Please upload a CSV file');
+      return;
     }
+    
+    setUploadStatus('uploading');
+    const reader = new FileReader();
+    
+    reader.onload = (e) => {
+      try {
+        const csvText = String(e.target?.result ?? '');
+        const parsedData = parseCSV(csvText);
+        
+        setData(parsedData);
+        setIsUsingCustomData(true);
+        setUploadStatus('success');
+        
+        // Calculate stats for uploaded data
+        const earlyData = parsedData.slice(0, Math.floor(parsedData.length * 0.65));
+        const lateData = parsedData.slice(Math.floor(parsedData.length * 0.65));
+        const inflectionPoint = parsedData.length > 0 ? parsedData[Math.floor(parsedData.length * 0.65)]?.sessionLength || 0 : 0;
+        
+        setStats({
+          totalSessions: parsedData.length,
+          inflectionPoint: inflectionPoint.toFixed(1),
+          earlySuccessRate: earlyData.length > 0 ? (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1) : '0',
+          lateSuccessRate: lateData.length > 0 ? (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1) : '0',
+        });
+        
+        alert(`Successfully loaded ${parsedData.length} data points from ${file.name}`);
+      } catch (error) {
+        console.error('Error parsing CSV:', error);
+        setUploadStatus('error');
+        alert(`Error parsing CSV: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
+    };
+    
+    reader.onerror = () => {
+      setUploadStatus('error');
+      alert('Error reading file');
+    };
+    
+    reader.readAsText(file);
+  };
+
+  const loadSampleData = () => {
+    const sampleData = generateSampleData();
+    setData(sampleData);
+    setIsUsingCustomData(false);
+    setUploadStatus('idle');
+    
+    const earlyData = sampleData.slice(0, 130);
+    const lateData = sampleData.slice(130);
+    const inflectionPoint = 1.0 + (130 - 1) * 0.2;
+    
+    setStats({
+      totalSessions: sampleData.length,
+      inflectionPoint: inflectionPoint.toFixed(1),
+      earlySuccessRate: (earlyData.reduce((sum, p) => sum + p.successRate, 0) / earlyData.length).toFixed(1),
+      lateSuccessRate: (lateData.reduce((sum, p) => sum + p.successRate, 0) / lateData.length).toFixed(1),
+    });
   };
 
   const exportData = () => {
@@ -197,12 +302,110 @@ console.log('CSV text preview:', csvText.slice(0, 200));
         {/* Header */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Session Performance Analyzer</h1>
-          <p className="text-gray-600">Analytics for session length vs success rate correlation</p>
+          <p className="text-gray-600 mb-4">Analytics for session length vs success rate correlation</p>
+          
+          {/* Data Source Info */}
+          <div className="flex items-center gap-2 text-sm">
+            <span className="font-medium">Data source:</span>
+            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+              isUsingCustomData 
+                ? 'bg-green-100 text-green-800' 
+                : 'bg-blue-100 text-blue-800'
+            }`}>
+              {isUsingCustomData ? '📁 Custom CSV Data' : '🧪 Sample Data'}
+            </span>
+            <span className="text-gray-500">({stats.totalSessions} sessions)</span>
+          </div>
         </div>
 
-        {/* Controls */}
+        {/* Data Management */}
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">📊 Data Management</h2>
+          <div className="flex flex-col md:flex-row gap-4">
+            
+            {/* File Upload Section */}
+            <div className="flex-1">
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Upload Your Data</h3>
+              <div className="flex items-center gap-3">
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileUpload}
+                  accept=".csv"
+                  className="hidden"
+                />
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploadStatus === 'uploading'}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+                    uploadStatus === 'uploading'
+                      ? 'bg-gray-400 text-white cursor-not-allowed'
+                      : uploadStatus === 'success'
+                      ? 'bg-green-600 hover:bg-green-700 text-white'
+                      : uploadStatus === 'error'
+                      ? 'bg-red-600 hover:bg-red-700 text-white'
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
+                >
+                  <Upload className="w-4 h-4" />
+                  {uploadStatus === 'uploading' ? 'Uploading...' :
+                   uploadStatus === 'success' ? 'Upload New File' :
+                   uploadStatus === 'error' ? 'Try Again' : 'Upload CSV File'}
+                </button>
+                <div className="text-xs text-gray-500 flex items-center gap-2">
+                  <span>Expected format: session_number, session_length, success_rate</span>
+                  <a 
+                    href="/session-performance-analyzer/sample_data.csv" 
+                    download="sample_data.csv"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    📥 Download Sample
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Sample Data Section */}
+            <div className="flex-1">
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Use Sample Data</h3>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={loadSampleData}
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors"
+                >
+                  <BarChart3 className="w-4 h-4" />
+                  Load Demo Data
+                </button>
+                <span className="text-xs text-gray-500">
+                  200 sessions with realistic performance curve
+                </span>
+              </div>
+            </div>
+
+            {/* Export Section */}
+            <div className="flex-1">
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Export Results</h3>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={exportData}
+                  disabled={data.length === 0}
+                  className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Export CSV
+                </button>
+                <span className="text-xs text-gray-500">
+                  Download current dataset
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Analysis Controls */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">🔧 Analysis Controls</h2>
+          <div className="flex flex-col md:flex-row gap-6 items-center">
             <div className="flex items-center gap-2">
               <label className="font-medium text-gray-700">View Mode:</label>
               <select 
@@ -215,43 +418,21 @@ console.log('CSV text preview:', csvText.slice(0, 200));
               </select>
             </div>
             
-            <div className="flex items-center gap-2">
-              <label className="font-medium text-gray-700">Smoothing Level:</label>
-              <input
-                type="range"
-                min="5"
-                max="25"
-                value={smoothingLevel}
-                onChange={(e) => setSmoothingLevel(parseInt(e.target.value))}
-                className="w-24"
-              />
-              <span className="text-sm text-gray-600 w-8">{smoothingLevel}</span>
-            </div>
-
-            {/* Upload and Export Buttons */}
-            <div className="flex gap-2 ml-auto">
-              <input
-                type="file"
-                ref={fileInputRef}
-                onChange={handleFileUpload}
-                accept=".csv"
-                className="hidden"
-              />
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Upload className="w-4 h-4" />
-                Upload Data
-              </button>
-              <button
-                onClick={exportData}
-                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                Export
-              </button>
-            </div>
+            {viewMode === 'trend' && (
+              <div className="flex items-center gap-2">
+                <label className="font-medium text-gray-700">Smoothing Level:</label>
+                <input
+                  type="range"
+                  min="5"
+                  max="25"
+                  value={smoothingLevel}
+                  onChange={(e) => setSmoothingLevel(parseInt(e.target.value))}
+                  className="w-32"
+                />
+                <span className="text-sm text-gray-600 w-8 font-mono">{smoothingLevel}</span>
+                <span className="text-xs text-gray-500">sessions</span>
+              </div>
+            )}
           </div>
         </div>
 
