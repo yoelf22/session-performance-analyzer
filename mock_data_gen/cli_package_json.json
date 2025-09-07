@@ -1,0 +1,40 @@
+{
+  "name": "sample-data-generator",
+  "version": "1.0.0",
+  "description": "Generate realistic AWS and Shopify sample data for session analysis with configurable patterns and noise injection",
+  "main": "index.js",
+  "bin": {
+    "sample-data-generator": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "install-global": "npm install -g .",
+    "uninstall-global": "npm uninstall -g sample-data-generator"
+  },
+  "keywords": [
+    "data-generation",
+    "sample-data",
+    "aws",
+    "shopify",
+    "cli",
+    "testing",
+    "mock-data",
+    "session-analysis",
+    "csv"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/sample-data-generator.git"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
