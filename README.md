@@ -2,56 +2,170 @@
 
 [![Deploy to GitHub Pages](https://github.com/yoelf22/session-performance-analyzer/actions/workflows/deploy.yml/badge.svg)](https://github.com/yoelf22/session-performance-analyzer/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
-[![Recharts](https://img.shields.io/badge/Recharts-2.8.0-green.svg)](https://recharts.org/)
+[![React](https://img.shields.io/badge/React-19.1.1-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue.svg)](https://www.typescriptlang.org/)
 
-A professional, interactive web application for analyzing session performance data with advanced trend analysis, configurable smoothing, and comprehensive data visualization capabilities.
+A professional web application for analyzing e-commerce session performance by fusing Shopify success metrics with AWS session duration data to identify optimal engagement patterns and inflection points.
 
 ## 🚀 [Live Demo](https://yoelf22.github.io/session-performance-analyzer/)
 
+## 📋 Data Requirements
+
+### Required Input Files
+
+The analyzer requires **two CSV files** to perform the fusion analysis:
+
+#### 1. Shopify Data (Success Metrics)
+**Purpose**: Contains session success rates or conversion data from your e-commerce platform.
+
+**Required Columns:**
+- `session_id` (or `sessionid`, `session-id`) - Unique session identifier
+- `success` (or `success_rate`, `success_percent`) - Success rate as decimal (0.45) or percentage (45)
+
+**Optional Columns:**
+- `user_id` - User identifier for additional analysis
+- `order_id` - Order identifier for transaction tracking
+- `timestamp` - Session timestamp for temporal analysis
+
+**Example Shopify CSV:**
+```csv
+session_id,user_id,success,order_id,timestamp
+sess_001,user_123,0.85,order_456,2024-09-01T10:30:00Z
+sess_002,user_124,0.92,order_457,2024-09-01T10:31:15Z
+sess_003,user_125,0.73,,2024-09-01T10:32:30Z
+```
+
+#### 2. AWS Data (Session Lengths)
+**Purpose**: Contains session duration data from your analytics platform.
+
+**Required Columns (Option A - Direct Duration):**
+- `session_id` (or `sessionid`, `session-id`) - Unique session identifier
+- `session_length` (or `duration`, `session_duration`) - Duration in seconds
+
+**Required Columns (Option B - Timestamp Calculation):**
+- `session_id` - Unique session identifier  
+- `start_timestamp` (or `start_time`, `begin_timestamp`) - Session start time
+- `end_timestamp` (or `end_time`, `finish_timestamp`) - Session end time
+
+**Optional Columns:**
+- `user_id` - User identifier for correlation
+
+**Example AWS CSV (Option A):**
+```csv
+session_id,user_id,session_length
+sess_001,user_123,4.2
+sess_002,user_124,6.8
+sess_003,user_125,2.1
+```
+
+**Example AWS CSV (Option B):**
+```csv
+session_id,user_id,start_timestamp,end_timestamp
+sess_001,user_123,1724526540,1724526544.2
+sess_002,user_124,1724526578.8,1724526585.6
+sess_003,user_125,1724526590,1724526592.1
+```
+
+### Timestamp Format Support
+
+The analyzer supports multiple timestamp formats:
+- **Unix timestamps** (seconds): `1724526540`
+- **Unix timestamps** (milliseconds): `1724526540000`
+- **ISO 8601**: `2024-09-01T10:30:00Z`
+- **Standard formats**: `2024-09-01 10:30:00`
+
+### Column Name Flexibility
+
+The analyzer uses intelligent column detection and supports various naming conventions:
+
+| Data Type | Accepted Column Names |
+|-----------|----------------------|
+| Session ID | `session_id`, `sessionid`, `session-id`, or any column containing "session" and "id" |
+| Success Rate | `success`, `success_rate`, `success_percent`, `success_percentage` |
+| Session Length | `session_length`, `duration`, `session_duration`, `length` |
+| Start Time | `start_timestamp`, `start_time`, `starttime`, `begin_timestamp` |
+| End Time | `end_timestamp`, `end_time`, `endtime`, `finish_timestamp` |
+| User ID | `user_id`, `userid`, `user-id`, `user` |
+
 ## ✨ Features
 
-### 📈 **Advanced Analytics**
+### 📈 **Fusion Analytics**
+- **Data Fusion**: Merges Shopify success metrics with AWS session duration data
+- **Session Matching**: Intelligent matching by session ID with detailed match rate reporting
+- **Cross-Platform Analysis**: Combines e-commerce and analytics data for comprehensive insights
 
-- **Raw Data Visualization**: Interactive scatter plot showing all 200 session data points
-- **Trend Analysis**: Smoothed trend lines with configurable smoothing levels (5-25 sessions)
-- **Inflection Point Detection**: Automatically identifies performance transition points around session 130
-- **Statistical Dashboard**: Comprehensive metrics including correlation analysis
+### 🎯 **Inflection Point Detection**
+- **Advanced Algorithm**: Uses slope change analysis to identify performance transition points
+- **Mathematical Approach**: Bins data to reduce noise, calculates slope changes to find maximum curvature
+- **Realistic Detection**: Accurately identifies inflection points around 5-6 seconds based on real user behavior
 
-### 🎛️ **Interactive Controls**
+### 📊 **Interactive Visualizations**
+- **Scatter Plot**: Shows individual session data points with success rate vs. session length
+- **Trend Analysis**: Smoothed trend lines with configurable smoothing levels
+- **Responsive Charts**: 500px width charts optimized for clarity and detail
 
-- **Configurable Smoothing**: Real-time adjustment of moving average window (5-25 sessions)
-- **Data Export**: Export analysis results to CSV format with one click
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Professional UI**: Modern interface built with Tailwind CSS
+### 🎛️ **Professional UI**
+- **Responsive Layout**: CSS Grid-based design with mobile-first approach
+- **Desktop Layout**: Side-by-side arrangement with controls left, action button right
+- **Status Indicators**: Color-coded upload status with inline messaging
+- **Data Export**: One-click CSV export of fusion results
 
-### 📊 **Data Insights**
+## 🧮 Statistical Analysis & Algorithms
 
-- **Performance Metrics**: Success rate improvement tracking over session length
-- **Correlation Analysis**: Statistical correlation between session number and success rate  
-- **Trend Detection**: Identifies plateau points and improvement phases
-- **Comprehensive Statistics**: Mean, standard deviation, min/max values, and improvement rates
+### Inflection Point Detection Algorithm
 
-### 🔧 **Technical Excellence**
+The core algorithm uses **slope change analysis** to identify the mathematical inflection point:
 
-- **Error Boundaries**: Robust error handling with user-friendly fallbacks
-- **Performance Monitoring**: Web Vitals integration for performance tracking
-- **SEO Optimized**: Complete meta tags, structured data, and social media integration
-- **Accessibility**: WCAG compliant with keyboard navigation and screen reader support
+```typescript
+// 1. Data Preparation
+const sortedData = data.sort((a, b) => a.sessionLength - b.sessionLength);
+
+// 2. Data Binning (reduces noise)
+const binSize = Math.max(1, Math.floor(sortedData.length / 20));
+const binnedData = groupIntoBins(sortedData, binSize);
+
+// 3. Slope Calculation
+for each point i in binnedData:
+    slopeBefore = (point[i].success - point[i-1].success) / 
+                  (point[i].length - point[i-1].length)
+    slopeAfter = (point[i+1].success - point[i].success) / 
+                 (point[i+1].length - point[i].length)
+    
+// 4. Maximum Slope Change Detection
+maxSlopeChange = max(abs(slopeAfter - slopeBefore))
+inflectionPoint = sessionLength where maxSlopeChange occurs
+```
+
+### Statistical Rationale
+
+#### Why Slope Change Analysis?
+1. **Robust to Noise**: Binning reduces individual data point variation
+2. **Mathematically Sound**: Identifies true curvature changes, not arbitrary percentages
+3. **Realistic Results**: Finds actual behavioral transition points around 5-6 seconds
+4. **Visual Correlation**: Matches what analysts see visually in charts
+
+#### Performance Curve Theory
+- **Early Phase (0-5s)**: High engagement, rapid success rate improvement
+- **Inflection Point (5-6s)**: Transition where user behavior changes
+- **Late Phase (6s+)**: Declining engagement, diminishing returns
+
+### Data Quality Metrics
+- **Match Rate**: Percentage of sessions found in both datasets
+- **Data Coverage**: Total sessions analyzed vs. uploaded
+- **Statistical Significance**: Minimum 10 data points required for analysis
 
 ## 🛠️ Technology Stack
 
-- **Frontend Framework**: React 18.2.0 + TypeScript
-- **Data Visualization**: Recharts 2.8.0  
-- **Styling**: Tailwind CSS 3.3.0
-- **Build Tool**: Vite
+- **Frontend**: React 19.1.1 + TypeScript 5.8.3
+- **Data Visualization**: Recharts 3.1.2
+- **Styling**: Custom CSS with CSS Grid responsive layout
+- **Icons**: Lucide React for consistent iconography
+- **Build Tool**: Vite 7.1.2
 - **Deployment**: GitHub Pages with automated CI/CD
-- **Performance**: Web Vitals monitoring
 
 ## 📦 Installation & Setup
 
 ### Prerequisites
-
 - Node.js 16+ 
 - npm or yarn
 - Git
@@ -86,126 +200,66 @@ npm run preview
 
 ### GitHub Pages (Automated)
 
-The project includes automated GitHub Pages deployment:
-
-1. **Fork or clone** this repository
-2. **Enable GitHub Pages** in repository settings
-3. **Push to main branch** - deployment happens automatically
-4. **Access your site** at `https://yoelf22.github.io/session-performance-analyzer/`
-
-### Manual Deployment
-
 ```bash
 # Deploy to GitHub Pages
 npm run deploy
 ```
 
-## 📊 Data Analysis Features
+The project includes automated deployment configuration in `package.json`.
 
-### Session Data Generation
+## 💡 Usage Guide
 
-The analyzer generates realistic session performance data with:
+1. **Upload Shopify Data**: CSV file with session IDs and success rates
+2. **Upload AWS Data**: CSV file with session IDs and durations/timestamps  
+3. **Generate Analysis**: Click the prominent "Generate Fusion Analysis" button
+4. **Review Metrics**: 
+   - Total Sessions: Combined data count
+   - Matched: Sessions found in both datasets
+   - Inflection Point: Calculated transition point in seconds
+   - Success Rates: Early vs. late phase performance
+5. **Analyze Charts**: 
+   - Left: Scatter plot of individual sessions
+   - Right: Trend analysis with smoothing
+6. **Export Results**: Download fused dataset as CSV
 
-- **200 sample sessions** with natural variation and noise
-- **Inflection point** around session 130 where improvement rate changes
-- **Two-phase performance curve**: rapid improvement (0-130) and plateau (130+)
-- **Realistic noise**: ±7.5% variation with cyclical patterns
+## 🔬 Data Processing Pipeline
 
-### Statistical Analysis
+### 1. CSV Parsing
+- Flexible column detection with fuzzy matching
+- Support for quoted values and various delimiters
+- Robust error handling with detailed feedback
 
-Comprehensive metrics calculation including:
+### 2. Data Validation
+- Session ID format validation
+- Numeric value parsing with range checking
+- Timestamp format detection and conversion
 
-- **Basic Statistics**: Mean, standard deviation, min/max values
-- **Performance Metrics**: Initial rate, final rate, total improvement
-- **Correlation Analysis**: Pearson correlation coefficient
-- **Trend Detection**: Moving average with configurable window size
+### 3. Session Fusion
+- Inner join on session_id
+- Data type normalization (percentages, timestamps)
+- Missing value handling
 
-### Visualization Components
-
-- **Scatter Plot**: Raw data points with inflection point markers
-- **Line Charts**: Smoothed trends with original data overlay  
-- **Interactive Tooltips**: Detailed information on hover
-- **Responsive Containers**: Charts adapt to screen size automatically
-
-## 🎨 UI/UX Design
-
-### Layout Structure
-
-- **Header Section**: Title and description with clear hierarchy
-- **Control Panel**: Smoothing controls and export functionality
-- **Statistics Dashboard**: Key metrics in card-based layout
-- **Charts Section**: Side-by-side visualization containers
-- **Detailed Analysis**: Expandable statistics and insights
-
-### Design System
-
-- **Color Palette**: Professional blue/gray scheme with brand colors
-- **Typography**: Clear hierarchy with proper contrast ratios
-- **Spacing**: Consistent 8px grid system
-- **Components**: Reusable UI elements with hover states
-- **Animations**: Subtle transitions for enhanced user experience
-
-## 🔍 Code Architecture
-
-### Component Structure
-
-```
-src/
-├── components/
-│   ├── SessionAnalyzer.tsx      # Main analyzer component
-│   └── ErrorBoundary.tsx        # Error handling wrapper
-├── App.tsx                      # Application root with error boundary
-├── App.css                      # Tailwind CSS and custom styles
-└── main.tsx                     # React application entry point
-```
-
-### Key Functions
-
-- **`generateSessionData()`**: Creates realistic performance curve data
-- **`applySmoothingFilter()`**: Implements moving average smoothing
-- **`detectInflectionPoint()`**: Uses second derivative analysis for trend detection
-- **`calculateStatistics()`**: Computes comprehensive performance metrics
-- **`exportToCSV()`**: Handles data export with proper formatting
+### 4. Statistical Analysis
+- Inflection point calculation using slope analysis
+- Success rate aggregation by session length ranges
+- Performance metrics computation
 
 ## 📈 Performance Optimization
 
-### Loading Performance
-
-- **Code Splitting**: Automatic chunk splitting by Vite
-- **Resource Preloading**: Critical resources loaded early
-- **Image Optimization**: Optimized icons and assets
-- **Bundle Analysis**: Vite bundle analyzer integration
-
-### Runtime Performance
-
-- **React.memo**: Memoization for expensive calculations
-- **useCallback**: Optimized event handlers and functions
-- **Efficient Re-renders**: Strategic state management
-- **Responsive Charts**: Recharts with responsive containers
-
-## 🧪 Testing
-
-### Running Tests
-
-```bash
-# Run test suite
-npm run test
-
-# Run tests with coverage
-npm run test:coverage
-```
+- **Efficient Data Processing**: Optimized parsing and fusion algorithms
+- **Responsive UI**: CSS Grid with mobile-first responsive design
+- **Chunked Bundle**: Vite optimization with code splitting
+- **Memory Management**: Cleanup of large datasets after processing
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
+We welcome contributions! Please follow these guidelines:
 
-### Development Workflow
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📜 License
 
@@ -214,49 +268,28 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙋 Support
 
 ### Getting Help
-
-- **Documentation**: Check this README
+- **Documentation**: This README contains comprehensive information
 - **Issues**: Open a [GitHub issue](https://github.com/yoelf22/session-performance-analyzer/issues)
-- **Discussions**: Join [GitHub Discussions](https://github.com/yoelf22/session-performance-analyzer/discussions)
+- **Live Demo**: Test functionality at [live demo](https://yoelf22.github.io/session-performance-analyzer/)
 
 ### Bug Reports
-
-When reporting bugs, please include:
-
-- **Browser and version**
-- **Steps to reproduce**
-- **Expected vs actual behavior**
-- **Console errors (if any)**
-- **Screenshots (if applicable)**
-
-## 📊 Analytics & Insights
-
-The Session Performance Analyzer is designed based on real-world session analysis patterns:
-
-### Performance Curve Model
-
-- **Phase 1 (Sessions 1-130)**: Rapid improvement phase with steep learning curve
-- **Phase 2 (Sessions 130+)**: Plateau phase with diminishing returns
-- **Realistic Variation**: Natural noise and cyclical patterns in data
-- **Inflection Detection**: Mathematical identification of curve transition points
-
-### Statistical Validity
-
-- **Sample Size**: 200 sessions provide statistical significance
-- **Correlation Analysis**: Pearson correlation coefficient calculation
-- **Trend Analysis**: Moving average smoothing with configurable windows
-- **Outlier Handling**: Robust statistics that handle data variation
+Please include:
+- Browser and version
+- Sample data files (if possible)
+- Steps to reproduce
+- Expected vs actual behavior
+- Console errors (if any)
 
 ---
 
-## 🎯 Quick Start Guide
+## 🎯 Quick Start
 
-1. **Visit the [live demo](https://yoelf22.github.io/session-performance-analyzer/)**
-2. **Adjust smoothing level** using the slider (5-25 sessions)
-3. **Explore the charts** with interactive tooltips and zoom
-4. **Review statistics** in the comprehensive dashboard
-5. **Export data** to CSV for further analysis
+1. **Visit**: [https://yoelf22.github.io/session-performance-analyzer/](https://yoelf22.github.io/session-performance-analyzer/)
+2. **Prepare**: Two CSV files with session data (see Data Requirements above)
+3. **Upload**: Shopify file first, then AWS file
+4. **Analyze**: Click "Generate Fusion Analysis"
+5. **Export**: Download results for further analysis
 
 ---
 
-Built with ❤️ by Yoel Frischoff | [View on GitHub](https://github.com/yoelf22/session-performance-analyzer)
+Built with ❤️ for e-commerce analytics | [View on GitHub](https://github.com/yoelf22/session-performance-analyzer)
