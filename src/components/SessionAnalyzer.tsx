@@ -528,6 +528,11 @@ const SessionAnalyzer: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Session Performance Analyzer</h1>
           <p className="text-gray-600 mb-4">Analytics for session length vs success rate correlation</p>
           
+          {/* Debug status */}
+          <div className="bg-green-100 border border-green-300 rounded p-2 mb-4">
+            <span className="text-green-800 text-sm font-medium">✅ React App Loaded Successfully - Chart Data: {fusedData.length} points</span>
+          </div>
+          
           {/* Data Source Info */}
           <div className="flex items-center gap-2 text-sm">
             <span className="font-medium">Data source:</span>
