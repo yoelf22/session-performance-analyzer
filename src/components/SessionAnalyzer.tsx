@@ -114,8 +114,9 @@ const SessionAnalyzer: React.FC = () => {
     );
     const successRateIndex = headers.findIndex(h => 
       h === 'success_rate' || h === 'successrate' || h === 'success-rate' ||
-      h === 'success_percent' || h === 'success_percentage' ||
-      (h.includes('success') && (h.includes('rate') || h.includes('percent')))
+      h === 'success_percent' || h === 'success_percentage' || h === 'success' ||
+      (h.includes('success') && (h.includes('rate') || h.includes('percent'))) ||
+      h.includes('success')
     );
     const timestampIndex = headers.findIndex(h => 
       h.includes('timestamp') || h.includes('date') || h.includes('time')
@@ -172,11 +173,25 @@ const SessionAnalyzer: React.FC = () => {
       h === 'session_id' || h === 'sessionid' || h === 'session-id' || 
       (h.includes('session') && h.includes('id'))
     );
-    const sessionLengthIndex = headers.findIndex(h => 
+    // Look for direct session length column first
+    let sessionLengthIndex = headers.findIndex(h => 
       h === 'session_length' || h === 'sessionlength' || h === 'session-length' ||
       h === 'session_duration' || h === 'duration' ||
       (h.includes('session') && (h.includes('length') || h.includes('duration')))
     );
+    
+    // If no direct session length, look for start/end timestamp columns
+    let startTimestampIndex = -1;
+    let endTimestampIndex = -1;
+    
+    if (sessionLengthIndex === -1) {
+      startTimestampIndex = headers.findIndex(h => 
+        h.includes('start') && h.includes('timestamp')
+      );
+      endTimestampIndex = headers.findIndex(h => 
+        h.includes('end') && h.includes('timestamp')
+      );
+    }
     const userIdIndex = headers.findIndex(h => 
       h === 'user_id' || h === 'userid' || h === 'user-id' ||
       (h.includes('user') && h.includes('id'))
@@ -185,8 +200,8 @@ const SessionAnalyzer: React.FC = () => {
       h.includes('timestamp') || h.includes('date') || h.includes('time')
     );
     
-    if (sessionIdIndex === -1 || sessionLengthIndex === -1) {
-      throw new Error(`AWS CSV must contain columns for session_id and session_length. Found headers: ${headers.join(', ')}`);
+    if (sessionIdIndex === -1 || (sessionLengthIndex === -1 && (startTimestampIndex === -1 || endTimestampIndex === -1))) {
+      throw new Error(`AWS CSV must contain columns for session_id and either session_length OR both start_timestamp and end_timestamp. Found headers: ${headers.join(', ')}`);
     }
     
     for (let i = 1; i < lines.length; i++) {
@@ -194,12 +209,30 @@ const SessionAnalyzer: React.FC = () => {
       if (values.length < 2) continue;
       
       const sessionId = values[sessionIdIndex];
-      const sessionLength = parseFloat(values[sessionLengthIndex]);
+      let sessionLength: number;
       
-      if (sessionId && !isNaN(sessionLength)) {
+      if (sessionLengthIndex >= 0) {
+        // Direct session length column
+        sessionLength = parseFloat(values[sessionLengthIndex]);
+      } else {
+        // Calculate from start/end timestamps
+        const startTime = values[startTimestampIndex];
+        const endTime = values[endTimestampIndex];
+        
+        try {
+          const start = new Date(startTime);
+          const end = new Date(endTime);
+          sessionLength = (end.getTime() - start.getTime()) / 1000; // Convert to seconds
+        } catch (error) {
+          console.warn('Failed to parse timestamps for session:', sessionId, startTime, endTime);
+          continue; // Skip this row if timestamp parsing fails
+        }
+      }
+      
+      if (sessionId && !isNaN(sessionLength) && sessionLength > 0) {
         data.push({
           sessionId,
-          sessionLength,
+          sessionLength: Number(sessionLength.toFixed(2)),
           userId: userIdIndex >= 0 ? values[userIdIndex] : undefined,
           timestamp: timestampIndex >= 0 ? values[timestampIndex] : undefined,
         });
@@ -601,8 +634,8 @@ const SessionAnalyzer: React.FC = () => {
               )}
               
               <div className="text-xs text-gray-600 mt-2">
-                Required columns: <code>session_id</code>, <code>success_rate</code><br/>
-                Optional: <code>order_id</code>, <code>timestamp</code><br/>
+                Required columns: <code>session_id</code>, <code>success</code> (or <code>success_rate</code>)<br/>
+                Optional: <code>user_id</code>, <code>order_id</code>, <code>timestamp</code><br/>
                 <a 
                   href="/session-performance-analyzer/shopify_sample.csv" 
                   download="shopify_sample.csv"
@@ -673,7 +706,8 @@ const SessionAnalyzer: React.FC = () => {
               
               <div className="text-xs text-gray-600 mt-2">
                 Required columns: <code>session_id</code>, <code>session_length</code><br/>
-                Optional: <code>user_id</code>, <code>timestamp</code><br/>
+                OR: <code>session_id</code>, <code>start_timestamp</code>, <code>end_timestamp</code><br/>
+                Optional: <code>user_id</code><br/>
                 <a 
                   href="/session-performance-analyzer/aws_sample.csv" 
                   download="aws_sample.csv"
