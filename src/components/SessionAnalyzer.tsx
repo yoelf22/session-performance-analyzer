@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
 import { BarChart3, TrendingDown, AlertTriangle, Upload, Download } from 'lucide-react';
 
 interface ShopifyData {
@@ -98,26 +97,27 @@ const SessionAnalyzer: React.FC = () => {
     return points;
   };
 
-  const getSmoothedData = (): FusedDataPoint[] => {
-    if (!fusedData.length) return [];
-    
-    const smoothed: FusedDataPoint[] = [];
-    for (let i = 0; i < fusedData.length; i += smoothingLevel) {
-      const chunk = fusedData.slice(i, i + smoothingLevel);
-      if (chunk.length === 0) continue;
-      
-      const avgLength = chunk.reduce((sum, p) => sum + p.sessionLength, 0) / chunk.length;
-      const avgSuccess = chunk.reduce((sum, p) => sum + p.successRate, 0) / chunk.length;
-      
-      smoothed.push({
-        sessionId: `smoothed_${i}`,
-        sessionNumber: Math.round(i + smoothingLevel / 2),
-        sessionLength: Number(avgLength.toFixed(2)),
-        successRate: Number(avgSuccess.toFixed(2)),
-      });
-    }
-    return smoothed;
-  };
+  // Temporarily commented out for debugging
+  // const getSmoothedData = (): FusedDataPoint[] => {
+  //   if (!fusedData.length) return [];
+  //   
+  //   const smoothed: FusedDataPoint[] = [];
+  //   for (let i = 0; i < fusedData.length; i += smoothingLevel) {
+  //     const chunk = fusedData.slice(i, i + smoothingLevel);
+  //     if (chunk.length === 0) continue;
+  //     
+  //     const avgLength = chunk.reduce((sum, p) => sum + p.sessionLength, 0) / chunk.length;
+  //     const avgSuccess = chunk.reduce((sum, p) => sum + p.successRate, 0) / chunk.length;
+  //     
+  //     smoothed.push({
+  //       sessionId: `smoothed_${i}`,
+  //       sessionNumber: Math.round(i + smoothingLevel / 2),
+  //       sessionLength: Number(avgLength.toFixed(2)),
+  //       successRate: Number(avgSuccess.toFixed(2)),
+  //     });
+  //   }
+  //   return smoothed;
+  // };
 
   const parseShopifyCSV = (csvText: string): ShopifyData[] => {
     const lines = csvText.trim().split('\n');
@@ -419,63 +419,43 @@ const SessionAnalyzer: React.FC = () => {
   );
 
   const renderChart = () => {
-    if (!fusedData.length) {
-      return <div className="flex items-center justify-center h-full text-gray-500">No fused data available. Please upload both Shopify and AWS data files or click "Load Demo Data".</div>;
-    }
+    // Debug information
+    const debugInfo = {
+      fusedDataLength: fusedData.length,
+      firstDataPoint: fusedData[0],
+      viewMode: viewMode,
+      isReportGenerated: isReportGenerated
+    };
 
-    if (viewMode === 'raw') {
-      return (
-        <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart data={fusedData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-            <XAxis 
-              dataKey="sessionLength" 
-              type="number" 
-              domain={['dataMin - 1', 'dataMax + 1']}
-              label={{ value: 'Session Length (seconds)', position: 'insideBottom', offset: -10 }}
-            />
-            <YAxis 
-              domain={[0, 100]}
-              label={{ value: 'Success Rate (%)', angle: -90, position: 'insideLeft' }}
-            />
-            <Tooltip 
-              formatter={(value: any) => [`${Number(value).toFixed(1)}%`, 'Success Rate']}
-              labelFormatter={(value: any) => `Session Length: ${Number(value).toFixed(1)}s`}
-            />
-            <Scatter dataKey="successRate" fill="#4F46E5" fillOpacity={0.7} />
-          </ScatterChart>
-        </ResponsiveContainer>
-      );
-    } else {
-      const smoothedData = getSmoothedData();
-      return (
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={smoothedData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" opacity={0.3} />
-            <XAxis 
-              dataKey="sessionLength"
-              type="number"
-              domain={['dataMin - 1', 'dataMax + 1']}
-              label={{ value: 'Session Length (seconds)', position: 'insideBottom', offset: -10 }}
-            />
-            <YAxis 
-              domain={[0, 100]}
-              label={{ value: 'Success Rate (%)', angle: -90, position: 'insideLeft' }}
-            />
-            <Tooltip 
-              formatter={(value: any) => [`${Number(value).toFixed(1)}%`, 'Success Rate']}
-              labelFormatter={(value: any) => `Session Length: ${Number(value).toFixed(1)}s`}
-            />
-            <Line 
-              dataKey="successRate" 
-              stroke="#DC2626" 
-              strokeWidth={3}
-              dot={{ fill: '#DC2626', r: 4 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      );
-    }
+    return (
+      <div className="h-full">
+        {/* Debug section */}
+        <div className="bg-yellow-50 border border-yellow-200 rounded p-4 mb-4">
+          <h4 className="font-medium text-yellow-800 mb-2">Debug Information:</h4>
+          <pre className="text-sm text-yellow-700 whitespace-pre-wrap">
+            {JSON.stringify(debugInfo, null, 2)}
+          </pre>
+        </div>
+
+        {!fusedData.length ? (
+          <div className="flex items-center justify-center h-64 text-gray-500 border border-gray-200 rounded">
+            No fused data available. Please upload both Shopify and AWS data files or click "Load Demo Data".
+          </div>
+        ) : (
+          <div className="border border-gray-200 rounded p-4">
+            <div className="text-center text-gray-600 mb-4">
+              Chart rendering disabled for debugging. Data points: {fusedData.length}
+            </div>
+            <div className="h-64 bg-gray-50 rounded flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-lg font-medium text-gray-700">Chart Would Render Here</div>
+                <div className="text-sm text-gray-500">Sample data: {fusedData[0]?.sessionLength}s → {fusedData[0]?.successRate}%</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
   };
 
   return (
