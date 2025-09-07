@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
-import { BarChart3, TrendingDown, AlertTriangle, Upload, Download } from 'lucide-react';
+import { BarChart3, Upload, Download } from 'lucide-react';
 import './SessionAnalyzer.css';
 
 interface ShopifyData {
@@ -417,10 +417,47 @@ const SessionAnalyzer: React.FC = () => {
     
     setFusedData(fused);
     
-    // Calculate statistics
-    const earlyData = fused.slice(0, Math.floor(fused.length * 0.65));
-    const lateData = fused.slice(Math.floor(fused.length * 0.65));
-    const inflectionPoint = fused.length > 0 ? fused[Math.floor(fused.length * 0.65)]?.sessionLength || 0 : 0;
+    // Calculate proper inflection point using derivative analysis
+    const calculateInflectionPoint = (data: FusedDataPoint[]): number => {
+      if (data.length < 10) return 0; // Need sufficient data points
+      
+      const smoothingWindow = 5;
+      const smoothedData: number[] = [];
+      
+      // Apply smoothing to success rates
+      for (let i = smoothingWindow; i < data.length - smoothingWindow; i++) {
+        const window = data.slice(i - smoothingWindow, i + smoothingWindow + 1);
+        const avgSuccess = window.reduce((sum, p) => sum + p.successRate, 0) / window.length;
+        smoothedData.push(avgSuccess);
+      }
+      
+      // Calculate first derivative (rate of change)
+      const derivatives: number[] = [];
+      for (let i = 1; i < smoothedData.length; i++) {
+        const derivative = smoothedData[i] - smoothedData[i - 1];
+        derivatives.push(derivative);
+      }
+      
+      // Find the point where the derivative changes most dramatically (second derivative)
+      let maxSecondDerivative = 0;
+      let inflectionIndex = 0;
+      
+      for (let i = 1; i < derivatives.length; i++) {
+        const secondDerivative = Math.abs(derivatives[i] - derivatives[i - 1]);
+        if (secondDerivative > maxSecondDerivative) {
+          maxSecondDerivative = secondDerivative;
+          inflectionIndex = i + smoothingWindow; // Adjust for smoothing offset
+        }
+      }
+      
+      return data[inflectionIndex]?.sessionLength || 0;
+    };
+    
+    const inflectionPoint = calculateInflectionPoint(fused);
+    
+    // Split data based on calculated inflection point
+    const earlyData = fused.filter(p => p.sessionLength <= inflectionPoint);
+    const lateData = fused.filter(p => p.sessionLength > inflectionPoint);
     
     setStats({
       totalSessions: totalSessions,
@@ -549,10 +586,47 @@ const SessionAnalyzer: React.FC = () => {
     setAWSUploadStatus('idle');
     setIsReportGenerated(true);
     
-    // Use the same 65% calculation as in generateFusionReport
-    const earlyData = sortedData.slice(0, Math.floor(sortedData.length * 0.65));
-    const lateData = sortedData.slice(Math.floor(sortedData.length * 0.65));
-    const inflectionPoint = sortedData.length > 0 ? sortedData[Math.floor(sortedData.length * 0.65)]?.sessionLength || 0 : 0;
+    // Calculate proper inflection point for sample data too
+    const calculateInflectionPoint = (data: FusedDataPoint[]): number => {
+      if (data.length < 10) return 0; // Need sufficient data points
+      
+      const smoothingWindow = 5;
+      const smoothedData: number[] = [];
+      
+      // Apply smoothing to success rates
+      for (let i = smoothingWindow; i < data.length - smoothingWindow; i++) {
+        const window = data.slice(i - smoothingWindow, i + smoothingWindow + 1);
+        const avgSuccess = window.reduce((sum, p) => sum + p.successRate, 0) / window.length;
+        smoothedData.push(avgSuccess);
+      }
+      
+      // Calculate first derivative (rate of change)
+      const derivatives: number[] = [];
+      for (let i = 1; i < smoothedData.length; i++) {
+        const derivative = smoothedData[i] - smoothedData[i - 1];
+        derivatives.push(derivative);
+      }
+      
+      // Find the point where the derivative changes most dramatically (second derivative)
+      let maxSecondDerivative = 0;
+      let inflectionIndex = 0;
+      
+      for (let i = 1; i < derivatives.length; i++) {
+        const secondDerivative = Math.abs(derivatives[i] - derivatives[i - 1]);
+        if (secondDerivative > maxSecondDerivative) {
+          maxSecondDerivative = secondDerivative;
+          inflectionIndex = i + smoothingWindow; // Adjust for smoothing offset
+        }
+      }
+      
+      return data[inflectionIndex]?.sessionLength || 0;
+    };
+
+    const inflectionPoint = calculateInflectionPoint(sortedData);
+    
+    // Split data based on calculated inflection point
+    const earlyData = sortedData.filter(p => p.sessionLength <= inflectionPoint);
+    const lateData = sortedData.filter(p => p.sessionLength > inflectionPoint);
     
     setStats({
       totalSessions: sortedData.length,
