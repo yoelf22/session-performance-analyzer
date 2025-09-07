@@ -1,0 +1,2244 @@
+{
+  "scrape_timestamp": "2025-08-26 19:19:54",
+  "site": "Base44 Catalog",
+  "url": "https://catalog.base44.com/apps",
+  "total_items": 160,
+  "items": [
+    {
+      "name": "TaskMaster",
+      "description": "TaskMaster is a user-friendly to-do list app that helps you manage your tasks efficiently. Create, update, prioritize, and track your tasks in a beautiful interface.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/fc59fd_logo.png",
+      "app_url": "https://catalog.base44.com/apps/task-master-fd2bfbf1",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "InstaFriends",
+      "description": "A fun and interactive platform for sharing moments, photos, and staying connected with friends and family. Post your favorite memories, like and comment on others' photos, and discover your community!",
+      "categories": [
+        "social media",
+        "communication",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/1f5542_logo.png",
+      "app_url": "https://catalog.base44.com/apps/insta-friends-1c3d5922",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Base44",
+      "description": "Base44 is an innovative platform that simplifies web application development, allowing creatives and businesses to build beautiful applications without the complexity of coding. Focus on your ideas, while Base44 handles the technical details.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "design"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/01837e_logo.png",
+      "app_url": "https://catalog.base44.com/apps/base44-9ff8a590",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "DoomDash",
+      "description": "A fast-paced 3D first-person shooter where players battle enemies to score points and survive. Navigate through a dynamic arena, collect weapons, and outmaneuver foes in this thrilling pixelated adventure!",
+      "categories": [
+        "gaming",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/56b1ae_logo.png",
+      "app_url": "https://catalog.base44.com/apps/doom-dash-35bb4f31",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Simple Todo List",
+      "description": "A user-friendly app for managing and organizing your daily tasks with ease. Add, complete, and delete tasks to stay productive.",
+      "categories": [
+        "productivity",
+        "organizational software",
+        "task management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/c89785_logo.png",
+      "app_url": "https://catalog.base44.com/apps/simple-todo-list-62ed37a0",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "DueDiligence Pro",
+      "description": "A powerful app for conducting due diligence investigations with AI-powered report generation, streamlined management, and insightful analysis tools.",
+      "categories": [
+        "business apps",
+        "analytics",
+        "legal"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/e552f2_logo.png",
+      "app_url": "https://catalog.base44.com/apps/due-diligence-pro-91f961b6",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "VideoHub",
+      "description": "VideoHub is a dynamic video sharing platform that allows users to upload, watch, and engage with videos across various categories, fostering a community of creators and viewers.",
+      "categories": [
+        "video streaming",
+        "social media",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/8b2d63_logo.png",
+      "app_url": "https://catalog.base44.com/apps/video-hub-a599f7c8",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Culinary Experience",
+      "description": "A catering and private chef service that offers personalized culinary experiences for special events, allowing customers to connect with the finest chefs and create unforgettable meals.",
+      "categories": [
+        "food",
+        "events",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/257219_logo.png",
+      "app_url": "https://catalog.base44.com/apps/culinary-experience-a599e409",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Todo Master",
+      "description": "Todo Master is a user-friendly app that helps you manage your tasks effortlessly, prioritize them according to importance, set due dates, and keep track of your progress.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/e3904d_logo.png",
+      "app_url": "https://catalog.base44.com/apps/todo-master-1e157228",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Receipt Buddy",
+      "description": "A user-friendly app that allows you to scan, upload, and organize receipts, easily extracting valuable data for expense tracking and management.",
+      "categories": [
+        "productivity",
+        "finance",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/1e995b_logo.png",
+      "app_url": "https://catalog.base44.com/apps/receipt-buddy-ccc8bd8a",
+      "creator": "Anonymous",
+      "created_date": "7 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "SearchSmart",
+      "description": "SearchSmart is your AI-powered research assistant, helping you find answers quickly and efficiently by leveraging real-time web searches. Ask any question, and receive insightful responses along with relevant sources to support your inquiries.",
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/725ae7_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/search-smart-32ef1622",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Markdown Buddy",
+      "description": "A user-friendly Markdown to HTML converter that allows you to create, edit, and preview your Markdown documents in real-time. Easily export your formatted HTML or Markdown files with just a click!",
+      "categories": [
+        "productivity",
+        "education",
+        "blogging"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/35f908_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/markdown-buddy-899e0ddb",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Tattoo Design Studio",
+      "description": "An intuitive app that allows users to create custom tattoo designs by selecting styles and providing descriptions, generating stunning tattoo images based on their input.",
+      "categories": [
+        "design",
+        "entertainment",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9da478_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/tattoo-design-studio-df720b05",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Platform Adventure",
+      "description": "A fun and engaging platformer game where players navigate through various platforms, collect coins, and avoid falling while trying to achieve high scores and stay alive.",
+      "categories": [
+        "gaming",
+        "entertainment",
+        "casual games"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/70edcb_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/platform-adventure-df720b01",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Monster Quest",
+      "description": "A fun monster-catching RPG where players explore fields, engage in turn-based battles, and level up their unique monsters. Choose your starter, train your team, and challenge wild monsters in an expansive world!",
+      "categories": [
+        "gaming",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/5aa116_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/monster-quest-df720a7f",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "חשבונית",
+      "description": "אפליקציה לניהול חשבוניות עבור הארגון שלך. ניהול קל, חכם ויעיל של חשבוניות עם אפשרויות ניתוח ודיווח.",
+      "categories": [
+        "productivity",
+        "finance",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ed711e_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/חשבונית-e0fb7258",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "InvoiceMaster",
+      "description": "A powerful app to manage, track, and organize all your business invoices effortlessly. Upload, preview, and categorize invoices while gaining valuable insights into your expenses.",
+      "categories": [
+        "finance",
+        "business apps",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/dcec39_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/invoice-master-491d0c51",
+      "creator": "Anonymous",
+      "created_date": "8 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "InvoiceEase",
+      "description": "A user-friendly tool for managing and tracking your business invoices, making it easier to stay organized and on top of your expenses.",
+      "categories": [
+        "finance",
+        "organizational software",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/f4dfe2_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/invoice-ease-fc924920",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "Invoice Manager",
+      "description": "A powerful app to manage and track your business invoices, enabling seamless uploads, data extraction, and analysis of expenses.",
+      "categories": [
+        "finance",
+        "business apps",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0cd205_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/invoice-manager-82842d8f",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "PhD Applications Manager",
+      "description": "Efficiently manage and review doctoral program applications by extracting key information from PDF files and organizing them for easy access and evaluation.",
+      "categories": [
+        "productivity",
+        "organizational software",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/520bcb_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/ph-d-applications-manager-82842d8a",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 1
+    },
+    {
+      "name": "PhotoFlow CRM",
+      "description": "A comprehensive CRM for photographers to manage client galleries, bookings, and business expansion through referral tracking. Features include photoshoot scheduling, file delivery, pricing packages, and reminders for seamless client interactions.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "customer relationship management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6bbac9_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/photo-flow-crm-b18ebb6b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Invoice Extractor Pro",
+      "description": "A user-friendly app to easily upload your invoices, automatically extract data, and export it to Excel for seamless financial management.",
+      "categories": [
+        "productivity",
+        "finance",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/563ece_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/invoice-extractor-pro-72053489",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Color Harmony Generator",
+      "description": "A web app that helps designers create harmonious color palettes for their projects, offering various harmony types and export options.",
+      "categories": [
+        "design",
+        "productivity",
+        "collaboration"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/255fc6_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/color-harmony-generator-ef11946a",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Invoice Insight",
+      "description": "An easy-to-use app that allows users to upload invoices and automatically extract essential information, generating downloadable CSV files for seamless record-keeping and financial management.",
+      "categories": [
+        "productivity",
+        "finance",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2efce1_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/invoice-insight-97d2ef55",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "MemeMaster",
+      "description": "MemeMaster is a fun and creative meme generator that allows users to create engaging and hilarious memes with AI-generated captions and customizable text effects. Upload images or generate them on the spot, personalize your captions, and share your creations with friends!",
+      "categories": [
+        "entertainment",
+        "social media",
+        "design"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/290df6_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/meme-master-97d2ef3b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "DoomRun",
+      "description": "A fast-paced 3D first-person shooter game inspired by classic retro shooters. Immerse yourself in dynamic environments and challenge your reflexes as you battle through levels filled with obstacles and adversaries.",
+      "categories": [
+        "gaming"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/85d47d_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/doom-run-97d2eef1",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Receipts Organizer",
+      "description": "An intuitive app that allows users to easily upload receipts, automatically extract their data, and export it for organization and analysis. Perfect for tracking expenses with categories, notes, and convenient file management.",
+      "categories": [
+        "productivity",
+        "finance",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/306568_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/receipts-organizer-9a07b028",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Insta-Clone",
+      "description": "InstaClone is a social media app that lets you share moments through photos, connect with friends, and explore creative ideas by following your favorite accounts. Engage with the community by liking and commenting on posts while building your own unique profile.",
+      "categories": [
+        "social media",
+        "entertainment",
+        "photo editing"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/e93d4c_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/insta-clone-501d529a",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Sudoku Master",
+      "description": "A fun and challenging Sudoku game that allows players to solve puzzles of varying difficulty levels. Track your time, make notes, and test your skills against beautifully designed grids. Perfect for both beginners and seasoned Sudoku enthusiasts!",
+      "categories": [
+        "gaming",
+        "education",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/299637_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/sudoku-master-5748214d",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Sudoku Solver",
+      "description": "A fun and engaging Sudoku game that challenges your logic and problem-solving skills. Play at various difficulty levels while tracking your progress and timing. Perfect for sharpening your mind and enjoying a classic pastime!",
+      "categories": [
+        "gaming",
+        "education",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/986ee2_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/sudoku-solver-0b27e07d",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Pokemon Gold Adventure",
+      "description": "Embark on an exciting adventure in Pokemon Gold Adventure! Capture, train, and battle your favorite Pokemon in a journey filled with wild encounters, leveling up, and building your unique team. Explore and become a master Pokemon Trainer!",
+      "categories": [
+        "gaming",
+        "entertainment",
+        "adventure"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/f52bd0_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/pokemon-gold-adventure-0b27e05c",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "My Digital Wardrobe",
+      "description": "An intuitive app that helps you organize, manage, and showcase your clothing collection. Easily add, filter, and favorite your clothing items and outfits to create a stylish and personalized digital wardrobe.",
+      "categories": [
+        "organizational software",
+        "consumer apps",
+        "fashion"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9e8d33_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/my-digital-wardrobe-a1b1ebcd",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Fridge to Fork",
+      "description": "An app that helps you turn the ingredients in your fridge into delicious recipes. Simply add what you have, and get inspired with creative meal ideas!",
+      "categories": [
+        "consumer apps",
+        "productivity",
+        "health"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/f6110f_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/fridge-to-fork-75ae9218",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "PokeWorld Adventure",
+      "description": "Embark on an exciting journey in PokeWorld Adventure! Capture, train, and battle a variety of Pokémon as you explore vast landscapes and challenge other trainers. Will you become the ultimate Pokémon master?",
+      "categories": [
+        "gaming",
+        "entertainment",
+        "adventure"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/cc0df9_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/poke-world-adventure-e2a541cc",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Monster Battle Arena",
+      "description": "A game where you can choose, train, and battle unique monsters. Level up your characters, strategize in battles, and become the ultimate monster trainer!",
+      "categories": [
+        "gaming",
+        "entertainment",
+        "sports"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/870027_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/monster-battle-arena-e2a541b6",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Dark Tasks",
+      "description": "A sleek todo list app designed to help you manage your tasks efficiently with a modern dark theme.",
+      "categories": [
+        "productivity",
+        "task management",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/4640dd_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/dark-tasks-c86a0715",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "CSS Editor Pro",
+      "description": "A web app that allows users to edit and manage their CSS files with ease, featuring a live preview and intuitive interface.",
+      "categories": [
+        "productivity",
+        "developer tools",
+        "design"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/bd4fb5_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/css-editor-pro-8c230ef0",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "API Explorer",
+      "description": "API Explorer is a powerful tool for developers to easily test and manage API endpoints. Create, save, and run customizable HTTP requests, view detailed responses, and streamline your API testing workflow.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/a2b4c2_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/api-explorer-9a2eebcf",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "Sales Call Analyzer",
+      "description": "A powerful tool for analyzing cold call recordings. Automatically transcribe calls and assess sales rep performance based on key metrics like opener, hook, and pitch. Customize analyses and export results easily.",
+      "categories": [
+        "business apps",
+        "customer relationship management",
+        "analytics"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/838905_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/sales-call-analyzer-9a2eebc3",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 2
+    },
+    {
+      "name": "LexisCRM",
+      "description": "A comprehensive CRM solution tailored for law firms to manage cases, track billable hours, store legal documents, and streamline legal workflows.",
+      "categories": [
+        "productivity",
+        "legal",
+        "customer relationship management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/75cbb8_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/lexis-crm-74eca169",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "Taskify",
+      "description": "Taskify is a simple and intuitive task management app that allows you to create boards, organize tasks, and seamlessly track your progress.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0759f5_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/taskify-74eca14e",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "TaskFlow",
+      "description": "A task management app that helps you organize your projects by creating boards and managing tasks with ease.",
+      "categories": [
+        "productivity",
+        "project management",
+        "task management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9656ce_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-flow-74eca148",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "FriendSpace",
+      "description": "A social networking app to connect with friends, share posts, photos, and stay updated on each other's lives.",
+      "categories": [
+        "social media",
+        "communication",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/180d30_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/friend-space-74eca13b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "BudgetWise",
+      "description": "A user-friendly app that helps you create and manage personal or household budgets with customizable categories, track your expenses, and visualize your financial health.",
+      "categories": [
+        "productivity",
+        "finance",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/4421f8_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/budget-wise-a96d5cc7",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "SnakeDash",
+      "description": "A fun and addictive snake game where you control the snake to eat food, grow longer, and chase high scores! Challenge yourself and compete against others in the leaderboard.",
+      "categories": [
+        "gaming",
+        "entertainment",
+        "social media"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/23a58b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/snake-dash-1002fa44",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "JobTracker",
+      "description": null,
+      "categories": [
+        "productivity",
+        "management",
+        "human resources"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/29d120_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/job-tracker-c4301939",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "הצעות מסלול לתיכון יאסא",
+      "description": "מצגת אינטראקטיבית בעברית להצגת הצעות למסלולי לימוד חדשים בתיכון יאס״א, המתמקדת בבינה מלאכותית ויזמות טכנולוגית.",
+      "categories": [
+        "education",
+        "AI",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ef6d94_footer_logo3X2.png?",
+      "app_url": "https://catalog.base44.com/apps/הצעות-מסלול-לתיכון-יאסא-d0ab49a1",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "Liverpool Quiz Challenge",
+      "description": "Test your knowledge about Liverpool FC with this engaging quiz app! Challenge yourself with questions ranging from club history to player statistics, and see how well you know the Reds. Compete against the clock and aim for the highest score!",
+      "categories": [
+        "sports",
+        "gaming",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/72dd6f_liverpool-fc.png?",
+      "app_url": "https://catalog.base44.com/apps/liverpool-quiz-challenge-b770cfa4",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 3
+    },
+    {
+      "name": "TaskManagement",
+      "description": "A task management application that allows users to create, assign, and track tasks",
+      "categories": [
+        "productivity",
+        "organizational software",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/615e3f_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-management-13dfe703",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "FitnessGoals",
+      "description": "Personal fitness goal tracking application with AI-powered consultation and milestone management.",
+      "categories": [
+        "health",
+        "consumer apps",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/815232_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/fitness-goals-13dfe656",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "HangoutPlanner",
+      "description": "An app to help friends schedule and coordinate hangouts by managing date/time voting and sending invites.",
+      "categories": [
+        "productivity",
+        "scheduling",
+        "social media"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0d154f_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/hangout-planner-13dfe64f",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "ExpenseManager",
+      "description": "An app to help friends manage and split expenses, track balances, and settle payments.",
+      "categories": [
+        "finance",
+        "productivity",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/7e41ac_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/expense-manager-13dfe64b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "CurrencyConverter",
+      "description": "A simple currency converter application that allows users to convert between different currencies using real-time exchange rates.",
+      "categories": [
+        "finance",
+        "consumer apps",
+        "travel"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/fe8e15_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/currency-converter-9b42043b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "EmployeeDocumentProcessor",
+      "description": "An application for uploading and processing employee documents (employment contracts and Form 101), extracting relevant information, and exporting to Excel.",
+      "categories": [
+        "productivity",
+        "organizational software",
+        "human resources"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/1c71a7_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/employee-document-processor-201123ab",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "FileManager",
+      "description": "A file management system that allows users to upload, organize, and share files.",
+      "categories": [
+        "productivity",
+        "cloud storage",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2e0673_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/file-manager-201121f1",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "FoodBizKnowledge",
+      "description": "מערכת ניהול ידע לעסקי מזון המאפשרת ניהול מוצרים, נהלים ותפעול",
+      "categories": [
+        "business apps",
+        "organizational software",
+        "operations"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/19d4b1_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/food-biz-knowledge-20112074",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "FriendJokes",
+      "description": "An app that generates personalized jokes about friends based on their characteristics and traits",
+      "categories": [
+        "entertainment",
+        "social media",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0db4ff_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/friend-jokes-20111f41",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "NearbyBars",
+      "description": "A web application that helps users find bars near their home address, displaying them on a map with relevant information like distance, ratings, and operating hours.",
+      "categories": [
+        "entertainment",
+        "consumer apps",
+        "travel"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/d1f694_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/nearby-bars-20111f3d",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "BlogAI Editor",
+      "description": "AI-powered blog editing software that helps writers improve their content with real-time suggestions, SEO optimization, and comprehensive analysis.",
+      "categories": [
+        "productivity",
+        "marketing",
+        "blogging"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/51471c_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/blog-ai-editor-54573ab7",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "markdown_converter",
+      "description": "A web application that converts Markdown text to HTML with live preview and export functionality.",
+      "categories": [
+        "productivity",
+        "design",
+        "content management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/330de2_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/markdown_converter-44f55adc",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "AIBlogEditor",
+      "description": "AI-powered blog post editor that allows users to create and edit blog posts using AI, generate images, and manage their blog content.",
+      "categories": [
+        "productivity",
+        "AI",
+        "blogging"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9ddda3_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/aiblog-editor-9d2d08b0",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "PortfolioManager",
+      "description": "An investment portfolio management application that helps users track their stock investments, analyze portfolio composition, and receive rebalancing recommendations.",
+      "categories": [
+        "finance",
+        "productivity",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/8b05a4_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/portfolio-manager-a62e097d",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "BlogEditor",
+      "description": "An AI-powered blog editor that allows users to create, edit, and enhance blog posts using AI assistance.",
+      "categories": [
+        "blogging",
+        "AI",
+        "content management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/23b0a4_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/blog-editor-a62e096d",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "APITestingApp",
+      "description": "An application for testing APIs using OpenAPI specifications. Users can configure API endpoints, set global headers, create test scenarios, and execute tests.",
+      "categories": [
+        "developer tools",
+        "business apps",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/781fa7_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/apitesting-app-db03b1a2",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "LLMQueryApp",
+      "description": "A simple application to query LLM models with prompts and display responses.",
+      "categories": [
+        "AI",
+        "productivity",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/a63ffb_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/llmquery-app-0b31dc49",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 4
+    },
+    {
+      "name": "WritingAssistant",
+      "description": "AI-powered writing assistant that helps improve writing with customizable suggestions for grammar, style, and clarity.",
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/8cc50a_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/writing-assistant-86f42de9",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "ColorPaletteGenerator",
+      "description": "A web application for generating and managing harmonious color palettes with multiple export options.",
+      "categories": [
+        "design",
+        "creativity",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/d89950_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/color-palette-generator-86f42de4",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "GoalTracker",
+      "description": "A goal tracking application that helps users set, manage, and visualize progress on personal and professional goals.",
+      "categories": [
+        "productivity",
+        "management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/fcdb4b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/goal-tracker-4c32247e",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TaskManager",
+      "description": "A task management application that allows users to create boards with lists and manage tasks within them.",
+      "categories": [
+        "productivity",
+        "management",
+        "task management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/c51cb6_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-manager-4c322476",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TaskBoard",
+      "description": "A task management application that allows users to create boards with task lists, and manage tasks with drag-and-drop functionality.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/1b4799_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-board-5bf4683e",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TaskBoards",
+      "description": "A task management application that allows users to organize tasks in different boards",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ad10fc_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-boards-4c322471",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "WebcamFilter",
+      "description": "A web application that displays webcam feed with black and white and grain filters applied in real-time.",
+      "categories": [
+        "video streaming",
+        "photo editing",
+        "entertainment"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/7fc824_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/webcam-filter-5bf46835",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "Machit",
+      "description": "מערכת לחיבור בין בכירים בתחום מערכות מידע וביטחון מידע, המאפשרת התייעצות, שיתוף ידע, ומציאת פתרונות מתאימים",
+      "categories": [
+        "business apps",
+        "communication",
+        "collaboration"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/db8dcd_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/machit-f3c2156b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "SQSMessageSender",
+      "description": "An application that analyzes GitHub repositories to discover SQS message patterns and allows sending custom messages to the discovered queues.",
+      "categories": [
+        "productivity",
+        "developer tools",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9b520c_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/sqsmessage-sender-f3c21524",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "AISignalStudio",
+      "description": "A studio for creating and refining AI signals that analyze company data and generate structured insights.",
+      "categories": [
+        "AI",
+        "business apps",
+        "analytics"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/a9eb83_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/aisignal-studio-e3930298",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TodoApp",
+      "description": "A todo list application to manage and track tasks with due dates and priorities",
+      "categories": [
+        "productivity",
+        "task management",
+        "organization"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/a30604_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/todo-app-0aa491c8",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TodoBoards",
+      "description": "A task management application that allows users to organize tasks in different boards, with features for task creation, completion tracking, and organization.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/cfea19_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/todo-boards-221ecf10",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "ITLeadersNetwork",
+      "description": "פלטפורמה לחיבור וייעוץ בין מנהלי מערכות מידע ובכירים בתחום אבטחת המידע והתוכנה",
+      "categories": [
+        "business apps",
+        "organizational software",
+        "communication"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/506dc2_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/itleaders-network-167a852b",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "ITManagersNetwork",
+      "description": "פלטפורמה המחברת בין מנהלי מערכות מידע ובכירים בתחום ה-IT, מאפשרת התייעצות, שיתוף מידע וניהול אירועים",
+      "categories": [
+        "business apps",
+        "communication",
+        "collaboration"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/86f22a_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/itmanagers-network-58a92e86",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "json-parser-builder",
+      "description": "A tool for data engineers to create JSON parsers by visually mapping fields and defining transformations between source and target schemas",
+      "categories": [
+        "developer tools",
+        "data visualization",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/511a3b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/json-parser-builder-3cdea9c0",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "JSONSchemaTransformer",
+      "description": "An application for transforming data between different JSON schemas using AI-generated code transformations.",
+      "categories": [
+        "developer tools",
+        "AI",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/fd29bf_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/jsonschema-transformer-7c438794",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "ParserBuilder",
+      "description": "A tool for data engineers to create JSON parsers by visually mapping fields and defining transformations between source and target schemas.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2f24d4_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/parser-builder-830a034c",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "Parser Configuration Tool",
+      "description": "A visual tool for data engineers to design and manage data transformations between different JSON schemas",
+      "categories": [
+        "developer tools",
+        "data visualization",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/157e8e_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/parser-configuration-tool-06be1709",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "ScoutActivities",
+      "description": "מערכת לניהול אישורי פעילויות בצופים",
+      "categories": [
+        "organizational software",
+        "approval systems",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/f4445c_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/scout-activities-37b9d6ac",
+      "creator": "Anonymous",
+      "created_date": "9 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "TodoList",
+      "description": "A simple todo list application for managing tasks",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/01f749_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/todo-list-ad9cd1aa",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 5
+    },
+    {
+      "name": "Tzofim Activity Manager",
+      "description": "אפליקציה לניהול פעילויות ואישורים בארגון הצופים בישראל. מאפשרת למרכזים להגיש בקשות לאישור מפעלים כגון סמינרים, טיולים ופעילויות חוץ שבטיות, עם מערכת טפסים דינאמיים וממשק ניהול לאדמינים.",
+      "categories": [
+        "organizational software",
+        "approval systems",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/cf633d_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/tzofim-activity-manager-d5b570db",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "DocCollab",
+      "description": "A collaborative document management system that allows users to create, edit, and share documents with real-time collaboration features.",
+      "categories": [
+        "productivity",
+        "collaboration",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ff443b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/doc-collab-25ef3079",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Artist Studio CRM",
+      "description": "A comprehensive CRM platform designed for visual artists to manage their artworks, exhibitions, clients, and sales.",
+      "categories": [
+        "productivity",
+        "management",
+        "customer relationship management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0f5470_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/artist-studio-crm-7bc6c892",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "PersonalBudgetPlanner",
+      "description": "A personal budget planner application that helps users track and manage their finances effectively.",
+      "categories": [
+        "finance",
+        "productivity",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0509a5_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/personal-budget-planner-11dd4783",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "JSON Viewer",
+      "description": "A web application for analyzing, formatting, and managing JSON data with features like syntax highlighting, validation, and snippet management.",
+      "categories": [
+        "productivity",
+        "developer tools",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/d505c7_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/json-viewer-ec3ade29",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Task Management App",
+      "description": "A simple task management application where users can create, manage, and track their tasks.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/362c23_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/task-management-app-f9957f91",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "GitHub SQS Message Analysis and Sender",
+      "description": "A GitHub SQS Message Analysis and Sender app that helps developers analyze their repositories for SQS message patterns and send test messages.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "analytics"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/120618_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/git-hub-sqs-message-analysis-and-sender-7d519d37",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "WittyComeback",
+      "description": "A playful app that helps users generate witty and humorous comebacks for friendly banter, allowing them to save and track their best responses.",
+      "categories": [
+        "entertainment",
+        "social media",
+        "communication"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/86bd00_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/witty-comeback-7d519d24",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "GitHub Repository Explorer",
+      "description": "An application that allows users to view and explore their GitHub repositories, view repository details, and ask questions about their repositories with AI-powered answers. The app provides an intuitive interface for managing and interacting with GitHub repositories.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "AI"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/8ae1db_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/git-hub-repository-explorer-fbb6e807",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "PersonalTaskManager",
+      "description": "A personal task management application that allows users to create, view, edit, and delete tasks. It also provides analytics through a dashboard that displays task completion progress over time.",
+      "categories": [
+        "productivity",
+        "management",
+        "task management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/324213_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/personal-task-manager-0bc44314",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "TravelItineraryBuilder",
+      "description": "A comprehensive travel itinerary builder application that allows users to create and manage detailed travel plans, including attractions, restaurants, transportation, accommodations, budget tracking, and sharing features.",
+      "categories": [
+        "travel",
+        "productivity",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/895318_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/travel-itinerary-builder-fe15096e",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Flashcard Learning App",
+      "description": "An interactive flashcard application that allows users to create, manage, and study flashcards using a spaced repetition system to enhance learning efficiency and track progress over time.",
+      "categories": [
+        "education",
+        "productivity",
+        "learning management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/78ca49_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/flashcard-learning-app-2b861459",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "טינדר לכלבים",
+      "description": "אפליקציית היכרויות לכלבים בסגנון טינדר, שמאפשרת לבעלי כלבים למצוא חברים לכלבי שלהם על ידי צפייה בפרופילים והחלקה ימינה או שמאלה. כוללת מערכת צ'אט להתאמות הדדיות וסינון לפי מיקום, גיל ותכונות כלב.",
+      "categories": [
+        "social media",
+        "entertainment",
+        "consumer apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/082135_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/טינדר-לכלבים-220a186a",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "TeamProjectManager",
+      "description": "A comprehensive project management platform designed for team collaboration and efficient task management.",
+      "categories": [
+        "project management",
+        "collaboration",
+        "task management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b3bfe3_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/team-project-manager-220a181b",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "TeamFlow",
+      "description": null,
+      "categories": [
+        "productivity",
+        "project management",
+        "collaboration"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/9ccf23_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/team-flow-220a1818",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "SimpleCRM",
+      "description": "A simple Customer Relationship Management (CRM) system that allows users to manage customers and their associated tasks, including file attachments for tasks.",
+      "categories": [
+        "productivity",
+        "customer relationship management",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/8ec578_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/simple-crm-38397a03",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Blog Manager",
+      "description": "A blog management application that helps users manage multiple blogs, create content, and receive AI-powered writing assistance.",
+      "categories": [
+        "productivity",
+        "content management",
+        "blogging"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3b640b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/blog-manager-ee65edd2",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Vulcan Integrations Generator",
+      "description": "An app that assists developers in generating new API integrations based on their existing examples. It leverages AI to combine integration patterns with online API documentation, ensuring consistency and efficiency across the codebase.",
+      "categories": [
+        "developer tools",
+        "AI",
+        "productivity"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ffaff9_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/vulcan-integrations-generator-9eff8bac",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "Israeli Nonprofits Analytics Dashboard",
+      "description": "A comprehensive dashboard providing insights and analytics into the nonprofit sector in Israel, featuring interactive charts, financial analysis, and trend tracking.",
+      "categories": [
+        "analytics",
+        "business apps",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/138015_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/israeli-nonprofits-analytics-dashboard-1177a0ff",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 6
+    },
+    {
+      "name": "BusinessDashboard",
+      "description": "A responsive and modern dashboard application showcasing various business metrics through interactive charts. Users can view monthly revenue trends, product categories distribution, top selling products, and regional sales comparisons all in a single, visually appealing interface.",
+      "categories": [
+        "business apps",
+        "analytics",
+        "data visualization"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6e8670_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/business-dashboard-1d8a1607",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "GitHub Repository Analyzer",
+      "description": "An app that allows users to input a GitHub repository URL and ask questions about its content, providing detailed answers to help users analyze the repository efficiently.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "analytics"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/81fbed_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/git-hub-repository-analyzer-a381cde0",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "ניהול פרויקט בנייה ביתי",
+      "description": "אפליקציה לניהול ומעקב אחרי פרויקט הבנייה הביתית, כולל ניהול משימות, תקציב, קבלנים ותיעוד הפעילות.",
+      "categories": [
+        "productivity",
+        "project management",
+        "management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b7f080_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/ניהול-פרויקט-בנייה-ביתי-102429c4",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "URL Text Analyzer",
+      "description": "A web application that analyzes text content from a provided URL for spelling and grammar errors, presenting the results in an organized and user-friendly manner.",
+      "categories": [
+        "productivity",
+        "education",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/7df10b_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/url-text-analyzer-46106ec9",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "Salesforce Lead Analyzer",
+      "description": "Salesforce Lead Analyzer",
+      "categories": [
+        "business apps",
+        "customer relationship management",
+        "analytics"
+      ],
+      "logo_url": "https://app.base44.com/api/files/2c807b_logo.png",
+      "app_url": "https://catalog.base44.com/apps/salesforce-lead-analyzer-442d9693",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "SalesforceAnalyticsDashboard",
+      "description": "A customizable dashboard application that analyzes Salesforce leads and opportunities data, providing insights through various widgets and visualizations. Users can track lead sources, opportunity stages, and performance metrics through a personalized dashboard interface.",
+      "categories": [
+        "business apps",
+        "analytics",
+        "customer relationship management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/8c45ef_logo.png",
+      "app_url": "https://catalog.base44.com/apps/salesforce-analytics-dashboard-0b3acf55",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "BeautifulTaskManager",
+      "description": "A modern, beautifully designed task manager web application that helps users organize and track their tasks efficiently with a clean, minimal interface and responsive design.",
+      "categories": [
+        "productivity",
+        "task management",
+        "project management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/d4eee4_logo.png",
+      "app_url": "https://catalog.base44.com/apps/beautiful-task-manager-dcdea980",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "MarkdownToHTMLConverter",
+      "description": "A web application that allows users to convert Markdown text to HTML with live preview and export options.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "education"
+      ],
+      "logo_url": "https://app.base44.com/api/files/021517_logo.png",
+      "app_url": "https://catalog.base44.com/apps/markdown-to-htmlconverter-55b647cf",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "JSON Viewer and Formatter",
+      "description": "A web-based application that allows users to easily view, format, and analyze JSON data. Users can paste or upload raw JSON, see it with syntax highlighting, explore nested structures through an interactive tree view, validate JSON syntax, and copy the formatted JSON for further use.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "business apps"
+      ],
+      "logo_url": "https://app.base44.com/api/files/b8d983_logo.png",
+      "app_url": "https://catalog.base44.com/apps/json-viewer-and-formatter-97d4d47c",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "Meal Planner and Recipe Finder",
+      "description": "A meal planner and recipe finder app that allows users to plan balanced meals, find recipes based on their dietary preferences and restrictions, and generate grocery lists.",
+      "categories": [
+        "productivity",
+        "health",
+        "consumer apps"
+      ],
+      "logo_url": "https://app.base44.com/api/files/cb7ed5_logo.png",
+      "app_url": "https://catalog.base44.com/apps/meal-planner-and-recipe-finder-32deb847",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "Online JSON Viewer",
+      "description": "A user-friendly web application that allows users to view, format, and analyze JSON data with features such as syntax highlighting, collapsible tree structure, real-time validation, and more.",
+      "categories": [
+        "developer tools",
+        "analytics",
+        "data visualization"
+      ],
+      "logo_url": "https://app.base44.com/api/files/24b5d3_logo.png",
+      "app_url": "https://catalog.base44.com/apps/online-json-viewer-864dadf8",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "ItineraryBuilder",
+      "description": "A comprehensive travel planning tool that allows users to create, manage, and share detailed travel itineraries, including activities, reservations, transportation details, and budget estimates.",
+      "categories": [
+        "travel",
+        "productivity",
+        "collaboration"
+      ],
+      "logo_url": "https://app.base44.com/api/files/354107_logo.png",
+      "app_url": "https://catalog.base44.com/apps/itinerary-builder-ce1e87bd",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "ArtistCRM",
+      "description": "A CRM application tailored for visual artists to manage their artworks, exhibitions, and clients efficiently. It allows artists to track their art inventory, plan exhibitions, and maintain detailed client profiles, all through an intuitive and visually appealing interface.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "customer relationship management"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/07cc7e_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/artist-crm-dc4fd8e3",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "UUID Generator",
+      "description": "Create a UUID generator - should generate Universally Unique Identifiers (UUIDs) for use in applications. Include options for different UUID versions, batch generation, and the ability to copy or export UUIDs in bulk.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "organizational software"
+      ],
+      "logo_url": "https://app.base44.com/api/files/9a4139_logo.png",
+      "app_url": "https://catalog.base44.com/apps/uuid-generator-bb2453ef",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "API Tester",
+      "description": "A tool to test API endpoints with customizable HTTP requests. Users can set headers, body, and query parameters, store test cases, and view response details like headers and status codes.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "business apps"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/d5cfa1_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/api-tester-a4043eb1",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "RegexTester",
+      "description": null,
+      "categories": [
+        "developer tools",
+        "productivity",
+        "education"
+      ],
+      "logo_url": "https://app.base44.com/api/files/e78386_logo.png",
+      "app_url": "https://catalog.base44.com/apps/regex-tester-a4043ea4",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "ArtistManagerApp",
+      "description": "An app for artists to manage their artworks, track sales, and maintain client relationships, including exhibition and event tracking.",
+      "categories": [
+        "productivity",
+        "management",
+        "organizational software"
+      ],
+      "logo_url": "https://app.base44.com/api/files/f9f0b7_logo.png",
+      "app_url": "https://catalog.base44.com/apps/artist-manager-app-963318bd",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "Todo Manager",
+      "description": "A simple and user-friendly todo list application that helps users manage their tasks by separating work and personal tasks, with daily email reminders for due tasks.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://app.base44.com/api/files/9ed929_logo.png",
+      "app_url": "https://catalog.base44.com/apps/todo-manager-1d76f39e",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 7
+    },
+    {
+      "name": "PetCareConnect",
+      "description": "An app that connects pet owners with local dog walkers and pet sitters, providing scheduling tools, profile reviews, secure payment options, and seamless service bookings.",
+      "categories": [
+        "consumer apps",
+        "business apps",
+        "health"
+      ],
+      "logo_url": "https://app.base44.com/api/files/2efa9a_logo.png",
+      "app_url": "https://catalog.base44.com/apps/pet-care-connect-877e2839",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Article Management App",
+      "description": "Article Management App",
+      "categories": [
+        "productivity",
+        "content management",
+        "blogging"
+      ],
+      "logo_url": "https://app.base44.com/api/files/ccdbfb_logo.png",
+      "app_url": "https://catalog.base44.com/apps/article-management-app-4b0665bc",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "SimpleToDoList",
+      "description": "A clean and intuitive to-do list application that allows users to create, view, edit, and delete tasks, categorize them into Work and Family, attach files, and sort and filter tasks based on various criteria.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/e4e3a5_logo.png",
+      "app_url": "https://catalog.base44.com/apps/simple-to-do-list-4b0665ba",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Recibo+",
+      "description": null,
+      "categories": [
+        "productivity",
+        "finance",
+        "management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/d2edbe_logo.png",
+      "app_url": "https://catalog.base44.com/apps/recibo-ff65dad1",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Tattoo Shop CRM",
+      "description": "A comprehensive CRM system designed for tattoo shops to manage client information, schedule appointments, track tattoo designs, manage artists' portfolios, and send automated reminders and follow-up messages.",
+      "categories": [
+        "business apps",
+        "customer relationship management",
+        "productivity"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/daf7de_logo.png",
+      "app_url": "https://catalog.base44.com/apps/tattoo-shop-crm-19a62ef3",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "GPU Marketplace",
+      "description": "A user-friendly marketplace for buying and selling used GPUs, featuring advanced search and notification capabilities.",
+      "categories": [
+        "e-commerce",
+        "consumer apps",
+        "gaming"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/95c675_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/gpu-marketplace-adbe8bf0",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "JSON Formatter",
+      "description": "A user-friendly web application that allows users to input JSON and displays it in a neat, human-readable format. Users can paste or type their JSON, submit it, and view the formatted result with error handling for invalid JSON inputs.",
+      "categories": [
+        "productivity",
+        "developer tools",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/06cf41_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/json-formatter-adbe8beb",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "AI Search Engine",
+      "description": "An AI-powered search engine that provides detailed, contextual responses to user queries by leveraging internet search and an advanced language model. Features include source citations, follow-up questions, and the ability to dive deeper into topics.",
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/312506_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/ai-search-engine-adbe8be2",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Todo List App",
+      "description": "A simple todo list application that allows users to manage their tasks by categorizing them as work or personal, with daily email reminders for tasks due that day.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b6faac_logo.png?",
+      "app_url": "https://catalog.base44.com/apps/todo-list-app-12432d15",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Database Chat",
+      "description": "An intuitive web application that allows users to interact with their databases through an AI-powered chat interface, enabling natural language queries and displaying results seamlessly.",
+      "categories": [
+        "productivity",
+        "AI",
+        "business apps"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/472689_logo.png",
+      "app_url": "https://catalog.base44.com/apps/database-chat-9ac7fd72",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "SimpleTodoListApp",
+      "description": "A simple and user-friendly todo list app that allows users to manage their tasks efficiently, categorized as Work or Personal, with daily email reminders for tasks due.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/7dc96a_logo.png",
+      "app_url": "https://catalog.base44.com/apps/simple-todo-list-app-02499809",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "ChatWithYourData",
+      "description": "An app that allows users to upload documents and interactively ask questions about their content through a chat-like interface, utilizing AI to provide accurate and relevant answers based on the uploaded data.",
+      "categories": [
+        "productivity",
+        "AI",
+        "business apps"
+      ],
+      "logo_url": "https://app.base44.com/api/files/16ca74_logo.png",
+      "app_url": "https://catalog.base44.com/apps/chat-with-your-data-b7328008",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "AI Powered Search Engine",
+      "description": "An AI-powered search engine that provides detailed, contextual responses to user queries by leveraging internet search and an advanced language model. Features include source citations, follow-up questions, deep dive options, and search history for an intuitive and comprehensive search experience.",
+      "categories": [
+        "AI",
+        "consumer apps",
+        "productivity"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/d3af66_logo.png",
+      "app_url": "https://catalog.base44.com/apps/ai-powered-search-engine-6105bad1",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "InsightSeek",
+      "description": null,
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://app.base44.com/api/files/6fbd32_logo.png",
+      "app_url": "https://catalog.base44.com/apps/insight-seek-b97c8d4a",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "CommunityEngage",
+      "description": "A community engagement platform that fosters collaboration and interaction among users through profiles, content sharing, community interactions, ranking systems, and personalized content recommendations.",
+      "categories": [
+        "social media",
+        "collaboration",
+        "community engagement"
+      ],
+      "logo_url": "https://app.base44.com/api/files/28039a_logo.png",
+      "app_url": "https://catalog.base44.com/apps/community-engage-b97c8d25",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "מערכת אישורים למפעלים לצופי ישראל",
+      "description": "מערכת לאישור פעילויות חוץ מבנה לצופי ישראל, כולל הגדרת סוגי פעילויות, הגדרת שאלות אישור, הגשת בקשות מעקב ואישור בקשות.",
+      "categories": [
+        "approval systems",
+        "productivity",
+        "organizational software"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/c153ca_logo.png",
+      "app_url": "https://catalog.base44.com/apps/מערכת-אישורים-למפעלים-לצופי-ישראל-cb46c613",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "מערכת אישור פעילויות",
+      "description": "מערכת לאישור פעילויות חוצות עבור הצופים הישראלים. מאפשרת הגדרת סוגי פעילויות, השאלות הנדרשות, הגשת בקשות ובדיקת סטטוס הבקשות.",
+      "categories": [
+        "productivity",
+        "approval systems",
+        "organizational software"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/297612_logo.png",
+      "app_url": "https://catalog.base44.com/apps/מערכת-אישור-פעילויות-58987433",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "Dog Registry",
+      "description": "A simple app that allows users to register dogs along with their owner information.",
+      "categories": [
+        "consumer apps",
+        "management",
+        "organization"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/f6f8e5_logo.png",
+      "app_url": "https://catalog.base44.com/apps/dog-registry-ab68971c",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "SmartSearch",
+      "description": "A user-friendly search engine powered by an advanced language model, providing detailed contextual answers, source citations, and follow-up questions.",
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/8f6280_logo.png",
+      "app_url": "https://catalog.base44.com/apps/smart-search-541d5010",
+      "creator": "Anonymous",
+      "created_date": "10 months ago",
+      "page_number": 8
+    },
+    {
+      "name": "SimpleTodoApp",
+      "description": "A user-friendly todo list application to manage personal and work tasks, with daily email reminders for tasks due that day.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organization"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/b43556_logo.png",
+      "app_url": "https://catalog.base44.com/apps/simple-todo-app-6d4dc852",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "NailAppointmentScheduler",
+      "description": "אפליקציה לניהול וקביעת תורים לעסק בבניית ציפורניים. מאפשרת ללקוחות לראות זמינות, לבחור שירותים ולתאם תור, ובעל העסק לנהל את לוח הזמנים והתורים.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "scheduling"
+      ],
+      "logo_url": "https://app.base44.com/api/files/f1c44a_logo.png",
+      "app_url": "https://catalog.base44.com/apps/nail-appointment-scheduler-1df4b6a3",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "שיווקי_עסק",
+      "description": null,
+      "categories": [
+        "business apps",
+        "marketing",
+        "customer relationship management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/f86360_logo.png",
+      "app_url": "https://catalog.base44.com/apps/שיווקי_עסק-1768e0dc",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "Receipt Manager",
+      "description": null,
+      "categories": [
+        "productivity",
+        "finance",
+        "business apps"
+      ],
+      "logo_url": "https://app.base44.com/api/files/f2fad8_logo.png",
+      "app_url": "https://catalog.base44.com/apps/receipt-manager-1768e0ca",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "TheList",
+      "description": "A web application for connecting marketing service providers with clients.",
+      "categories": [
+        "business apps",
+        "marketing",
+        "customer relationship management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/e762b0_logo.png",
+      "app_url": "https://catalog.base44.com/apps/the-list-f53ce3f3",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "ניהול הוצאות בית ספר למקעקעים",
+      "description": "אפליקציה לניהול הוצאות עסקיות עבור בית ספר למקעקעים, הכוללת העלאת חשבוניות, זיהוי אוטומטי של פרטי החשבונית, הצגת סיכום בטבלה, הזנה ידנית של הוצאות קבועות וסיכום כולל של ההוצאות.",
+      "categories": [
+        "finance",
+        "business apps",
+        "management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/d66a57_logo.png",
+      "app_url": "https://catalog.base44.com/apps/ניהול-הוצאות-בית-ספר-למקעקעים-556e40d3",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "ניהול הוצאות לבית ספר למקעקעים",
+      "description": "אפליקציה לניהול הוצאות עבור בית ספר למקעקעים, המאפשרת למשתמשים להעלות חשבוניות, לנתח אותן, להזין הוצאות ידניות ולצפות בסיכום כולל של ההוצאות.",
+      "categories": [
+        "productivity",
+        "finance",
+        "business apps"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/c53c26_logo.png",
+      "app_url": "https://catalog.base44.com/apps/ניהול-הוצאות-לבית-ספר-למקעקעים-556e40ce",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "Tattoo School Expense Manager",
+      "description": "An expense management application tailored for a tattoo school, allowing multiple users to upload invoice images, automatically extract expense details, manually enter expenses, view and filter expenses, and see a summary of all expenses.",
+      "categories": [
+        "finance",
+        "organizational software",
+        "management"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/1a58a6_logo.png",
+      "app_url": "https://catalog.base44.com/apps/tattoo-school-expense-manager-f6c8ad40",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "AI_Powered_Search",
+      "description": "An AI-powered search engine that answers user questions with detailed, contextual responses sourced from the internet.",
+      "categories": [
+        "AI",
+        "productivity",
+        "education"
+      ],
+      "logo_url": "https://app.base44.com/api/files/8fd265_logo.png",
+      "app_url": "https://catalog.base44.com/apps/ai_powered_search-ec4668c1",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "TaskManagerApp",
+      "description": "אפליקציה לניהול משימות בעברית עם הפרדה בין משימות של צבא, עבודה ומשפחה. מאפשרת למשתמשים ליצור, לערוך ולמחוק משימות, לסווג אותן לפי קטגוריות, להציג אותן ברשימה מסודרת, ולסמן משימות כהושלמו. המשתמשים יכולים להגדיר סדר עדיפויות ותאריכי יעד למשימות.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://app.base44.com/api/files/2a1b66_logo.png",
+      "app_url": "https://catalog.base44.com/apps/task-manager-app-ec4668bc",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "LLMSearchEngine",
+      "description": "A search engine application powered by a language model that answers user queries by searching the internet, providing detailed and contextual responses with source citations, follow-up questions, and the ability to explore topics in depth.",
+      "categories": [
+        "productivity",
+        "AI",
+        "education"
+      ],
+      "logo_url": "https://app.base44.com/api/files/6c4eb2_logo.png",
+      "app_url": "https://catalog.base44.com/apps/llmsearch-engine-ec4668ae",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "GitHub Notification App",
+      "description": "A user-friendly application that allows users to receive email notifications with summaries of commits from their selected GitHub repositories.",
+      "categories": [
+        "developer tools",
+        "productivity",
+        "project management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/d95ca8_logo.png",
+      "app_url": "https://catalog.base44.com/apps/git-hub-notification-app-ec466897",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "Israeli Diaspora Connect",
+      "description": "פלטפורמה חברתית לישראלים החיים בחו״ל להתחבר, לשתף חוויות ולהשתתף באירועים מקומיים ווירטואליים. העיצוב ידידותי למשתמש ואינטואיטיבי, עם ממשק מודרני ונקי וצבעי כחול ולבן המשלבים אלמנטים מדגל ישראל.",
+      "categories": [
+        "social media",
+        "communication",
+        "virtual events"
+      ],
+      "logo_url": "https://app.base44.com/api/files/e46178_logo.png",
+      "app_url": "https://catalog.base44.com/apps/israeli-diaspora-connect-ec466877",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "AI Blog Manager",
+      "description": "An intuitive application that allows users to generate high-quality blog posts using AI, edit them, and automatically convert each blog into four engaging LinkedIn posts.",
+      "categories": [
+        "blogging",
+        "productivity",
+        "marketing"
+      ],
+      "logo_url": "https://app.base44.com/api/files/db6d8861525942eb96631a1d7429c09flogo.png",
+      "app_url": "https://catalog.base44.com/apps/ai-blog-manager-63df7ebe",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "Tattoo Shop Lead Manager",
+      "description": "A user-friendly lead management application for small tattoo shops to manage customer information, tattoo requests, and appointment scheduling.",
+      "categories": [
+        "business apps",
+        "customer relationship management",
+        "productivity"
+      ],
+      "logo_url": "https://app.base44.com/api/files/a41a1512a903422b9a0a0440ee1b0870logo.png",
+      "app_url": "https://catalog.base44.com/apps/tattoo-shop-lead-manager-fd76d0f6",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "ניהול לידים",
+      "description": "אפליקציה לניהול לידים בעברית המאפשרת ניהול מידע מפורט על לידים, סיווג ותיוג, מעקב היסטוריית תקשורת, ייצוא נתונים, שליחת אימיילים, תמיכה במספר משתמשים עם הרשאות שונות, דשבורד מסכם, וחיפוש וסינון מתקדם.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "customer relationship management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/8fb695a1d08342b28b79ffba93d14295logo.png",
+      "app_url": "https://catalog.base44.com/apps/ניהול-לידים-fd76d0ee",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "HebrewLeadManager",
+      "description": "A Hebrew lead management system that allows users to manage, prioritize, and track leads efficiently with features including comprehensive lead information management, categorization, status tracking, note and call log additions, and detailed reporting.",
+      "categories": [
+        "productivity",
+        "business apps",
+        "customer relationship management"
+      ],
+      "logo_url": "https://app.base44.com/api/files/b2c4055426354bd3ac559feae734afa2logo.png",
+      "app_url": "https://catalog.base44.com/apps/hebrew-lead-manager-fd76d0e6",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "TodoList Manager",
+      "description": "An intuitive web application to manage personal and work tasks efficiently. Users can create, edit, delete, and categorize tasks, set due dates, mark tasks as complete, and filter tasks based on category and status. The app provides daily email reminders for tasks due on the current day.",
+      "categories": [
+        "productivity",
+        "task management",
+        "organizational software"
+      ],
+      "logo_url": "https://app.base44.com/api/files/7c50d69f45294c65bf2795a856489d4dlogo.png",
+      "app_url": "https://catalog.base44.com/apps/todo-list-manager-fd76d0dd",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    },
+    {
+      "name": "אפליקציה לאישור טיולים של צופים",
+      "description": "אפליקציה פשוטה בעברית לאישור טיולים של צופים הכוללת שני תפקידי משתמש: מנהיג שבט ומנהיג הנהגה. מנהיגי שבטים יוכלו לשלוח בקשות לטיולים, ומנהיגי הנהגה יוכלו לאשר או לדחות בקשות אלו.",
+      "categories": [
+        "organizational software",
+        "approval systems",
+        "management"
+      ],
+      "logo_url": "https://127.0.0.1:8000/api/files/8e37da2e8a264e39a7d6980dde4e301elogo.png",
+      "app_url": "https://catalog.base44.com/apps/אפליקציה-לאישור-טיולים-של-צופים-7b6fd18b",
+      "creator": "Anonymous",
+      "created_date": null,
+      "page_number": 9
+    }
+  ]
+}

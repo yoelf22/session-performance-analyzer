@@ -1,0 +1,198 @@
+2025-08-26 19:18:41,336 - weekly_scraper - INFO - Starting weekly scraping run...
+2025-08-26 19:18:41,336 - weekly_scraper - INFO - Starting Lovable Launched scraper...
+2025-08-26 19:18:54,288 - weekly_scraper - INFO - Lovable Launched: Found 107 total items
+2025-08-26 19:18:54,289 - weekly_scraper - INFO - Lovable Launched: 107 new items since last run
+2025-08-26 19:18:54,295 - weekly_scraper - INFO - Starting Base44 Catalog scraper...
+2025-08-26 19:19:54,553 - weekly_scraper - INFO - Base44 Catalog: Found 160 total items
+2025-08-26 19:19:54,555 - weekly_scraper - INFO - Base44 Catalog: 160 new items since last run
+2025-08-26 19:19:54,563 - weekly_scraper - INFO - Starting Replit Gallery scraper...
+2025-08-26 19:20:08,782 - weekly_scraper - INFO - Replit Gallery: Found 19 total items
+2025-08-26 19:20:08,783 - weekly_scraper - INFO - Replit Gallery: 19 new items since last run
+2025-08-26 19:20:08,788 - weekly_scraper - INFO - Starting Bolt.new Gallery scraper...
+2025-09-02 10:11:58,090 - weekly_scraper - INFO - Starting weekly scraping run...
+2025-09-02 10:11:58,091 - weekly_scraper - INFO - Starting Lovable Launched scraper...
+2025-09-02 10:11:59,300 - weekly_scraper - ERROR - Error scraping Lovable Launched: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2025-09-02 10:11:59,301 - weekly_scraper - ERROR - Traceback (most recent call last):
+  File "/Users/yoel/Desktop/anappaday_scrape/weekly_scraper.py", line 79, in run_single_scraper
+    await scraper.scrape_all_apps()
+  File "/Users/yoel/Desktop/anappaday_scrape/lovable_scraper_final.py", line 25, in scrape_all_apps
+    browser = await p.chromium.launch(headless=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 14457, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+
+2025-09-02 10:11:59,382 - weekly_scraper - INFO - Starting Base44 Catalog scraper...
+2025-09-02 10:11:59,553 - weekly_scraper - ERROR - Error scraping Base44 Catalog: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2025-09-02 10:11:59,554 - weekly_scraper - ERROR - Traceback (most recent call last):
+  File "/Users/yoel/Desktop/anappaday_scrape/weekly_scraper.py", line 79, in run_single_scraper
+    await scraper.scrape_all_apps()
+  File "/Users/yoel/Desktop/anappaday_scrape/base44_scraper.py", line 23, in scrape_all_apps
+    browser = await p.chromium.launch(headless=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 14457, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+
+2025-09-02 10:11:59,632 - weekly_scraper - INFO - Starting Replit Gallery scraper...
+2025-09-02 10:11:59,808 - weekly_scraper - ERROR - Error scraping Replit Gallery: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2025-09-02 10:11:59,809 - weekly_scraper - ERROR - Traceback (most recent call last):
+  File "/Users/yoel/Desktop/anappaday_scrape/weekly_scraper.py", line 82, in run_single_scraper
+    await scraper.scrape_all_projects()
+  File "/Users/yoel/Desktop/anappaday_scrape/replit_scraper.py", line 23, in scrape_all_projects
+    browser = await p.chromium.launch(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 14457, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+
+2025-09-02 10:11:59,882 - weekly_scraper - INFO - Starting Bolt.new Gallery scraper...
+2025-09-02 10:12:00,056 - weekly_scraper - ERROR - Error scraping Bolt.new Gallery: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2025-09-02 10:12:00,057 - weekly_scraper - ERROR - Traceback (most recent call last):
+  File "/Users/yoel/Desktop/anappaday_scrape/weekly_scraper.py", line 82, in run_single_scraper
+    await scraper.scrape_all_projects()
+  File "/Users/yoel/Desktop/anappaday_scrape/bolt_scraper.py", line 23, in scrape_all_projects
+    browser = await p.chromium.launch(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 14457, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/yoel/Desktop/anappaday_scrape/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at /Users/yoel/Library/Caches/ms-playwright/chromium_headless_shell-1181/chrome-mac/headless_shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+
+2025-09-02 10:12:00,133 - weekly_scraper - INFO - Weekly scraping completed in 2.0s. Total new items: 0
+2025-09-02 10:12:51,156 - weekly_scraper - INFO - Starting weekly scraping run...
+2025-09-02 10:12:51,156 - weekly_scraper - INFO - Starting Lovable Launched scraper...
+2025-09-02 10:13:05,157 - weekly_scraper - INFO - Lovable Launched: Found 108 total items
+2025-09-02 10:13:05,159 - weekly_scraper - INFO - Lovable Launched: 0 new items since last run
+2025-09-02 10:13:05,165 - weekly_scraper - INFO - Starting Base44 Catalog scraper...
+2025-09-02 10:13:15,868 - weekly_scraper - INFO - Base44 Catalog: Found 1 total items
+2025-09-02 10:13:15,869 - weekly_scraper - INFO - Base44 Catalog: 1 new items since last run
+2025-09-02 10:13:15,873 - weekly_scraper - INFO - Starting Replit Gallery scraper...
+2025-09-02 10:13:28,988 - weekly_scraper - INFO - Replit Gallery: Found 19 total items
+2025-09-02 10:13:28,988 - weekly_scraper - INFO - Replit Gallery: 19 new items since last run
+2025-09-02 10:13:28,992 - weekly_scraper - INFO - Starting Bolt.new Gallery scraper...

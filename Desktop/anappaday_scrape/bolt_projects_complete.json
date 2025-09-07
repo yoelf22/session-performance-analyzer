@@ -1,0 +1,1773 @@
+{
+  "scrape_timestamp": "2025-08-26 10:49:38",
+  "source_website": "https://bolt.new/gallery/all",
+  "total_projects_found": 252,
+  "description": "Complete extraction from Bolt.new Gallery with all loaded projects",
+  "extraction_method": "Load more pagination + article element parsing",
+  "projects": [
+    {
+      "title": "MyWorkoutDB",
+      "author": null,
+      "url": "https://myworkoutdb.com",
+      "image_url": "https://api.typeform.com/responses/files/24b20ddd94248352911912263275624e64aaae8a3bd0a16278d99f5390306307/myworkoutdbthumbnail.png",
+      "likes": 416
+    },
+    {
+      "title": "unrav.io: Make complex simple again",
+      "author": "Sacha",
+      "url": "https://unrav.io",
+      "image_url": "https://api.typeform.com/responses/files/90fe3985e2b5fcc44d007a99028c2bccf0731fac4c0bd48bdfa0f6e2bbdc0de4/Screenshot_2025_06_28_at_4.53.53_PM.png",
+      "likes": 198
+    },
+    {
+      "title": "AI Prompt Galaxy: 500,000+ Prompts",
+      "author": "Akash Banerjee - SKY",
+      "url": "https://aipromptgalaxy.com/",
+      "image_url": "https://api.typeform.com/responses/files/de06cfff77d52ad453423feef4d617080dc48f955de292377bf4d0c8f8eddb55/Screenshot_2025_07_17_142238.png",
+      "likes": 184
+    },
+    {
+      "title": "Ask in Bio",
+      "author": "Paulius & Gabe",
+      "url": "https://askinb.io/",
+      "image_url": "https://api.typeform.com/responses/files/dec8ca5ef8d789a9e8a76a7f3f4e2f02a7dec76e3fe27e4e4c86d3979c1c957d/Ask_In_Bio.png",
+      "likes": 168
+    },
+    {
+      "title": "Melodia",
+      "author": "Petit Sebastien",
+      "url": "https://learn.amah-llc.com/",
+      "image_url": "https://api.typeform.com/responses/files/bd1166d793481d1b90de5b969996e221c4723b6b8ed45d869365c4a722ae3f3e/Screenshot_2025_07_04_022423.png",
+      "likes": 158
+    },
+    {
+      "title": "In Honor Of",
+      "author": null,
+      "url": "https://inhonorof.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4ce5f60cbf388789e0c666fda1b78fe6b1f7506b4c44aece404e340335468aec/In_Honor_Of.png",
+      "likes": 143
+    },
+    {
+      "title": "Nora AI",
+      "author": "Anioke Sebastian",
+      "url": "https://noratutor.xyz",
+      "image_url": "https://api.typeform.com/responses/files/076a9fe3e9c08b30f34eea5938f277445c2666902ef67d55fe22d5c311548bc7/hero.jpeg",
+      "likes": 126
+    },
+    {
+      "title": "Visual Study",
+      "author": null,
+      "url": "https://visualstudy.site",
+      "image_url": "https://api.typeform.com/responses/files/1c3d7df48170c86eac05433637208e3a895e23ec976217c0d18d6c298b813850/Screenshot_2025_07_05_at_23.01.54.png",
+      "likes": 100
+    },
+    {
+      "title": "The Mindloom",
+      "author": "Pushpendra Singh",
+      "url": "https://themindloom.app",
+      "image_url": "https://api.typeform.com/responses/files/34bb47b88db6c6172cbab9c18ea2007796b9a6b5ab635afac28240bda30619ea/og_image.png",
+      "likes": 98
+    },
+    {
+      "title": "ProsePilot",
+      "author": null,
+      "url": "https://prosepilot.app/",
+      "image_url": "https://api.typeform.com/responses/files/93f8ad897001bbf81da710f5c6e8268ba07c66652938e4f7c976f9af40c54606/Screenshot_2025_07_02_at_2.23.41_PM.png",
+      "likes": 96
+    },
+    {
+      "title": "WriteAway - AI Document Editor",
+      "author": "Nathan Marquez",
+      "url": "https://www.writeaway.fun/",
+      "image_url": "https://api.typeform.com/responses/files/c800ac547a09fd50b4ae35b1078f338fc5fb5e5b202408667eab5b026f88112d/Screenshot_2025_06_30_at_12.54.03_PM.png",
+      "likes": 91
+    },
+    {
+      "title": "ParkLens - Explore & Support US National Parks through Photography",
+      "author": null,
+      "url": "https://parklens.org/",
+      "image_url": "https://api.typeform.com/responses/files/e5fff1bd2073ae91bc4c20fbf06f46fa367baeaeac2750ff2ca0f530fa9888cc/parklens_thumbnail.png",
+      "likes": 80
+    },
+    {
+      "title": "Tripp'it - A fun travelling web app",
+      "author": null,
+      "url": "https://trippit.me/",
+      "image_url": "https://api.typeform.com/responses/files/b233ffea76a31285bc48362a04e9bb5452ad8bb315440aeea8b68b8a8cc48504/FireShot_Capture_002___Trippit____trippit.me_.png",
+      "likes": 73
+    },
+    {
+      "title": "Meow Piano",
+      "author": "Eve",
+      "url": "https://meow-piano.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/0063ebb10839a2d81fd68e321bd23209e65060c9b7d5eeb991577abf014b8c55/meow_piano.png",
+      "likes": 73
+    },
+    {
+      "title": "Navistride",
+      "author": null,
+      "url": "https://navistride.online/",
+      "image_url": "https://api.typeform.com/responses/files/ea96c7e381f55d62c758a90e20491c26e0a0a60b918274aadf03fe9be9c522fe/navistride_thumbnail.png",
+      "likes": 63
+    },
+    {
+      "title": "Colrnx",
+      "author": "Colrnx",
+      "url": null,
+      "image_url": "https://api.typeform.com/responses/files/08315b0028c0e08074c785d69631cf38ca053c0011bc84f094a79c20892c938a/Screenshot_2025_06_30_221813.png",
+      "likes": 57
+    },
+    {
+      "title": "FriendCards",
+      "author": null,
+      "url": "http://myfriendcards.com",
+      "image_url": "https://api.typeform.com/responses/files/4920e7d8491eee2b2b7719b4392a9746851af58ba8fcb6348095eae62aacede3/FriendCards_Landing_page.png",
+      "likes": 57
+    },
+    {
+      "title": "Nixly",
+      "author": "Jakub",
+      "url": "https://nixly.app/",
+      "image_url": "https://api.typeform.com/responses/files/9ef66df809511cde7c4077faeb48e2bee8af09378c1cc4b88b23c208ccc3db1b/Screenshot_2025_07_01_at_22.18.45.png",
+      "likes": 57
+    },
+    {
+      "title": "Better Me",
+      "author": "Ashen Gunaratne",
+      "url": "https://betterme.site/",
+      "image_url": "https://api.typeform.com/responses/files/eebc497c699dbf2c0a12eefe8f79aa3abca425f9225d60cd5e4886a0bacd26dc/WhatsApp_Image_2025_06_30_at_22.58.02_21865cfa.jpg",
+      "likes": 52
+    },
+    {
+      "title": "The Waiting Room",
+      "author": null,
+      "url": "https://stuckhereforever.online",
+      "image_url": "https://api.typeform.com/responses/files/31419562b8e3800d7ed3c878f3b1e7c4b2208a39fae3e2ad9f2fc71ccbd145ba/Screenshot_2025_07_02_at_14.09.19.png",
+      "likes": 48
+    },
+    {
+      "title": "Latent Genius - Ideas & Action with AI",
+      "author": null,
+      "url": "https://latentgenius.com/",
+      "image_url": "https://api.typeform.com/responses/files/8286668e493873ef818bcedcbe57b45eba992924182b6613142a23ffdad2a49e/latent_genius.png",
+      "likes": 47
+    },
+    {
+      "title": "RiseClub-Transform Negative Comments Into Daily Growth Challenges.",
+      "author": null,
+      "url": "https://riseclub.site/",
+      "image_url": "https://api.typeform.com/responses/files/e446ec736cfc7c637585b7235ae0fd1b3b3e28916159f390c2a78c87b29640c0/Screenshot_2025_06_28_at_00.23.02.png",
+      "likes": 46
+    },
+    {
+      "title": "VetPaw: AI Dog Mentor & Health Companion",
+      "author": "Naveed Ahmed",
+      "url": "https://vetpaw.online",
+      "image_url": "https://api.typeform.com/responses/files/6d932e50f1aa38bf50a6eb865b6c97807649b9790e38b23582de193d7a2f63fe/gallery.jpg",
+      "likes": 43
+    },
+    {
+      "title": "Synclinic",
+      "author": "Petit Sebastien",
+      "url": "https://synclinic.online/",
+      "image_url": "https://api.typeform.com/responses/files/56828307438658e3ac6b8d2536ea1bd6494e09fd4d1e7962417708d411d943e4/Screenshot_2025_07_01_161020.png",
+      "likes": 42
+    },
+    {
+      "title": "AI Job Search Agent",
+      "author": null,
+      "url": "https://aijobsearchagent.online/",
+      "image_url": "https://api.typeform.com/responses/files/4560cd77e8a7fe05db9e73bd5d4ed35479c63803d1c5d21ad15c3ec611f85914/AIJobSearchAgentImageThumbnail.png",
+      "likes": 40
+    },
+    {
+      "title": "aink - advance books writer",
+      "author": "Patryk Roguszewski",
+      "url": "https://aink.studio/",
+      "image_url": "https://api.typeform.com/responses/files/17d93fc5986d924fec71100691118a576db9857f35d563083abf0b41d2ce253b/Screenshot_2025_07_02_at_09.13.42.png",
+      "likes": 40
+    },
+    {
+      "title": "Skiva",
+      "author": null,
+      "url": "https://skiva.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/115643d92b0c562f4e50758d85608237ac111cc86a45d903bde1e05639a2758c/Screenshot_2025_06_27_225316.png",
+      "likes": 40
+    },
+    {
+      "title": "Prominence",
+      "author": null,
+      "url": "https://prominence.live",
+      "image_url": "https://api.typeform.com/responses/files/f635f7fbf194e7f5cc13dbdfe34960cfdde7816214161a8d99fcf4c7bb31705e/homepage.png",
+      "likes": 38
+    },
+    {
+      "title": "PrepNGrab",
+      "author": null,
+      "url": "https://prepngrab.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4645109025deea3c02af0b8ce3476a9d392569c9582ee95cc5f09d8021df4e5e/Screenshot_2025_06_30_162138.png",
+      "likes": 38
+    },
+    {
+      "title": "WigglyTales",
+      "author": "Stephen",
+      "url": "https://www.wigglytales.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/40eae32275129b3bca54a762e01e64d3a0eb54fd9c26b42dab22edeb1a640dae/wigglyAnother.png",
+      "likes": 37
+    },
+    {
+      "title": "Lingua Flow",
+      "author": null,
+      "url": "https://linguaflow.online",
+      "image_url": "https://api.typeform.com/responses/files/f3f36c3546a2624590b3509b841d4f1fce951bc23f056eea888d75cb9f97c0c9/Screenshot_2025_06_26_133106.png",
+      "likes": 35
+    },
+    {
+      "title": "AI-Powered Travel Curator",
+      "author": null,
+      "url": "https://www.voyador.eu/",
+      "image_url": "https://api.typeform.com/responses/files/ca4210ddbd025484274de0345edb67e196fdf921b8a4b585c3f938717bf4d29e/SCR_20250707_nvvd.png",
+      "likes": 35
+    },
+    {
+      "title": "stribe",
+      "author": null,
+      "url": "https://stribe.me",
+      "image_url": "https://api.typeform.com/responses/files/bb205f4846a3728790d31ffbd25255939c4e4d3be1f33cc2e7d48d72f6a1f24d/Screenshot_2025_07_02_at_9.12.59_PM.png",
+      "likes": 35
+    },
+    {
+      "title": "Dachly",
+      "author": "Adrien DONOT",
+      "url": "https://dachly.com",
+      "image_url": "https://api.typeform.com/responses/files/cf14b2ef186df0432dae2d45e73d3a7e90f56f91bdbbcf9960b6162bcd1e1b18/CleanShot_2025_07_02_at_09.05.22.png",
+      "likes": 34
+    },
+    {
+      "title": "Game Frame",
+      "author": "Flokzy",
+      "url": "https://game-frame.site/",
+      "image_url": "https://api.typeform.com/responses/files/6693af7ff29ee46ade8e829fca35e91cfcdbda4b3cba8a2bbd11ef7a66060b7c/og.png",
+      "likes": 34
+    },
+    {
+      "title": "Battle Prompt",
+      "author": null,
+      "url": "https://battleprompt.online/",
+      "image_url": "https://api.typeform.com/responses/files/2cc108c18f07b87e96ef8a3e3346bcee94b54b64f46e1a5d056f739c927bcc23/original.png",
+      "likes": 33
+    },
+    {
+      "title": "ThoughtPilot",
+      "author": null,
+      "url": "https://thoughtpilot.pro/",
+      "image_url": "https://api.typeform.com/responses/files/7ad93f475790cf257e872060763392976d8b6dcda271001fadbb33aeaf77fac6/thumbnail.jpg",
+      "likes": 31
+    },
+    {
+      "title": "Just Imagine",
+      "author": "Ryan & Dimi",
+      "url": "https://justimagine.online",
+      "image_url": "https://api.typeform.com/responses/files/b81ff17ede18a1d18a100e4226a0cfded756c3fab8ec304e83bdce5fd54f5c87/thumbnail2.png",
+      "likes": 31
+    },
+    {
+      "title": "Boltable",
+      "author": "Maurice",
+      "url": "https://boltable.design",
+      "image_url": "https://api.typeform.com/responses/files/c16278aeec82de62ce34c4ad31f034a5f13f24ac3af85ddcfc871e4b8fd6c256/Screenshot_2025_07_02_at_08.26.22.png",
+      "likes": 30
+    },
+    {
+      "title": "Minifolio",
+      "author": null,
+      "url": "https://minifolio-cards.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/6f5c18f637270929392dc3928bc598e31b1b2788611611b87821d156febbb4f0/IMG_20250702_WA0000.jpg",
+      "likes": 28
+    },
+    {
+      "title": "OnceUponATime Stories",
+      "author": "Adrian",
+      "url": "https://outstories.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/2985785a9af1835572fb1675221f1d99afb042b62eab8972ea80e7cb4a751ce3/Screenshot_120.png",
+      "likes": 27
+    },
+    {
+      "title": "hegrid",
+      "author": "Budi Gunawan",
+      "url": "https://hegrid.site/",
+      "image_url": "https://api.typeform.com/responses/files/6563a3101fd2a258e4865371c5b737e874b5c0b62d6e53206d18173dba24926d/og_image.jpg",
+      "likes": 27
+    },
+    {
+      "title": "sudori",
+      "author": null,
+      "url": "https://su-dori.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/2c52f8afce37e5baf5d73df93a5c42401e85ebc7c5bf9045ee9f89fb6490d3c6/Screenshot_2025_06_29_120412.png",
+      "likes": 26
+    },
+    {
+      "title": "FEEDO",
+      "author": null,
+      "url": "https://getfeedo.com/",
+      "image_url": "https://api.typeform.com/responses/files/054234f4d620d7943b580559f0c8fc567996eaa46090fbd182f0c2a4b5faf508/feedo_landing_page.png",
+      "likes": 25
+    },
+    {
+      "title": "jakub.works",
+      "author": "Jakub",
+      "url": "https://jakub.works/",
+      "image_url": "https://api.typeform.com/responses/files/67192d7dd2506279d132b288ce1b6e495ed506598c6cd85c2148c31e40d88493/Screenshot_2025_07_01_at_22.22.32.png",
+      "likes": 24
+    },
+    {
+      "title": "Lovelette",
+      "author": "Mrvibecoder",
+      "url": "https://lovelette.me",
+      "image_url": "https://api.typeform.com/responses/files/885d5cd8d4f53981d8d5ba155396c93e93847a6e2eeb620f90993738acc6a22f/loveletteme.png",
+      "likes": 24
+    },
+    {
+      "title": "Open World Map – Call for Heroes",
+      "author": null,
+      "url": "https://owmapp.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/02af75e69bfdb1dbc99ab69083b623c67d4ad2b3d6f82ed3dca0a7f7867a9eb5/Screenshot_2025_07_03_at_12.30.45_AM.png",
+      "likes": 24
+    },
+    {
+      "title": "My Paru - Your Personal AI Companion for Life",
+      "author": null,
+      "url": "https://myparu.com/",
+      "image_url": "https://api.typeform.com/responses/files/1c130f42cfc40ae5e50e7dde262cc63cd45d691c5839dcc216eeec579896a08a/2025_06_30_05_54_17.png",
+      "likes": 22
+    },
+    {
+      "title": "Amah ai Startup",
+      "author": "Petit Sebastien",
+      "url": "https://ii.amah.ai",
+      "image_url": "https://api.typeform.com/responses/files/84248533c62cbd482a19149ad0904d9aca88abdb33a771c5c5bd55d7dbdd965c/Screenshot_2025_07_10_155727.png",
+      "likes": 21
+    },
+    {
+      "title": "🌟 SoulTurtle – Guided by Light, Powered by AI 🌟",
+      "author": null,
+      "url": "https://soulturtle.site/",
+      "image_url": "https://api.typeform.com/responses/files/bf89bb21cee41ce07056ad8e557b2c52f848cbfe7e09ee60b2d7cbd894352e1d/SoulTurtle_Gallery.png",
+      "likes": 21
+    },
+    {
+      "title": "Studia",
+      "author": "Nadeem",
+      "url": "https://studiaworld.site",
+      "image_url": "https://api.typeform.com/responses/files/5c488ee4cd873fa1f57419b5fa7bae6fe59c1546802bd2a5fe329dde3da0c173/ss2.png",
+      "likes": 21
+    },
+    {
+      "title": "Bickqr",
+      "author": "omu inetimi",
+      "url": "https://bickqr.com/",
+      "image_url": "https://api.typeform.com/responses/files/e863d5f11fbda271561f6a47e153ef3d6e2ec6dd2e07c9384b965b4b74bbc1af/Screenshot_2025_07_01_at_10.13.44_PM.png",
+      "likes": 21
+    },
+    {
+      "title": "Voicy AI",
+      "author": null,
+      "url": "https://voicyai.eu/",
+      "image_url": "https://api.typeform.com/responses/files/e063e78d584f1b81d25a290d2cb604d286c524814a6aa44b7dcf22769485ad17/Capture_d’écran_2025_07_02_à_21.13.50.png",
+      "likes": 20
+    },
+    {
+      "title": "Mental Health Journal",
+      "author": null,
+      "url": "https://www.mentalhealthjournal.co.uk/",
+      "image_url": "https://api.typeform.com/responses/files/bdf8a0b903112c42f7d898d24ecd7f21c618061c95eda8da5ddc73b178eced3f/Screenshot_2025_07_07_at_16.49.22.png",
+      "likes": 20
+    },
+    {
+      "title": "Truly",
+      "author": "Thiransa",
+      "url": "https://truly.today",
+      "image_url": "https://api.typeform.com/responses/files/9c66cf0a69dc669e0c4bef2978ede853fa5100584fcc54579ff8e8b1c4e5d9bc/Image_2025_06_26_at_16.39.jpeg",
+      "likes": 18
+    },
+    {
+      "title": "videoform.online",
+      "author": null,
+      "url": "https://videoform.online/",
+      "image_url": "https://api.typeform.com/responses/files/e3f0b3d1aab6c1366672b17e5579ce18c08a5e2b562e7e188f38dfe801982480/Screenshot_from_2025_06_24_14_21_36.png",
+      "likes": 18
+    },
+    {
+      "title": "NutureAI",
+      "author": null,
+      "url": "https://nutureai.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/d6e11ab4618bd5227a13dc6b1cc260e06d19240f745d74ed5a328ab9965d5b3b/NutureAI_Gallery.png",
+      "likes": 17
+    },
+    {
+      "title": "Akshat's Modern Portfolio",
+      "author": null,
+      "url": "https://iakshatjha.vercel.app",
+      "image_url": "https://api.typeform.com/responses/files/e633cc1e9f11b901556a926794d9a3c24327d23c378bf3060861ff0ffac6a2f4/Screenshot_2025_07_02_at_8.27.36_AM.png",
+      "likes": 17
+    },
+    {
+      "title": "VibeDoc.online",
+      "author": null,
+      "url": "https://vibedoc.online",
+      "image_url": "https://api.typeform.com/responses/files/c7f872fe4ac89f11d10789e1086a839494dbb5a04b833127a6beb7cf4106a94a/landing_page.png",
+      "likes": 17
+    },
+    {
+      "title": "Sonovia",
+      "author": "Lakshya Thakur",
+      "url": "https://sonovia.netlify.app",
+      "image_url": "https://api.typeform.com/responses/files/de197cad9e35422515dc4cb81b5e50655b83bda1aeb946dbb137ac5c87427c90/Screenshot_2025_07_02_at_2.14.32_AM.png",
+      "likes": 16
+    },
+    {
+      "title": "good admin",
+      "author": null,
+      "url": "https://goodadmin.app",
+      "image_url": "https://api.typeform.com/responses/files/34a40ce8ec149ee90bdc91542b666359ac993eaabf166858de3c8a69207292c1/Screenshot_2025_07_04_at_4.31.50_PM.png",
+      "likes": 16
+    },
+    {
+      "title": "Cosmic Symphony - Immersive Audio-Visual Performance",
+      "author": null,
+      "url": "https://cosmicsymphony.live/",
+      "image_url": "https://api.typeform.com/responses/files/e705bc26e5ab89dfb26a4010ca47ba4c23d893abe8a35cb906e14b183bb9f90d/bolt_cosmicsymphony_1.png",
+      "likes": 16
+    },
+    {
+      "title": "Voice2Canvas",
+      "author": null,
+      "url": "https://voice2canvas.co.uk/",
+      "image_url": "https://api.typeform.com/responses/files/2c31bbb91a8212711867193e5248a5dfd0575137248aaf1712a643288e3c48c6/voice2canvas.png",
+      "likes": 16
+    },
+    {
+      "title": "Flowstake - Fitness Tracking",
+      "author": "Renat Razumov",
+      "url": "https://flowstake.com",
+      "image_url": "https://api.typeform.com/responses/files/98d51ede9ea66712f5e0086144fb7beba561d6e8b38a94ac82faf33cf379324f/image.png",
+      "likes": 16
+    },
+    {
+      "title": "Augmentum",
+      "author": "Shayaan",
+      "url": "https://augmentummarketing.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/1d9813560de4b05ccd8f0df0dc0c297cc036973a2c54533a1a85d180194b86c2/Screenshot_2025_07_02_225303.png",
+      "likes": 15
+    },
+    {
+      "title": "Warranty Tracker",
+      "author": null,
+      "url": "https://warrantytracker.org/",
+      "image_url": "https://api.typeform.com/responses/files/763eea1aa658867a4fbe6414e4c4cff4cc1a9a06805d77223ae2a52b301caa02/Warranty_Tracker.png",
+      "likes": 14
+    },
+    {
+      "title": "ML - Personal Portfolio & Blog",
+      "author": "Maurice",
+      "url": "https://mauricelipschitz.com",
+      "image_url": "https://api.typeform.com/responses/files/0a9959217c4272fdc627a910b7b792b60ad651d0ea7ff592e1ee9fe4995b194b/Screenshot_2025_07_03_at_09.57.41.png",
+      "likes": 14
+    },
+    {
+      "title": "Reality Ripples Online",
+      "author": null,
+      "url": "https://realityripples.online/",
+      "image_url": "https://api.typeform.com/responses/files/825903896890e05c56d76b02d2d295440dc81fb24c6934c9a6b6194b06b63e73/now.png",
+      "likes": 14
+    },
+    {
+      "title": "Vibe Test",
+      "author": "Eve",
+      "url": "https://playmix-vibe-test.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/808e61c162bfc321cfd9be3f75cdbf817b23e8c4d010721932c1f4e6799983db/vibe_test.png",
+      "likes": 14
+    },
+    {
+      "title": "LinkFlex.online",
+      "author": "Mohamed Hadji",
+      "url": "https://linkflex.online/",
+      "image_url": "https://api.typeform.com/responses/files/78a5aae9a3b464d7f1365bdaecbff25f488f419b8fbc1850d1098f26dcc8b0dc/Screenshot_2025_06_28_at_5.03.57_PM.png",
+      "likes": 14
+    },
+    {
+      "title": "Matrix Neural Engine",
+      "author": "Mike BeastCode",
+      "url": "https://matrix-neural-engine.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/d8f49c2b87463336eed881491fb0ee9908e8ec0cbf6e5099fa9f54863b72d464/Screenshot_2025_07_01_at_4.38.10_PM.png",
+      "likes": 13
+    },
+    {
+      "title": "Metric Moon",
+      "author": null,
+      "url": "https://metricmoon.space",
+      "image_url": "https://api.typeform.com/responses/files/be43fc30986d63c030949346d9fc73536692671de225c13f47227ab024df3e98/metricmoon_home.jpg",
+      "likes": 12
+    },
+    {
+      "title": "Drift Inward - Release Stress, Upgrade Sleep, Shape Reality",
+      "author": null,
+      "url": "https://driftinward.com/",
+      "image_url": "https://api.typeform.com/responses/files/0fa5f028792364cce92eaffae76658d720e5d58d77e8699948b05056b9448da9/main.png",
+      "likes": 12
+    },
+    {
+      "title": "promptby.me",
+      "author": null,
+      "url": "https://promptby.me",
+      "image_url": "https://api.typeform.com/responses/files/94ae7882738c5f909dfae91dfc0a6ff2df8568758e7999e0e3467c2e5cdee225/IMG_2077.png",
+      "likes": 12
+    },
+    {
+      "title": "Dev Petit",
+      "author": "Petit Sebastien",
+      "url": "https://dev.petiht.com/",
+      "image_url": "https://api.typeform.com/responses/files/ed310e558f2555e6a0581ea08c25b0b30bcca7c9106f352f798090cfd121eb7d/Screenshot_2025_07_02_020843.png",
+      "likes": 12
+    },
+    {
+      "title": "Shylock.ai - Its nothing personal, just payback",
+      "author": null,
+      "url": "https://shylock-ai.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4c28461be49a5111298ed67ca95f415e27299c26f9580807af34dffccb0b7d12/Screenshot_8.jpg",
+      "likes": 12
+    },
+    {
+      "title": "Viberbase",
+      "author": "Sopheareach Te",
+      "url": "https://www.viberbase.com",
+      "image_url": "https://api.typeform.com/responses/files/eda531e994901d1d8fdf5a1af422cd2621fd76f8161b9f3bd37f83633474c9b1/file_00000000b040622fa28412aa492db684.png",
+      "likes": 12
+    },
+    {
+      "title": "Veri Assess",
+      "author": null,
+      "url": "https://veriassess.org",
+      "image_url": "https://api.typeform.com/responses/files/dadfd35b8b84c50c50fc3d8200ac6ad89753756c5cb4efbddcb4db0e9f08a257/Screenshot_2025_07_04_at_1.31.25_AM.png",
+      "likes": 11
+    },
+    {
+      "title": "Me Renaissant",
+      "author": null,
+      "url": "https://me-renaissant.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/11a4af66cb4d69b68f9089d8573f736a54fc8dbf0ac98a4ece34992fe3d1c548/Intro.jpg",
+      "likes": 11
+    },
+    {
+      "title": "Chatter Cub",
+      "author": "Thamiziniyan",
+      "url": "https://chattercub.space/",
+      "image_url": "https://api.typeform.com/responses/files/63150313d71edd8b8baa59d878e90e74b4df3cda2bd44d6438081f406cb9f568/chattercub_logo.jpeg",
+      "likes": 11
+    },
+    {
+      "title": "Glossless (AI Pose Inference and 3D Rendering Tool)",
+      "author": null,
+      "url": "https://glossless.app/",
+      "image_url": "https://api.typeform.com/responses/files/a28fcbac3e4456ea64bdd33fa812ff1ddfa2a2097f87d64f8206946b7bbe06f0/glossless_screenshot.png",
+      "likes": 11
+    },
+    {
+      "title": "URHeard AI",
+      "author": null,
+      "url": "https://urheardai.com",
+      "image_url": "https://api.typeform.com/responses/files/b85b934e6270ccca3b7b6d7bf126be492c52a30b284e931951998c5d4fb55688/Screenshot_2025_06_27_at_12.35.50_AM.png",
+      "likes": 11
+    },
+    {
+      "title": "Story Hero: AI Bedtime Stories",
+      "author": "Daniel Reiling",
+      "url": "https://storyhero.site",
+      "image_url": "https://api.typeform.com/responses/files/6b6845584f3c33b55357b2accab3c64612b4633ee23a2586198103bae20613a5/story_hero_banner.png",
+      "likes": 11
+    },
+    {
+      "title": "PromptingLab",
+      "author": "The Baz",
+      "url": "https://promptinglab.site",
+      "image_url": "https://api.typeform.com/responses/files/20320af83d6ba61561da2d9e712c15459693e8a8eafd2eff2dcc85c9463f2bcf/IMG_2375.jpeg",
+      "likes": 11
+    },
+    {
+      "title": "Yoga Instructor Landing Page",
+      "author": "Rudy P. Agnel",
+      "url": "https://yoga-with-anya.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/d2750e011509c0ea89b40bad8cbc474f5c536d7a177da9dca0732dc78f667d3f/Cover_Yoga.png",
+      "likes": 10
+    },
+    {
+      "title": "SmartHair",
+      "author": "Tori Elstrom",
+      "url": "https://trysmarthair.com",
+      "image_url": "https://api.typeform.com/responses/files/582ce53e1bb4dafff6656fb82961bf1861c023b1a7fa1940da7a7e2d400fd99f/Screenshot_2025_07_08_at_11.25.59_PM.png",
+      "likes": 10
+    },
+    {
+      "title": "Frendle",
+      "author": null,
+      "url": "http://demo.frendle.space/",
+      "image_url": "https://api.typeform.com/responses/files/0325fd48ec3362fb7078e03b69f1371440fd5e01dd4d7608630a69570d6724cd/frendle.jpg",
+      "likes": 10
+    },
+    {
+      "title": "StorySphere",
+      "author": "Gary Mellerick",
+      "url": "https://story-sphere.co.uk",
+      "image_url": "https://api.typeform.com/responses/files/485c748c7c77a13e29ef7299644e705722ba9e1ab28f8d6d319dedefd6295691/Front_page.png",
+      "likes": 10
+    },
+    {
+      "title": "LlamaText",
+      "author": null,
+      "url": "https://llamatext.com",
+      "image_url": "https://api.typeform.com/responses/files/5f0b2f22ce11b785e331f0452baacb39183b855c9c68b66867a14dcb42c67ad2/Bildschirmfoto_2025_07_05_um_15.23.35.png",
+      "likes": 10
+    },
+    {
+      "title": "Magic Prompts Workflow",
+      "author": "Kelvin",
+      "url": "https://magicprompts.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/8e04b33f6374a5f988b3f53940abb36577cc6feda702df5a65ff83f952beb593/Screenshot_2025_07_02_at_22.08.22.png",
+      "likes": 10
+    },
+    {
+      "title": "UseThis - Peer-to-Peer item rentals for students",
+      "author": null,
+      "url": "http://use-this.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/e51cdc225abc066b31bb4b64e10109db74bac3fac890e0caa42e67ba355d17b4/Screenshot_19.jpg",
+      "likes": 10
+    },
+    {
+      "title": "BackFeed",
+      "author": null,
+      "url": "https://backfeed.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/6d5fc32e6dc38597e626bb02f3a994469f99bfff02a1c2a78d50641da1237c3f/BackFeed.png",
+      "likes": 10
+    },
+    {
+      "title": "Digital Campfire",
+      "author": null,
+      "url": "https://digicampfire.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/1665e2fdf391acc850b1d037af2b63fe2a8d7d9cdb9547b5fab7487d52dabad2/digiCampfire_720.png",
+      "likes": 10
+    },
+    {
+      "title": "ImageOps - Convert & Edit Images",
+      "author": null,
+      "url": "https://imageops.ovrlzy.com/",
+      "image_url": "https://api.typeform.com/responses/files/003ebd976c352339da628a54fa8ceaf8e21e5618be8e64f217162e51d9352e88/Screenshot_2025_07_05_104123.png",
+      "likes": 9
+    },
+    {
+      "title": "Prompt Elevator",
+      "author": null,
+      "url": "https://elevatemyprompt.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/1cfec38c78f628a9bee17877c3e3772c1e391652ccaef19cd9ec2513f6873df1/Screenshot_2025_07_04_at_10.13.37_AM.png",
+      "likes": 9
+    },
+    {
+      "title": "Image to Prompt AI",
+      "author": null,
+      "url": "https://image2promptai.com/",
+      "image_url": "https://api.typeform.com/responses/files/bfce2cc9fa9fbe0f49a345099bec5b67d63ed8037ddfa667200d0ba0bd8310aa/Screenshot_194.png",
+      "likes": 9
+    },
+    {
+      "title": "GHOSTVAULT",
+      "author": "Alex Sofroniev",
+      "url": "https://ghostvault.tech",
+      "image_url": "https://api.typeform.com/responses/files/a4df31f6b6f237add82151f3b75f22405d90a904123c66b1bf0d18734361a3dd/identity_protection_reimagined.png",
+      "likes": 9
+    },
+    {
+      "title": "Advisors.ai",
+      "author": null,
+      "url": "https://ai-advisors.gregschwartz.net/",
+      "image_url": "https://api.typeform.com/responses/files/5e2ea050d2f6af1ae1a75775b2715d341645154d6d0c63ecad5b4b08241f8c2b/68ceb603_8c01_41a9_957b_4b476fbb6047.png",
+      "likes": 9
+    },
+    {
+      "title": "Who Dat Dude?!",
+      "author": "Tomáš Bencko",
+      "url": "http://whodatdude.com/",
+      "image_url": "https://api.typeform.com/responses/files/014fe1939ccb59717b2b262ffb2cd18c8c46ca953c1c6b01112c1087cf8a2b93/thumbnail_1440_800.jpg",
+      "likes": 9
+    },
+    {
+      "title": "A genuine personal space for myself and others to view my work. How im developing my AI knowledge along the way.",
+      "author": null,
+      "url": "https://bennysprojects.online/",
+      "image_url": "https://api.typeform.com/responses/files/a5ba8a63ceeb41d202fc5945c067e72badbc27ed9be46379f0eeb45e649c8206/thumb.png",
+      "likes": 9
+    },
+    {
+      "title": "WackyWidgets",
+      "author": "PunishingPoison",
+      "url": "https://wacky-widgets.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4c868bbfa43d861d591355f009cd882d3eb112e770f24184f61e50c4179116ea/Screenshot_2025_07_02_235241.png",
+      "likes": 8
+    },
+    {
+      "title": "StyleAi",
+      "author": null,
+      "url": "https://styleaiapp.online",
+      "image_url": "https://api.typeform.com/responses/files/0f0a5d2a6fba5c79d9ee6d88e8bd0a97e46362fa57a141e3e7e5236867d1ce22/Screenshot_2025_07_02_at_20.12.07.png",
+      "likes": 8
+    },
+    {
+      "title": "Promptivore",
+      "author": null,
+      "url": "https://promptivore.site/",
+      "image_url": "https://api.typeform.com/responses/files/df963908903a9653fbcac95462a1b1d1f2e2aebd6d7727c637a91192ea3cfce2/Screenshot_2025_07_02_at_14.18.25.png",
+      "likes": 8
+    },
+    {
+      "title": "Tapatro",
+      "author": "Johan Melin",
+      "url": "https://tapatro.com/",
+      "image_url": "https://api.typeform.com/responses/files/34f1b214a260c52383042b07bcfa4e46ccc779d0251e901604a001befdd3aa12/tapatro.png",
+      "likes": 8
+    },
+    {
+      "title": "Selfscapes",
+      "author": null,
+      "url": "https://selfscapes.art/",
+      "image_url": "https://api.typeform.com/responses/files/fef9653fae3c4f56546753c8d41b99f18ccb6932e265ce6427e725e27898c464/Screenshot_2025_06_30_003349.png",
+      "likes": 8
+    },
+    {
+      "title": "Customer Connect CRM and Callling &Texting Platform",
+      "author": "Benjie Malinao",
+      "url": "https://customer-connect.app/landing.html",
+      "image_url": "https://api.typeform.com/responses/files/a301f4a08d0cc463fe6a862df4198b889fec0b3733bbce747a3f51df7b8031b2/Screenshot_2025_07_03_at_2.54.44_am.png",
+      "likes": 8
+    },
+    {
+      "title": "The Watcher - Stay Ahead of Any Topic",
+      "author": "Raj Savaliya",
+      "url": "https://thewatcher.online",
+      "image_url": "https://api.typeform.com/responses/files/16dc2817db9485e86950746c79dd156c9643b4b1489f08f09593f78d57f82dd4/Screenshot_2025_07_02_105854.png",
+      "likes": 8
+    },
+    {
+      "title": "WhatSupp.Me",
+      "author": null,
+      "url": "https://whatsupp.me",
+      "image_url": "https://api.typeform.com/responses/files/1add9042f554024019d83410e7e5031621b8e1950f55873b5fe9838767d5c795/Screenshot_2025_07_04_at_9.54.28_AM.png",
+      "likes": 8
+    },
+    {
+      "title": "Lawspark AI",
+      "author": null,
+      "url": "https://lawspark-ai.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/7b47a7d753a14abb343a41179900e42e486dc7b1260c01e744599e0caf288e82/Screenshot_2025_07_01_at_12.37.35_AM.png",
+      "likes": 8
+    },
+    {
+      "title": "NutriAi - Your Personal AI Diet Guide",
+      "author": "Milan",
+      "url": "https://mkex.news/",
+      "image_url": "https://api.typeform.com/responses/files/797f37df8400b6061ad52bd2180d13ba4a4ca0079128483e24004b9a53ba9d61/Nutriai_personal_AI_Diet_guide.png",
+      "likes": 8
+    },
+    {
+      "title": "Full Stack Portfolio",
+      "author": null,
+      "url": "https://coruscating-platypus-af26d7.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/c54d955281127c09bdf696568a4c7ab85499bc82e0f73834f00e712a8ef0cab1/Captura_de_pantalla_2025_06_27_112203.png",
+      "likes": 8
+    },
+    {
+      "title": "Chatterwise",
+      "author": null,
+      "url": "https://chatterwise.io/",
+      "image_url": "https://api.typeform.com/responses/files/aa66d0b09d8b4bfe99443a923bf90c8272636462407232892fe03c0e587d7345/Screenshot_2025_06_27_215742.jpg",
+      "likes": 8
+    },
+    {
+      "title": "Oserin",
+      "author": "Afolabi",
+      "url": "https://oserin.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/3df7f1c84d5054a54a1d60095b653c322ef5393f04aecde2fb1d064d6f59de2f/Screenshot_2025_06_25_at_20.00.23.png",
+      "likes": 8
+    },
+    {
+      "title": "SmartMeal AI",
+      "author": null,
+      "url": "https://smartmealai.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/08e6c81fe255e841596cb917b311f33997e5413b44347fe1f7c2f6195c03805c/SmartMeal_AI___Smart_Meal_Planning___Food_Waste_Prevention.png",
+      "likes": 8
+    },
+    {
+      "title": "MedMint",
+      "author": "Emon Ganguly",
+      "url": "https://medmint.xyz",
+      "image_url": "https://api.typeform.com/responses/files/0a3e05aa27fbabb7068905bb41cbec304669994dd536fb7671b43f0e2398ef68/Cyan_Gradient_Technology_Startup_Business_Company_Presentation__1_.png",
+      "likes": 7
+    },
+    {
+      "title": "Dex PM",
+      "author": "Yury Kosyakov",
+      "url": "https://dexpm.com/",
+      "image_url": "https://api.typeform.com/responses/files/13c59becce9cf39b60e9aa4c6e400bf1c69955c1512d204d58995bcfb80c6310/Screenshot_2025_06_28_at_19.34.12.png",
+      "likes": 7
+    },
+    {
+      "title": "Biomission",
+      "author": null,
+      "url": "https://www.creanima.com/biomission/",
+      "image_url": "https://api.typeform.com/responses/files/1357a4c4676d12eab5f909b052864e6b613821986b7b083e644b69a0133a8cfe/Screenshot_2025_07_16_at_13.21.40.png",
+      "likes": 7
+    },
+    {
+      "title": "JobSpark",
+      "author": null,
+      "url": "https://jobspark.co.za",
+      "image_url": "https://api.typeform.com/responses/files/10a05e1aa4890453d39ac2272212e78640498506580919d4f15aa1668c9c099b/JobSpark_Screenshot_Homepage.png",
+      "likes": 7
+    },
+    {
+      "title": "StyleShot - Prettify screenshots on your phone",
+      "author": "Sunday Wong",
+      "url": "https://www.styleshot.app/",
+      "image_url": "https://api.typeform.com/responses/files/851784c7b1f1369bc308147bee84a8319b7babf6ae8a7585f4d9827fa1d4d5d4/image_14.png",
+      "likes": 7
+    },
+    {
+      "title": "Git Pushups",
+      "author": "Justin Higgins",
+      "url": "https://gitpushups.com",
+      "image_url": "https://api.typeform.com/responses/files/408cc3341524cf39869c57ae6ae8766706e568b2cc1d3b6cf6eefcad916e5470/galleryPreview__2_.png",
+      "likes": 7
+    },
+    {
+      "title": "Floqon",
+      "author": null,
+      "url": "https://floqon.com",
+      "image_url": "https://api.typeform.com/responses/files/2b92d05f76c90120775c12ba3f3557040e9b280c0d3e4452c6c60377b56e7a7d/FLOQON_PIC1.png",
+      "likes": 7
+    },
+    {
+      "title": "synthframe",
+      "author": null,
+      "url": "https://synthframe.xyz",
+      "image_url": "https://api.typeform.com/responses/files/bbc6adb61e912e165e91944c7904ee1dc190d7caa0c48cb29b463db74b92170a/Screenshot_2025_06_27_at_2.16.12_PM.png",
+      "likes": 7
+    },
+    {
+      "title": "InviteBunny - Beautiful RSVP Digital Invitations",
+      "author": "Dhruval Raval (aka ENRAVALED)",
+      "url": "https://www.invitebunny.com/",
+      "image_url": "https://api.typeform.com/responses/files/63243fb8ac1d1f66c12861f9237355c9d722096ccb661392827c52bff7af02de/download.png",
+      "likes": 7
+    },
+    {
+      "title": "Bolt Forest",
+      "author": "Onyinye Enyioha",
+      "url": "http://boltforest.com/",
+      "image_url": "https://api.typeform.com/responses/files/11473acdf1989c0933f3f4bee76463049c8563f0ddb594a2a8ade9ff0f7ee97d/boltforest.png",
+      "likes": 7
+    },
+    {
+      "title": "Ante",
+      "author": null,
+      "url": "https://antewrite.com/",
+      "image_url": "https://api.typeform.com/responses/files/e4c02d70030d4483e0e68880e9f2cbe3fd3d6018b3f887bf2baec656590f20e9/community.png",
+      "likes": 7
+    },
+    {
+      "title": "Promptify",
+      "author": null,
+      "url": "https://promptify.site/",
+      "image_url": "https://api.typeform.com/responses/files/2967e882efeb0b11979599567c6289ca5efd23c65e8dfd03b41c16d04c862a34/promptify.png",
+      "likes": 7
+    },
+    {
+      "title": "A real-time intelligence platform that maps and analyzes global security threats across domains like terrorism, cybercrime, conflict, and climate.",
+      "author": null,
+      "url": "https://globalsecurity.creasmid.nl/",
+      "image_url": "https://api.typeform.com/responses/files/bf6884d03664eae279123ae8ab9f37c1068a23a88383810dc5aaba99432fe998/GlobalSecurity_creasmid_nl.png",
+      "likes": 7
+    },
+    {
+      "title": "Geo2.AI",
+      "author": "Chris Pickett",
+      "url": "https://geo2.ai",
+      "image_url": "https://api.typeform.com/responses/files/e8db449c0feaec11bfa43ec70770374813c8308de8372447cba392b68d55badd/geo2ai.png",
+      "likes": 6
+    },
+    {
+      "title": "Feeelings.Fun",
+      "author": "Rudy P. Agnel",
+      "url": "https://feeelings.fun/",
+      "image_url": "https://api.typeform.com/responses/files/49006da9bbb257a9e4a58b2d3eb06dd412160a381c2c667f79adb79b042345d3/Cover_Feeelings_Fun.png",
+      "likes": 6
+    },
+    {
+      "title": "Lukisan",
+      "author": null,
+      "url": "https://lukisan.space",
+      "image_url": "https://api.typeform.com/responses/files/d28665249295bf4937327c1d1ef3c23cc416eea30c4b361d0c2fb0f87bc0c422/lukisan.png",
+      "likes": 6
+    },
+    {
+      "title": "LifeMap",
+      "author": null,
+      "url": "https://www.life-map.me/",
+      "image_url": "https://api.typeform.com/responses/files/f25ca254edf400f465a3fecc544bf0ff2a0a708f23413e4f55712c4045137c32/LifeMap_Thumbnail.jpg",
+      "likes": 6
+    },
+    {
+      "title": "EditForge Pro",
+      "author": "BUGINGO Flexon",
+      "url": "https://editforgepro.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/246d5d155a9b8f94cd6d9a50a885bed2a58ef53112d34f6bd7644940aa895964/Capture.PNG",
+      "likes": 6
+    },
+    {
+      "title": "BRND STCK",
+      "author": "Chris Hume",
+      "url": "https://brndstck.com",
+      "image_url": "https://api.typeform.com/responses/files/da1f4aa2dbd1914c7e79fa7019c1bb000bb9fc26a3ba84276a27212c546152ad/Screenshot_2025_07_02_at_3.25.35_PM.png",
+      "likes": 6
+    },
+    {
+      "title": "Obstie",
+      "author": null,
+      "url": "https://obstie.com/",
+      "image_url": "https://api.typeform.com/responses/files/2fef3233d216c9b627c673767f3168aadb6473a2e764d347464cfb8705dd6233/Untitled_design__2_.png",
+      "likes": 6
+    },
+    {
+      "title": "VibeBridge",
+      "author": "QuyB",
+      "url": "https://vibebridge.me",
+      "image_url": "https://api.typeform.com/responses/files/e601f6caa7eceed079632efa54f022a00441f095c99dbd118aa13f35f849f452/landing.png",
+      "likes": 6
+    },
+    {
+      "title": "Visualli.ai",
+      "author": null,
+      "url": "https://visualli.netlify.app",
+      "image_url": "https://api.typeform.com/responses/files/a17902cc6b384b7dd6495050d0de0c51875cb97e66c0e5179a522a6b6fc38c9f/poster2.png",
+      "likes": 6
+    },
+    {
+      "title": "otokia",
+      "author": null,
+      "url": "https://otokia.cloud/",
+      "image_url": "https://api.typeform.com/responses/files/5f2e6aaa016eb9b33a08db157bef9a56d36676adcd69d925cc13b4bb4644fcd7/980887AD_ACD2_41BA_BE89_D55CC1D6C6E3.jpeg",
+      "likes": 6
+    },
+    {
+      "title": "Loafie - Emotional Support Bread",
+      "author": null,
+      "url": "https://loafie.app/",
+      "image_url": "https://api.typeform.com/responses/files/39e7add44073f2ed0ca2b1aafb687a2a0f6ebff6ac1f2d414409b393e1d36992/original.png",
+      "likes": 6
+    },
+    {
+      "title": "Devleap AI",
+      "author": null,
+      "url": "https://devleap.site/",
+      "image_url": "https://api.typeform.com/responses/files/1e31ba6f0f5bb5cc6db61b77e5c9828b98b9866036c99ca71e38c5dab8ccbc29/Screenshot_2025_07_01_at_00.04.22.png",
+      "likes": 6
+    },
+    {
+      "title": "Vanish - Anonymous letter-writing/ Venting site",
+      "author": null,
+      "url": "https://vanishh.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/71298d5f597d4c452bc0316358c6719cb4fbc460e4959df4c0ae6c0eede256ff/Screenshot_41.jpg",
+      "likes": 6
+    },
+    {
+      "title": "AuraHeal AI",
+      "author": "Juan Lopez",
+      "url": "https://auraheal.app/",
+      "image_url": "https://api.typeform.com/responses/files/7b8864f5682e6586693dc07819a8513adce1533f2bbd30146d9fdadcaed14009/auraheal_ai.png",
+      "likes": 6
+    },
+    {
+      "title": "NearCart",
+      "author": null,
+      "url": "https://nearcart.tech/",
+      "image_url": "https://api.typeform.com/responses/files/309e2883db32bee0ed800065199ed3c60776c11ad298528c35dbe1c732c13513/Nearcart.png",
+      "likes": 5
+    },
+    {
+      "title": "Symbione - Feel The World Emotions",
+      "author": "Sweetam Moirangthem",
+      "url": "https://symbione.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/980728a649e8c7cca6fe4a7d060aa8e278fd5b622272ecba88e033e031975096/Screenshot_2025_07_03_232746.png",
+      "likes": 5
+    },
+    {
+      "title": "ZippyFreight - Challenge - Replace Old WP site with a One-Shot No PRD no AI gen long prompt",
+      "author": null,
+      "url": "https://my.zippyfreight.io",
+      "image_url": "https://api.typeform.com/responses/files/99a89b5de7c173238be73ed7c5d0363f7fa62615223be49661e01ea8435c1b98/Screenshot_2025_06_28_061641.jpg",
+      "likes": 5
+    },
+    {
+      "title": "FounderFocus - Clarity Partner",
+      "author": null,
+      "url": "https://founderfocus-claritypartner.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4cb984f66551c321e3155da23840c1265fa981348502f1de655948fa67445624/Thumbnail_Hackathon.png",
+      "likes": 5
+    },
+    {
+      "title": "BloodLink - An AI - Powered Blood Donation Platform",
+      "author": null,
+      "url": "https://bloodlink-intelligence.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/ebe02688efe4e6a04778d06856f9fb16b65cd95e1840f7ed53ef485e691cf5dd/Screenshot_2025_06_25_175352.png",
+      "likes": 5
+    },
+    {
+      "title": "Safe Wander",
+      "author": null,
+      "url": "https://safewander.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/03e2a40714b320152c34298b7d474423c8cb263d0cfd20fff0162705f4f011a8/Screenshot_2025_07_02_at_11.00.26_AM.png",
+      "likes": 5
+    },
+    {
+      "title": "Currents - Agile Project Management for Everyone",
+      "author": null,
+      "url": "https://currents.build",
+      "image_url": "https://api.typeform.com/responses/files/c60a364c94c71d5fc6316beea79cdf6b17f4b5f5c46461940904178fa6a2484e/Bolt_Showcase.jpg",
+      "likes": 5
+    },
+    {
+      "title": "Grub",
+      "author": "Vassilis Glantzis",
+      "url": "https://trygrub.com",
+      "image_url": "https://api.typeform.com/responses/files/6e94c1e45082e9e6868954a87bc7b966533394a6975c6035218da31deb771985/Screenshot_2025_06_27_at_8.14.04_PM.png",
+      "likes": 5
+    },
+    {
+      "title": "Lucidia",
+      "author": null,
+      "url": "https://getlucidia.com/",
+      "image_url": "https://api.typeform.com/responses/files/dd269aa76d01d11158bc06d4d0acea801c969469c0eecd223bb557c398edda35/Thumbnail.png",
+      "likes": 5
+    },
+    {
+      "title": "VibeViz.ai |  Vibe images → Get coherent visual style code prompt for your app",
+      "author": null,
+      "url": "https://vibeviz.ai",
+      "image_url": "https://api.typeform.com/responses/files/92aca63c12a52e2febecb1d680f7bac5a025f125b4555c5fc0438c6db3fc1d23/original.png",
+      "likes": 5
+    },
+    {
+      "title": "Monarch's Guilt",
+      "author": null,
+      "url": "https://themonarchs.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/bbd8508bec679cceb47a16d07af6cca0816d5310cd217e8e1c66c60f4d709793/Screenshot_2025_06_30_230835.png",
+      "likes": 5
+    },
+    {
+      "title": "Kidlio",
+      "author": "Maurice",
+      "url": "https://kidlio.fun",
+      "image_url": "https://api.typeform.com/responses/files/535de06846c55dd54e2c4ae6a26fdb849262aa2e9db71a23638c4af9a65590b6/Screenshot_2025_06_30_at_23.24.42.png",
+      "likes": 5
+    },
+    {
+      "title": "Riley's Portfolio Website",
+      "author": null,
+      "url": "https://rileybaird.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/2227c171fe3141cad16874c97d2b748697fdc89b2ca0a51ed560b953a28344e0/Screenshot_2025_06_27_122718.png",
+      "likes": 5
+    },
+    {
+      "title": "Remino Verse",
+      "author": null,
+      "url": "https://reminoverse.org/",
+      "image_url": "https://api.typeform.com/responses/files/5a4945e1aa1c35ae8c9b5aa88dac7fb182599b7ea65bcf9501cc5860adf0aaf6/Screenshot_2025_07_04_at_1.26.29_AM.png",
+      "likes": 5
+    },
+    {
+      "title": "qr4all.pro | built for real use case of QR",
+      "author": null,
+      "url": "https://qr4all.pro/",
+      "image_url": "https://api.typeform.com/responses/files/3a73fb14e7069433d4c9282f7f6c1954e6fe74d069118b0c4440c5dc9f1a5d7d/qr4all.jpg",
+      "likes": 5
+    },
+    {
+      "title": "Brain Dump task manager for real people",
+      "author": null,
+      "url": "https://clariaway.com/",
+      "image_url": "https://api.typeform.com/responses/files/1ecf4c141def63c546d37597300b495bb750b588b4082554b9b0cfe845751130/clariaway.png",
+      "likes": 5
+    },
+    {
+      "title": "TimeScroll Studio",
+      "author": "Andrew Grano",
+      "url": "https://timescroll.studio/",
+      "image_url": "https://api.typeform.com/responses/files/173012225085fd2346fe5888e2e08b90a10ec61c5343e1042ceeb97067260903/Screenshot_2025_06_29_at_1.36.15_PM.png",
+      "likes": 5
+    },
+    {
+      "title": "AuthorAI",
+      "author": "goodAIclub",
+      "url": "https://authorai.tech",
+      "image_url": "https://api.typeform.com/responses/files/f004bf76bc79873d1d7952be2d7f850ede79e79fbd7cdcc8a4124f6a0ad9970e/Author_AI_Transform_Ideas_Into_Books_07_10_2025_11_56_PM.png",
+      "likes": 5
+    },
+    {
+      "title": "OnlyCrops.AI",
+      "author": "Rob",
+      "url": "https://onlycrops.ai/",
+      "image_url": "https://api.typeform.com/responses/files/352e46bd6b40c87e4b8c0fc2db9a649f832169ab4f335ddd142e84b127a5437c/Screenshot_2025_07_02_at_11.08.45.png",
+      "likes": 5
+    },
+    {
+      "title": "Chatterwise",
+      "author": null,
+      "url": "https://chatterwise.io/",
+      "image_url": "https://api.typeform.com/responses/files/3a02c005c786525ee3ca23358237e6782d2b735f48c4c7dcad6bedec1dfca7a3/Screenshot_2025_06_29_130258.jpg",
+      "likes": 5
+    },
+    {
+      "title": "Kompliment",
+      "author": "vgbhuop",
+      "url": "https://kompliment.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/81824b00dd066dea90d1428e7138edfdaa9664911a07446edb59be1e64acf864/Screenshot_From_2025_06_27_01_21_07.png",
+      "likes": 5
+    },
+    {
+      "title": "Flow Closet - Astrology Based Fashion Analysis",
+      "author": "Bravya",
+      "url": "https://www.flowcloset.com",
+      "image_url": "https://api.typeform.com/responses/files/707d5f9646161280adae0ab50014215fbeea0d3013fe5daee49fe3d9aa562bcc/Screen_Shot_2025_07_16_at_12.13.41_AM.png",
+      "likes": 4
+    },
+    {
+      "title": "Polylogue",
+      "author": "Kofi",
+      "url": "https://polylogue.app/",
+      "image_url": "https://api.typeform.com/responses/files/f94dee32032da5d13979c72508996e80a04f7f3cbc84419d214ad7177fc68e0d/polylogue.app_.png",
+      "likes": 4
+    },
+    {
+      "title": "Sweet Web",
+      "author": null,
+      "url": "https://sweetwebaionline.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/a207d5ba619c270fb5136a420eda03c9f6161679221a897fabfbb1b8701a5993/Screenshot_2025_07_03_at_2.00.08_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "Edit your raw videos with AI",
+      "author": null,
+      "url": "https://tailorlabsai.com",
+      "image_url": "https://api.typeform.com/responses/files/35f05015f9c26611695891d6617cd1627c3734202845e45a38220fffd06172ca/Screenshot_2025_07_01_at_3.54.36_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "InfoRx",
+      "author": "Chinyere Unamba",
+      "url": "https://info-rx.org",
+      "image_url": "https://api.typeform.com/responses/files/c66f4ce90d2997641026a38cee1a52cfdcbff8814636e86dfab8a4c2e3fee1dd/Screenshot_2025_07_02_at_21_20_41_InfoRx___Simplifying_Healthcare_Through_Intelligent_Innovation.png",
+      "likes": 4
+    },
+    {
+      "title": "IndieQuest - A Gamified productivity tool",
+      "author": "Yannis Raft",
+      "url": "https://indiequest.app",
+      "image_url": "https://api.typeform.com/responses/files/97a304f03b76c6bf3782a23cccfa13d286fe19eddd4288c395fbbc0a831db111/scr4.jpg",
+      "likes": 4
+    },
+    {
+      "title": "Find Your Perfect Co-Founder with AI",
+      "author": null,
+      "url": "https://cofogram.com/",
+      "image_url": "https://api.typeform.com/responses/files/35b89a0129cf27a4ee69d6ddee3766878956c3e9742576c0763199936ac6ab07/Cofogram_banner.png",
+      "likes": 4
+    },
+    {
+      "title": "writopia",
+      "author": null,
+      "url": "https://writopia.online/",
+      "image_url": "https://api.typeform.com/responses/files/e490279df90e3777a85642fb33a7413d0fecbd9c8a52d392accba58cebd75f78/Screenshot_2025_07_01_at_4.48.47_AM__2_.png",
+      "likes": 4
+    },
+    {
+      "title": "IELTS Archiever",
+      "author": null,
+      "url": "https://ieltsachiever.online/",
+      "image_url": "https://api.typeform.com/responses/files/d05e48ba2a10903a74d046afe6a4d6d022a78f9226855f1390dc09c70557e2f4/2025_07_02_23.30.08_ieltsachiever.online_60fd7a26ecb8.jpg",
+      "likes": 4
+    },
+    {
+      "title": "InterviewAI - Master your interview skills",
+      "author": null,
+      "url": "https://interviewai.us/",
+      "image_url": "https://api.typeform.com/responses/files/dc4f05c8dc97aa0900faf567ed061150b242e509e452154f215682e8ef099f03/Screenshot_2025_07_09_at_4.46.28_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "IvyDreams - Where ambition meets a real plan.",
+      "author": null,
+      "url": "https://www.ivydreams.net",
+      "image_url": "https://api.typeform.com/responses/files/b986e9b70a3f7057f16939ef6760ef3616672f5e3f5f80eba3430517e141d936/download.jpg",
+      "likes": 4
+    },
+    {
+      "title": "SnapSocial",
+      "author": null,
+      "url": "https://snapsocial.me/",
+      "image_url": "https://api.typeform.com/responses/files/226aa1dd9b1980d5620b171c387ba7f823addee465e4efec39c5dd4cc45f05cc/file_00000000306061f7af2183610df2666e.png",
+      "likes": 4
+    },
+    {
+      "title": "Beautifully Done",
+      "author": null,
+      "url": "https://demo.beautifullydone.store/",
+      "image_url": "https://api.typeform.com/responses/files/2736b692967a2ecd45578781dc7b9d466b45d5b56e8cf4127031daab8faecda9/Screenshot_2025_07_03_at_13.50.37.png",
+      "likes": 4
+    },
+    {
+      "title": "Vibe Launch",
+      "author": "Mathan",
+      "url": "https://vibelaunch.site/",
+      "image_url": "https://api.typeform.com/responses/files/b875df9ca5e57dfecf312137d12c57ad863554eb207fee0987f413e660cadd25/image.png",
+      "likes": 4
+    },
+    {
+      "title": "QuitMate",
+      "author": "Jobin",
+      "url": "https://quitmate.me/",
+      "image_url": "https://api.typeform.com/responses/files/6c5e9d909d32f91c201577be1b843a49d8bfabe5d40e21c7a78b977a10be6f85/ChatGPT_Image_Jun_30__2025__09_00_51_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "AlterYou – AI Social Network",
+      "author": "Darshan",
+      "url": "https://alteryou.tech",
+      "image_url": "https://api.typeform.com/responses/files/b08ac446b61df87312a2cb7c5e22ab47d58a146cf2bc094bf3bd7ac0fa23f1d0/Picsart_25_07_01_01_58_20_061.png",
+      "likes": 4
+    },
+    {
+      "title": "Bag Manager by Disc Golf Dojo",
+      "author": "Ryan Milani",
+      "url": "https://bag.discgolfdojo.com/",
+      "image_url": "https://api.typeform.com/responses/files/29289d2fb8badf2943d10b81929a661e4450f2a6e7d1c5fc227da0cb1e7bf5a7/discgolfdojo.png",
+      "likes": 4
+    },
+    {
+      "title": "Timetide — Ride the Wave of Perfect Timing",
+      "author": null,
+      "url": "http://timetide.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/3d8ecacf8cc4491b8f9a1da265f119aa813c140c7e599ebf4f3cd7e9a220dafc/Timetide_—_Ride_the_Wave_of_Perfect_Timing_07_02_2025_02_04_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "ProposeAI",
+      "author": null,
+      "url": "https://proposeai.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/d8d7a54bf4b84cc486e30c780acac99858282db39fc497d63c69853d4339d8f3/ProposeAI_image.jpg",
+      "likes": 4
+    },
+    {
+      "title": "Gallorai — A Place for AI Creators to Belong",
+      "author": "Dinno",
+      "url": "https://gallorai.netlify.app",
+      "image_url": "https://api.typeform.com/responses/files/14faa2f46444ef8f8e1c0e2463b14bd67feea560b7158648d738516971022e5e/original.png",
+      "likes": 4
+    },
+    {
+      "title": "GuardianByte — AI-Powered Cybersecurity Assistant",
+      "author": null,
+      "url": "https://guardianbyte.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/4468202cb7ac12cd226ff634bfde9ebf70f3bd1b9e894a0b3bd3189786525e6b/Screenshot_2025_06_28_014141.png",
+      "likes": 4
+    },
+    {
+      "title": "Catalyst",
+      "author": null,
+      "url": "https://trycatalyst.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/169cf96fd3dc3155c055a92658bffc80c8822b3a649083df6fc97f3dfe11cd50/PNG_image.png",
+      "likes": 4
+    },
+    {
+      "title": "Wet noses Saranda",
+      "author": null,
+      "url": "https://wet-noses-saranda.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/baf8646997931f4fbcaf2e865a705ce12cd97d5fafdf1ac8a4f4c3a910f22966/Screenshot_at_Jun_27_03_58_00.png",
+      "likes": 4
+    },
+    {
+      "title": "Your Own Timeline - Recall Rearrange Write",
+      "author": null,
+      "url": "https://needitbuildit.site/",
+      "image_url": "https://api.typeform.com/responses/files/a1c42e35172a7ddb79cf350b392cd5e0c7be6224e723e91adbb1a33c4510a473/Screenshot_2025_06_30_174636.png",
+      "likes": 4
+    },
+    {
+      "title": "Datrix",
+      "author": "Zulele",
+      "url": "https://datrix.app/",
+      "image_url": "https://api.typeform.com/responses/files/8bbb3b4b9fb0c9454a2fed01f3927825df8de79cbe241586d35bfaeb99f0eb8d/Screenshot_2025_07_02_at_6.14.37_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "Flyim Persona Hub",
+      "author": null,
+      "url": "https://www.flyim.com",
+      "image_url": "https://api.typeform.com/responses/files/a19d87b9f2887d2e88f9adf92b1edd1f1e8c6e0309072c4f4d052df525dadc3c/FlyimBacksplash2.png",
+      "likes": 4
+    },
+    {
+      "title": "QR-Nexus",
+      "author": null,
+      "url": "https://qrnexus.site/",
+      "image_url": "https://api.typeform.com/responses/files/c49258c60aacab5158cde7383afe08a7ff36028c8bc56c2327e4ed2a9e515e50/qrnexus_homepage.png",
+      "likes": 4
+    },
+    {
+      "title": "Khetidheko",
+      "author": null,
+      "url": "https://kheti-dheko.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/b2484dd3da8bdd1a3bdaa224349d0aa96d7830dbc5b5a60d74feee0e0a56282e/Screenshot_2025_06_30_131826.png",
+      "likes": 4
+    },
+    {
+      "title": "Octify — AI-Powered Relationship Magic Mobile App",
+      "author": null,
+      "url": "https://octifybolt.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/ab21c6dda21f0b4718d244e493985450a6cb0dc80a8507508a1995c7d3a90f00/Octify_Fav_Devpost.gif",
+      "likes": 4
+    },
+    {
+      "title": "MailSnippet",
+      "author": "Farhan Khan",
+      "url": "https://mailsnippet.com/",
+      "image_url": "https://api.typeform.com/responses/files/e79d7ec8201308cb2f4ecaa2a9e47d278190e0bf9b8cbe3fed46106df9c2bde9/Thumbnailv2.png",
+      "likes": 4
+    },
+    {
+      "title": "Huggy - AI Mental Health Companion",
+      "author": null,
+      "url": "https://huggycares.me",
+      "image_url": "https://api.typeform.com/responses/files/fd2fd3e955b1892977bf7dfacf13a4a82080d7e903fe4eacb30632dc8f082fde/Wellness_coach.png",
+      "likes": 4
+    },
+    {
+      "title": "PeerMark",
+      "author": "Casey",
+      "url": "https://peermark.online",
+      "image_url": "https://api.typeform.com/responses/files/244cc6c2998a556708845c71eff5161ff64e9a32b248d6731bff6227de10aa97/Landing_Page.png",
+      "likes": 4
+    },
+    {
+      "title": "The Browser Lab",
+      "author": "Ian Curtis",
+      "url": "https://thebrowserlab.com",
+      "image_url": "https://api.typeform.com/responses/files/508ef1d5ed249148cd7a3bfbbcbfb397e5210041eb7abdf5ba4271743fb28258/Screenshot_2025_07_01_at_11.31.52_PM.png",
+      "likes": 4
+    },
+    {
+      "title": "AgentInitializer",
+      "author": null,
+      "url": "https://agentinitializer.dev/",
+      "image_url": "https://api.typeform.com/responses/files/3d7d47eeea4eadf47544862b88072268b65400a7f7489bdf82fef77935051de4/Screenshot_2025_07_02_at_7.27.49_AM.png",
+      "likes": 4
+    },
+    {
+      "title": "EverYou",
+      "author": null,
+      "url": "https://www.everyou.app",
+      "image_url": "https://api.typeform.com/responses/files/c9d271db9c2c9568523da84633a942a2a2abae9d10e42647d4366a569ae6e01b/Screenshot_2025_06_30_204020.png",
+      "likes": 4
+    },
+    {
+      "title": "Beesecure",
+      "author": null,
+      "url": "https://beesecure.io/",
+      "image_url": "https://api.typeform.com/responses/files/510b8376275614b92d98879ef7b1dbc672214ee6268f11c123b15d8500cee2b9/screen.jpg",
+      "likes": 4
+    },
+    {
+      "title": "Search Cocktails",
+      "author": null,
+      "url": "http://searchcocktails.com",
+      "image_url": "https://api.typeform.com/responses/files/3fd81c1a13f2a7acc9c8f50b5db7b812ab4c9cecc71d1f09194da082716a719c/cocktail.PNG",
+      "likes": 4
+    },
+    {
+      "title": "Focus Room",
+      "author": null,
+      "url": "https://focusroom-app1.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/136425d45bd97a83d20896748fc498ef828aaa9db1e16a39f3c3d51fcd562765/Solo_Focus_Session.png",
+      "likes": 4
+    },
+    {
+      "title": "Portfolio de William Ulses",
+      "author": null,
+      "url": "https://www.portfolio.williamulses.fr/",
+      "image_url": "https://api.typeform.com/responses/files/76dfc8ba6bf1bd2372e7a2b5dc37a376f429014fba22de526083d058d89c3117/Capture_d’écran_2025_07_02_à_13.51.02.png",
+      "likes": 4
+    },
+    {
+      "title": "EngageAI Landing Page",
+      "author": null,
+      "url": "https://www.engageai.dev",
+      "image_url": "https://api.typeform.com/responses/files/e53b2c1ef78aad444a5b96ecd65761daebabc0fd17c7a35b3a058880c8171748/CleanShot_2025_07_02_at_06.18.31_2x.png",
+      "likes": 4
+    },
+    {
+      "title": "Local Vibes",
+      "author": "Frank",
+      "url": "https://localvibes.app",
+      "image_url": "https://api.typeform.com/responses/files/1305a867ea4c87caa599ffac2bec6287ab4c3f3d35930e56bc3f2b36a25bfd6d/localvibes_thumbnail.png",
+      "likes": 3
+    },
+    {
+      "title": "Sadiki",
+      "author": "El Houcine",
+      "url": "https://sadikigo.site/",
+      "image_url": "https://api.typeform.com/responses/files/55a12abfdab39a0cfddd7335b8ade6f6462cf4d93c61d992614eb6f2ba5530df/Capture_d’écran_2025_06_29_à_16.20.40.png",
+      "likes": 3
+    },
+    {
+      "title": "Street Art Tour",
+      "author": null,
+      "url": "https://streetarttour.city",
+      "image_url": "https://api.typeform.com/responses/files/947557a2b62fc7c7778dc41bbc68f30ccc8bb21ff04b16a95a78ad50700ab2a8/streetarttour.city___3_.png",
+      "likes": 3
+    },
+    {
+      "title": "Assignme",
+      "author": null,
+      "url": "https://assignme.live/",
+      "image_url": "https://api.typeform.com/responses/files/d69ed1862e7051b0d757425ef8545a611bd6b42cb96dc3a46ada9bbaf9c262bb/ss.jpg",
+      "likes": 3
+    },
+    {
+      "title": "ZeroDropZone",
+      "author": "Doug Karr",
+      "url": "https://zerodropzone.com/",
+      "image_url": "https://api.typeform.com/responses/files/09a72a1b0d774c29dd4cef0c5461cb3ee89a834d611e7948953d71b158b12f86/game_modes.png",
+      "likes": 3
+    },
+    {
+      "title": "PreSign Know Before You Sign",
+      "author": null,
+      "url": "https://presign-new.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/9975b2ef3d63c5ccb86fe936a3736a1b7e12813eec89d45e03609c2b67d874bf/image_1000x400.jpg",
+      "likes": 3
+    },
+    {
+      "title": "GlyphOS Task Manager: Manage your tasks, and have fun doing it!",
+      "author": "DreamLoopOne",
+      "url": "https://glyphos-task-manager-demo.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/dc7b6fc31ab07b9d1fa6d0bc0975538d231557cd7be5206a7f88973a03d532b3/tm___beauty_shot.JPG",
+      "likes": 3
+    },
+    {
+      "title": "InterviewForge",
+      "author": null,
+      "url": "https://interviewforge.org/",
+      "image_url": "https://api.typeform.com/responses/files/4c476a7d79dfbca0ae7eac5c38f5a2833c7b5f56be4c9ff4702a30149d6747b0/SCR_20250703_bptm.png",
+      "likes": 3
+    },
+    {
+      "title": "OpenMark",
+      "author": null,
+      "url": "https://openmarking.site/",
+      "image_url": "https://api.typeform.com/responses/files/92c3cdb4bb569842b6c71f42cb5e6dfbdc210063fcfc859d9593f6db31a3fdea/Thumbnail__1_.jpg",
+      "likes": 3
+    },
+    {
+      "title": "SnapLease",
+      "author": null,
+      "url": "https://snaplease.app/",
+      "image_url": "https://api.typeform.com/responses/files/2521071d22e66aa199436ff2f93fd93244dad515ab2eea62921aa5ef982811da/SnapLease_Cover.png",
+      "likes": 3
+    },
+    {
+      "title": "SunSip -  🗺️ City Vibe. 🍹 Perfect Sip. 🌞 Feel It Now.",
+      "author": null,
+      "url": "https://sunsip.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/61a6db96f8bb3d9121d53adcf2def4def2d7a373e86c88bbfee1adb742e9a178/btn.png",
+      "likes": 3
+    },
+    {
+      "title": "AffordWiz - Your Personal Affordability Calculator",
+      "author": null,
+      "url": "https://affordwiz.com/",
+      "image_url": "https://api.typeform.com/responses/files/b144f016d642f64c567ab90ba0762c139af88970e853e4854041c9569ae03df5/a4dwiz.JPG",
+      "likes": 3
+    },
+    {
+      "title": "Tendreo",
+      "author": "Collins Edim",
+      "url": "https://tendreo.com",
+      "image_url": "https://api.typeform.com/responses/files/80ad7d7e3b16dfc205b9c93ecbe5466faf8860a85a416c31617bb2e4e4371421/Screenshot_from_2025_06_29_02_36_11.png",
+      "likes": 3
+    },
+    {
+      "title": "Monetise Me - Turn hobbies into income",
+      "author": null,
+      "url": "https://www.monetiseme.org/",
+      "image_url": "https://api.typeform.com/responses/files/2423f8be0e6f24e427adf10da18d20b191611555fbf63aada715740b5a2f68b8/Monetise_Me_Thumbnail.png",
+      "likes": 3
+    },
+    {
+      "title": "Six Thirty",
+      "author": null,
+      "url": "https://sixthirty.co.uk",
+      "image_url": "https://api.typeform.com/responses/files/ca9b9a83ff2dae8ecdc060c8bd08ad45b666b18d45f9f7cafa28835f9428fc03/logosix30.png",
+      "likes": 3
+    },
+    {
+      "title": "SolxClash",
+      "author": "Sahil Gupta",
+      "url": "http://solxclash.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/5107a0dd0fc0a1b04f0bf260c573a817cd117c9bcbcf635da9772425d71f7719/787_1x_shots_so.png",
+      "likes": 3
+    },
+    {
+      "title": "AskClerkly",
+      "author": "Mart",
+      "url": "https://askclerkly.com",
+      "image_url": "https://api.typeform.com/responses/files/a6599360309a8fe130c28efb1bc1f222a4ef93d75202d313a87a9443ef48e08c/Ask.png",
+      "likes": 3
+    },
+    {
+      "title": "Devdash",
+      "author": null,
+      "url": "https://www.trydevdash.com/",
+      "image_url": "https://api.typeform.com/responses/files/e92d4015acba534739d12c30122fbccb0df2d728dde9d8a59eb49a211b44cdf4/Screenshot_2025_06_28_184448.jpg",
+      "likes": 3
+    },
+    {
+      "title": "Mehmet Aktug Personal Website",
+      "author": "Mehmet Aktug",
+      "url": "https://mehmetaktug.com/",
+      "image_url": "https://api.typeform.com/responses/files/f19180ffa3bcea3f73d7369f60f48603b3c06731d2d1a0aae99ac355be800150/CleanShot_2025_07_06_at_17.11.51_2x.png",
+      "likes": 3
+    },
+    {
+      "title": "Resumeye",
+      "author": "Jelle",
+      "url": "https://www.resumeye.com/",
+      "image_url": "https://api.typeform.com/responses/files/8d57e40ccac889df5d5af2cd02111cd11cefaf1751ae265d6cd8f6ede3658bc1/resumeyee.png",
+      "likes": 3
+    },
+    {
+      "title": "elucidare: every feature is designed with neurodiverse professionals in mind",
+      "author": "Ciara Wearen",
+      "url": "https://elucidare.io",
+      "image_url": "https://api.typeform.com/responses/files/bb9498793d0553491be8af77496e8ad2fd9f6bcdf049d1824c5c8754bff4c176/thumbnail.png",
+      "likes": 3
+    },
+    {
+      "title": "BookVoice- Personal Audio Book Generator",
+      "author": null,
+      "url": "https://bookvoice.me",
+      "image_url": "https://api.typeform.com/responses/files/514954db112f3e4bb23e4ca1def322f91c3a5515a2bf4a1d35b878e7f6af9cfa/Screenshot_20250627_124746.png",
+      "likes": 3
+    },
+    {
+      "title": "Soneur - Solo Meetings, Powered by AI",
+      "author": null,
+      "url": "http://soneur.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/c1c974802ebc5b3f07e813ba44417f6d34336bd606ba109a19f162c19638c061/Screenshot_from_2025_07_15_03_25_27.png",
+      "likes": 3
+    },
+    {
+      "title": "PolicyGenie",
+      "author": null,
+      "url": "http://getpolicygenie.com/",
+      "image_url": "https://api.typeform.com/responses/files/6435c58c41efdb6140dfc6b5524c6d18bab3ddbc22a2ac2b81903fdc22b7eede/Screenshot_2025_06_30_101658.png",
+      "likes": 3
+    },
+    {
+      "title": "PrivSecrets: Privacy Tools Built for Devs, Sysadmins & Security Pros",
+      "author": null,
+      "url": "https://privsecrets.com",
+      "image_url": "https://api.typeform.com/responses/files/b3235d2b2111ec442a93c7fecfff8185e79cd310cd58669da70a63fa6047b50e/bolt_gallery.PNG",
+      "likes": 3
+    },
+    {
+      "title": "VeganSnap",
+      "author": "Ogunlusi Olubunmi Edward",
+      "url": "https://vegansnap.food",
+      "image_url": "https://api.typeform.com/responses/files/43319ed49f81ad0e940c1e71928d5f04d9e6e2946251303c23b972dcf6501072/Screenshot_2025_06_28_160530.png",
+      "likes": 3
+    },
+    {
+      "title": "FlashFX",
+      "author": "Gabriele Bolognese",
+      "url": "https://flashfx-demo.netlify.app",
+      "image_url": "https://api.typeform.com/responses/files/f554a7ff9e40f26bea623cb55a83330cde98893319211ba0b0470096788db715/beibi.png",
+      "likes": 3
+    },
+    {
+      "title": "Apollo11",
+      "author": null,
+      "url": "https://apollo-11-documentary.vercel.app/",
+      "image_url": "https://api.typeform.com/responses/files/9714c29f4ab662bb3e3829bd09c220e75d7dc13118ff700d96a3e48c1fbee59c/Screenshot_2025_06_27_at_11.17.19_PM.png",
+      "likes": 3
+    },
+    {
+      "title": "uLuup",
+      "author": "Nazlican",
+      "url": "https://uluup.com/",
+      "image_url": "https://api.typeform.com/responses/files/5071b29af15600299277b4bd7b1eb20a204f3281f178750bb73bc9013bcf0f87/uLuup_feature.png",
+      "likes": 3
+    },
+    {
+      "title": "Commora",
+      "author": null,
+      "url": "https://commora.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/6359c3e0dc0dc43ccddaf5b5e12acd54e8d95be7a1867543dbfeb858d5ba8118/Screenshot_20250627_225501.png",
+      "likes": 3
+    },
+    {
+      "title": "Drewbert Overdose Detection & Response Network",
+      "author": null,
+      "url": "https://drewbertdemo.online",
+      "image_url": "https://api.typeform.com/responses/files/118aac5af644532feb5f316f3dd4bb631fc8d19bc8b23bf98be2205f71059c15/IMG_0902.jpeg",
+      "likes": 3
+    },
+    {
+      "title": "LoopDrop",
+      "author": null,
+      "url": "http://hackpot.xyz/",
+      "image_url": "https://api.typeform.com/responses/files/26ca66428ffb2e48ecca9debf5ad158b74dfaa5ef6d59b9a286869fe9aed9392/Screenshot_2025_06_27_141421.png",
+      "likes": 3
+    },
+    {
+      "title": "PRAI.TODAY and Get Recognized by AI",
+      "author": null,
+      "url": "https://prai.today",
+      "image_url": "https://api.typeform.com/responses/files/d654769a9ceca739a82a05dfaf6d07ae9269d3d7c2c172b2a9ee170d8eba2a7a/prai_today.png",
+      "likes": 3
+    },
+    {
+      "title": "hacker4 me",
+      "author": null,
+      "url": "https://hacker4.me",
+      "image_url": "https://api.typeform.com/responses/files/3586f5cac0766277aaa4ad7f037c13129e4d433d1c7d12cf97a826e6d69db2fc/small.jpg",
+      "likes": 3
+    },
+    {
+      "title": "Lumi Hub – Sell Digital Products & Get Paid in Crypto",
+      "author": "Fatuma Yattani",
+      "url": "https://lumihub.live/",
+      "image_url": "https://api.typeform.com/responses/files/c00c0e5444b7a75dd072a243a06ceb661f3774a6e63f33f59d0e87cde8e84115/lumipic.png",
+      "likes": 3
+    },
+    {
+      "title": "Aurarora - AI Companion & Therapist",
+      "author": null,
+      "url": "https://aurarora.life",
+      "image_url": "https://api.typeform.com/responses/files/e82f1fe153e721f9bc242077687027c4fdd0f27e97d783703b1b939ad063e025/app_image.png",
+      "likes": 2
+    },
+    {
+      "title": "Supratip's Portfolio",
+      "author": null,
+      "url": "https://supratip.tech",
+      "image_url": "https://api.typeform.com/responses/files/c54f507ee45f1fd1babcd2f18221f3f312ead278a170b576cd0031676c6b560f/Screenshot_2025_07_12_224709.png",
+      "likes": 2
+    },
+    {
+      "title": "Tulipomania",
+      "author": null,
+      "url": "https://tulipomania.art",
+      "image_url": "https://api.typeform.com/responses/files/2b8c31d93c5cb32fe511489b5ce96a51552f55234bfe63427c7a6aa78609634c/tulipomania_title_card_720x400px.png",
+      "likes": 2
+    },
+    {
+      "title": "MyStageTime",
+      "author": null,
+      "url": "https://mystageti.me/",
+      "image_url": "https://api.typeform.com/responses/files/91723b63a49b7ce22c4adf1ca331e281bd5d3da4b66877ee10dff146c2d34e2e/Screenshot_2025_06_29_at_11.52.35_PM.png",
+      "likes": 2
+    },
+    {
+      "title": "Ramp",
+      "author": "Florence Ogunbore",
+      "url": "https://rampkit.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/3415e385efc629214b10ee72efed60c03ac67568359b96f518d14eb547228f56/Screenshot_2025_06_28_at_07.39.07.png",
+      "likes": 2
+    },
+    {
+      "title": "Genius Minds",
+      "author": "Seth P",
+      "url": "https://genius-minds.vercel.app/",
+      "image_url": "https://api.typeform.com/responses/files/b4082dadf82130b028e274128f52561d0059e688b0dc4b52860eea844aaec263/Screenshot_2025_07_01_at_3.56.07_AM.png",
+      "likes": 2
+    },
+    {
+      "title": "Mimix",
+      "author": "Subramanian Narayanan",
+      "url": "https://home.mimixai.app/",
+      "image_url": "https://api.typeform.com/responses/files/0fdfa3647506e925fb68adcc92311c2cf85944ae7099f913e10465c2a32eb2f5/App_page.png",
+      "likes": 2
+    },
+    {
+      "title": "Discuto",
+      "author": null,
+      "url": "https://discuto.app/",
+      "image_url": "https://api.typeform.com/responses/files/27d41279fe2661f63d2d9b325754c393688b48a3ada096dc79da20b6feb08bbb/Homepage.png",
+      "likes": 2
+    },
+    {
+      "title": "Crucue",
+      "author": null,
+      "url": "https://crucue.com/",
+      "image_url": "https://api.typeform.com/responses/files/f21a126631bc85c233ea2ac3674c57b901812aa02a52e30c168f3290cbde1935/crucue_fav.gif",
+      "likes": 2
+    },
+    {
+      "title": "Polymaths - Intelligent AI Experts, On Demand",
+      "author": "Sanket Dongre",
+      "url": "https://www.polymaths.app",
+      "image_url": "https://api.typeform.com/responses/files/664aa1f692ef283662056ced3ea6cac0cbfd7e71e2b0d3bd770acc334930f6d0/polymaths.jpg",
+      "likes": 2
+    },
+    {
+      "title": "LivLog",
+      "author": null,
+      "url": "https://livlog.netlify.app/",
+      "image_url": "https://api.typeform.com/responses/files/944aa75fc45d1c8da4517ebd695ef6f579cceaa226a0e0f5919d4f9a6552592f/Screenshot_2025_07_14_212226.png",
+      "likes": 2
+    },
+    {
+      "title": "Pivot AI: The \"LinkedIn 2.0\" for Your Future Potential",
+      "author": null,
+      "url": "https://pivotyour.work",
+      "image_url": "https://api.typeform.com/responses/files/70c2cf11b7715194614ab52ca3c311ac3004abd559326604be20dbd09ea14de9/pivot_landscape.jpg",
+      "likes": 2
+    },
+    {
+      "title": "Expo Email - Website + Campaign Report Dashboard",
+      "author": null,
+      "url": "https://expoemail.email/",
+      "image_url": "https://api.typeform.com/responses/files/b3a11f7e6feaccdf3c565c97787f4d0b6c41159ce02a779fb6140533d0b34707/Expo_Email___Email_Marketing_for_Trade_Show_Suppliers.png",
+      "likes": 2
+    },
+    {
+      "title": "YouLookedAt.me",
+      "author": "Anudeep",
+      "url": "https://youlookedat.me",
+      "image_url": "https://api.typeform.com/responses/files/92e2e1008037094a79b87e75f275b66ac500b5348a745a79a886fc2da6670136/You_Looked_At_Me_homepage.png",
+      "likes": 2
+    },
+    {
+      "title": "EchoRoom: A real-time anonymous mood-based chat app",
+      "author": null,
+      "url": "https://www.echoroom.tech/",
+      "image_url": "https://api.typeform.com/responses/files/ec13e9427157817face9a4a4ceea2825232e7baae2b0d68e40e76a3d9e124df4/home.png",
+      "likes": 2
+    }
+  ]
+}

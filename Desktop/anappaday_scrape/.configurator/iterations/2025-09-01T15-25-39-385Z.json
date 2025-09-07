@@ -1,0 +1,61 @@
+{
+  "id": "2025-09-01T15-25-39-385Z",
+  "timestamp": "2025-09-01T15:25:39.385Z",
+  "selectedComponents": {
+    "agents": [
+      "task-decomposition-expert",
+      "business-analyst",
+      "frontend-developer",
+      "javascript-pro",
+      "python-pro",
+      "data-analyst",
+      "code-reviewer",
+      "debugger"
+    ],
+    "commands": [
+      "setup-development-environment",
+      "setup-linting",
+      "setup-formatting",
+      "create-pr",
+      "fix-github-issue",
+      "generate-api-documentation",
+      "setup-comprehensive-testing",
+      "add-package",
+      "init-project",
+      "todo",
+      "optimize-build"
+    ],
+    "hooks": [
+      "lint-on-save",
+      "smart-formatting",
+      "format-javascript-files",
+      "format-python-files",
+      "run-tests-after-changes",
+      "test-runner",
+      "auto-git-add",
+      "smart-commit"
+    ],
+    "mcps": [
+      "github-integration",
+      "filesystem-access",
+      "context7",
+      "deepgraph-react",
+      "deepgraph-typescript",
+      "web-fetch"
+    ]
+  },
+  "userRequirements": {
+    "enable-ai-auth": "Browser OAuth (recommended)",
+    "api-key": "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",
+    "experience-level": "Beginner - New to AI-assisted development",
+    "project-type": "Other",
+    "programming-languages": [
+      "JavaScript/TypeScript"
+    ],
+    "web-frameworks": [
+      "React"
+    ],
+    "project-description": "this is a scraper",
+    "projectStructure": "/Users/yoel/Desktop/anappaday_scrape/weekly_scraper.py\n/Users/yoel/Desktop/anappaday_scrape/output-1.csv\n/Users/yoel/Desktop/anappaday_scrape/Formatted_Apps__v2_.csv\n/Users/yoel/Desktop/anappaday_scrape/.DS_Store\n/Users/yoel/Desktop/anappaday_scrape/CRON_AND_NOTIFICATIONS_GUIDE.md\n/Users/yoel/Desktop/anappaday_scrape/requirements.txt\n/Users/yoel/Desktop/anappaday_scrape/lovable_apps_comprehensive.json\n/Users/yoel/Desktop/anappaday_scrape/README_WEEKLY_SCRAPING.md\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/replit_all_20250826_192008.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/base44_all_20250826_191954.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/lovable_new_20250826_191854.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/base44_new_20250826_191954.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/lovable_all_20250826_191854.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/replit_new_20250826_192008.json\n/Users/yoel/Desktop/anappaday_scrape/weekly_scraping_data/scraping_history.db\n/Users/yoel/Desktop/anappaday_scrape/lovable_apps_enhanced.json\n/Users/yoel/Desktop/anappaday_scrape/lovable_scraper_final.py\n/Users/yoel/Desktop/anappaday_scrape/database.py\n/Users/yoel/Desktop/anappaday_scrape/cron_setup.py\n/Users/yoel/Desktop/anappaday_scrape/.claude/settings.local.json\n/Users/yoel/Desktop/anappaday_scrape/bolt_scraper.py\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/lovable_scraper_final.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/replit_scraper.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/weekly_scraper.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/notifications.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/bolt_scraper.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/base44_scraper.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/database.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/__pycache__/scheduler.cpython-313.pyc\n/Users/yoel/Desktop/anappaday_scrape/replit_debug.html\n/Users/yoel/Desktop/anappaday_scrape/output.csv\n/Users/yoel/Desktop/anappaday_scrape/setup_weekly_scraping.py\n/Users/yoel/Desktop/anappaday_scrape/formatted_apps.csv\n/Users/yoel/Desktop/anappaday_scrape/bolt_projects.json\n/Users/yoel/Desktop/anappaday_scrape/vibe_registry.py\n/Users/yoel/Desktop/anappaday_scrape/.venv/pyvenv.cfg\n/Users/yoel/Desktop/anappaday_scrape/.venv/.gitignore\n/Users/yoel/Desktop/anappaday_scrape/manage_scraping.py\n/Users/yoel/Desktop/anappaday_scrape/debug_page.html\n/Users/yoel/Desktop/anappaday_scrape/notifications.py\n/Users/yoel/Desktop/anappaday_scrape/scheduler.py\n/Users/yoel/Desktop/anappaday_scrape/lovable_scraper.py\n/Users/yoel/Desktop/anappaday_scrape/bolt_debug.html\n/Users/yoel/Desktop/anappaday_scrape/venv/pyvenv.cfg\n/Users/yoel/Desktop/anappaday_scrape/venv/.gitignore\n/Users/yoel/Desktop/anappaday_scrape/base44_scraper.py\n/Users/yoel/Desktop/anappaday_scrape/base44_apps.json\n/Users/yoel/Desktop/anappaday_scrape/lovable_scraper_enhanced.py\n/Users/yoel/Desktop/anappaday_scrape/replit_scraper.py\n/Users/yoel/Desktop/anappaday_scrape/data/vibe_registry.db\n/Users/yoel/Desktop/anappaday_scrape/data/vibe_registry_snapshot.db\n/Users/yoel/Desktop/anappaday_scrape/bolt_projects_complete.json\n/Users/yoel/Desktop/anappaday_scrape/replit_projects.json\n/Users/yoel/Desktop/anappaday_scrape/lovable_launched_apps.json\n/Users/yoel/Desktop/anappaday_scrape/scraping.log\n/Users/yoel/Desktop/anappaday_scrape/lovable_apps.json\n/Users/yoel/Desktop/anappaday_scrape/scraping_history.db\n"
+  }
+}
