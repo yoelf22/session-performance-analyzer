@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
 import { BarChart3, TrendingDown, AlertTriangle, Upload, Download } from 'lucide-react';
 
@@ -24,30 +24,52 @@ interface FusedDataPoint {
 }
 
 const SessionAnalyzer: React.FC = () => {
-  const [fusedData, setFusedData] = useState<FusedDataPoint[]>([]);
+  // Generate initial sample data immediately  
+  const generateSampleDataImmediate = (): FusedDataPoint[] => {
+    const points: FusedDataPoint[] = [];
+    for (let i = 1; i <= 200; i++) {
+      const sessionLength = 1.0 + (i - 1) * 0.2;
+      let baseSuccessRate: number;
+      
+      if (i <= 130) {
+        const progressRatio = (i - 1) / 129;
+        const curveValue = 1 - Math.pow(progressRatio, 0.7);
+        baseSuccessRate = 0.55 + (0.99 - 0.55) * curveValue;
+      } else {
+        baseSuccessRate = 0.05;
+      }
+      
+      const noise = (Math.random() - 0.5) * 0.2;
+      const successRate = Math.max(0, Math.min(1, baseSuccessRate + noise));
+      
+      points.push({
+        sessionId: `session_${i}`,
+        sessionNumber: i,
+        sessionLength: Number(sessionLength.toFixed(2)),
+        successRate: Number((successRate * 100).toFixed(2)),
+      });
+    }
+    return points;
+  };
+
+  const initialSampleData = generateSampleDataImmediate();
+  const [fusedData, setFusedData] = useState<FusedDataPoint[]>(initialSampleData);
   const [shopifyData, setShopifyData] = useState<ShopifyData[]>([]);
   const [awsData, setAWSData] = useState<AWSData[]>([]);
   const [viewMode, setViewMode] = useState<'raw' | 'trend'>('raw');
   const [smoothingLevel, setSmoothingLevel] = useState<number>(10);
   const [stats, setStats] = useState({
-    totalSessions: 0,
-    matchedSessions: 0,
-    inflectionPoint: '0',
-    earlySuccessRate: '0',
-    lateSuccessRate: '0',
+    totalSessions: initialSampleData.length,
+    matchedSessions: initialSampleData.length,
+    inflectionPoint: '27.0',
+    earlySuccessRate: '80.5',
+    lateSuccessRate: '5.0',
   });
   const [shopifyUploadStatus, setShopifyUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
   const [awsUploadStatus, setAWSUploadStatus] = useState<'idle' | 'uploading' | 'success' | 'error'>('idle');
-  const [isReportGenerated, setIsReportGenerated] = useState(false);
+  const [isReportGenerated, setIsReportGenerated] = useState(true);
   const shopifyFileRef = useRef<HTMLInputElement>(null);
   const awsFileRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // Load sample data by default on first render
-    if (fusedData.length === 0 && shopifyData.length === 0 && awsData.length === 0) {
-      loadSampleData();
-    }
-  }, []);
 
   const generateSampleData = (): FusedDataPoint[] => {
     const points: FusedDataPoint[] = [];
@@ -398,7 +420,7 @@ const SessionAnalyzer: React.FC = () => {
 
   const renderChart = () => {
     if (!fusedData.length) {
-      return <div className="flex items-center justify-center h-full text-gray-500">No fused data available. Please upload both Shopify and AWS data files.</div>;
+      return <div className="flex items-center justify-center h-full text-gray-500">No fused data available. Please upload both Shopify and AWS data files or click "Load Demo Data".</div>;
     }
 
     if (viewMode === 'raw') {
